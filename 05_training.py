@@ -97,10 +97,33 @@ val_transform = transforms.Compose([
 
 print("\nLoading datasets...")
 
+# Fix alphabetical ordering — map folders numerically 0-10
+correct_classes = [str(i) for i in range(11)]
+class_to_idx = {c: i for i, c in enumerate(correct_classes)}
+
 train_dataset = datasets.ImageFolder(
     os.path.join(DATA_DIR, "train"),
     transform=train_transform
 )
+train_dataset.class_to_idx = class_to_idx
+train_dataset.targets = [class_to_idx[train_dataset.classes[t]]
+                         for t in train_dataset.targets]
+
+val_dataset = datasets.ImageFolder(
+    os.path.join(DATA_DIR, "validation"),
+    transform=val_transform
+)
+val_dataset.class_to_idx = class_to_idx
+val_dataset.targets = [class_to_idx[val_dataset.classes[t]]
+                       for t in val_dataset.targets]
+
+test_dataset = datasets.ImageFolder(
+    os.path.join(DATA_DIR, "test"),
+    transform=val_transform
+)
+test_dataset.class_to_idx = class_to_idx
+test_dataset.targets = [class_to_idx[test_dataset.classes[t]]
+                        for t in test_dataset.targets]
 val_dataset = datasets.ImageFolder(
     os.path.join(DATA_DIR, "validation"),
     transform=val_transform
