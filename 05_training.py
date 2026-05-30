@@ -43,7 +43,8 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 # 1. CONFIG
 # ═════════════════════════════════════════════════════════════════════════════
 
-DATA_DIR     = "/data/Grace/Master_Laser_Crops"
+DATA_DIR        = "/data/Grace/Master_Laser_Crops"
+DATA_DIR_AUG    = "/data/Grace/Master_Laser_Crops_Augmented"
 NUM_CLASSES  = 11
 IMAGE_SIZE   = 224
 BATCH_SIZE   = 16
@@ -95,7 +96,83 @@ val_transform = transforms.Compose([
 # ═════════════════════════════════════════════════════════════════════════════
 # 4. DATASETS AND DATALOADERS
 # ═════════════════════════════════════════════════════════════════════════════
+# ═════════════════════════════════════════════════════════════════════════════
+# 3B. PHYSICAL AUGMENTATION — expand training set 3x (same as ViT Step 16)
+# Generates Gaussian noise + salt & pepper noise + flip copies
+# Only runs if augmented folder does not already exist
+# ═════════════════════════════════════════════════════════════════════════════
 
+import shutil
+import random
+from PIL import Image as PILImage
+
+def add_gaussian_noise(img, mean=0, std=25):
+    img_array = np.array(img).astype(np.float32)
+    noise = np.random.normal(mean, std, img_array.shape)
+    noisy = np.clip(img_array + noise, 0, 255).astype(np.uint8)
+    return PILImage.fromarray(noisy)
+
+def add_salt_pepper_noise(img, amount=0.05):
+    img_array = np.array(img).astype(np.uint8)
+    noisy = img_array.copy()
+    num_salt = int(amount * img_array.size * 0.5)
+    salt_coords = [np.random.randint(0, i, num_salt)
+                   for i in img_array.shape[:2]]
+    noisy[salt_coords[0], salt_coords[1]] = 255
+    num_pepper = int(amount * img_array.size * 0.5)
+    pepper_coords = [np.random.randint(0, i, num_pepper)
+                     for i in img_array.shape[:2]]
+    noisy[pepper_coords[0], pepper_coords[1]] = 0
+    return PILImage.fromarray(noisy)
+
+def flip_image(img):
+    choice = random.randint(0, 2)
+    if choice == 0:
+        return img.transpose(PILImage.FLIP_LEFT_RIGHT)
+    elif choice == 1:
+        return img.transpose(PILImage.FLIP_TOP_BOTTOM)
+    else:
+        img = img.transpose(PILImage.FLIP_LEFT_RIGHT)
+        return img.transpose(PILImage.FLIP_TOP_BOTTOM)
+
+if not os.path.exists(DATA_DIR_AUG):
+    print("\nGenerating physically augmented dataset (3x expansion)...")
+    # Copy full dataset first
+    shutil.copytree(DATA_DIR, DATA_DIR_AUG)
+
+    train_path = os.path.join(DATA_DIR_AUG, "train")
+    augmented_count = 0
+
+    for class_folder in os.listdir(train_path):
+        class_path = os.path.join(train_path, class_folder)
+        if not os.path.isdir(class_path):
+            continue
+        original_files = [f for f in os.listdir(class_path)
+                          if f.endswith(('.jpg', '.jpeg', '.png'))]
+        for img_file in original_files:
+            img_path = os.path.join(class_path, img_file)
+            img = PILImage.open(img_path).convert("RGB")
+            base_name = img_file.rsplit('.', 1)[0]
+
+            # Copy 1 — flip + Gaussian noise
+            aug1 = flip_image(img)
+            aug1 = add_gaussian_noise(aug1, mean=0, std=25)
+            aug1.save(os.path.join(class_path,
+                      f"{base_name}_aug_gaussian.jpg"))
+
+            # Copy 2 — flip + Salt & Pepper noise
+            aug2 = flip_image(img)
+            aug2 = add_salt_pepper_noise(aug2, amount=0.05)
+            aug2.save(os.path.join(class_path,
+                      f"{base_name}_aug_saltpepper.jpg"))
+
+            augmented_count += 2
+
+    print(f"Original train images : 717")
+    print(f"Augmented copies added: {augmented_count}")
+    print(f"Total train images    : {717 + augmented_count}")
+else:
+    print(f"\nAugmented dataset already exists at {DATA_DIR_AUG} — skipping generation")
 print("\nLoading datasets...")
 
 # Build hf_to_correct map — same fix as Kaggle notebook Step 4B
@@ -104,7 +181,7 @@ hf_to_correct = {idx: int(folder) for idx, folder in enumerate(train_folders)}
 print(f"Class remapping: {hf_to_correct}")
 
 train_dataset = datasets.ImageFolder(
-    os.path.join(DATA_DIR, "train"),
+    os.path.join(DATA_DIR_AUG, "train"),
     transform=train_transform
 )
 train_dataset.targets = [hf_to_correct[t] for t in train_dataset.targets]
