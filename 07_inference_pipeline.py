@@ -130,23 +130,24 @@ except:
 
 def get_dataset_name(filename):
     """Extract source dataset name from filename prefix."""
-    fname = os.path.basename(filename).lower()
-    if "stir" in fname:
+    fname = os.path.basename(filename)
+    f = fname.lower()
+    if "stir" in f:
         return "Soil-Moisture-Stir-September"
-    elif "september" in fname:
+    elif "september" in f:
         return "Soil-Moisture-September"
-    elif "5sagf" in fname:
+    elif "5sagf" in f:
         return "Soil-Moisture-5sagf"
-    elif "v4-uv" in fname or "v4-uv" in fname:
+    elif "v4-uv" in f:
         return "Soil-Moisture-v4-UV"
-    elif "v4-ir" in fname:
+    elif "v4-ir" in f:
         return "Soil-Moisture-v4-IR"
-    elif "v4-ir" in fname or "soil-moisture-ir" in fname:
-        return "Soil-Moisture-IR"
-    elif "v4" in fname:
+    elif "v4-" in f or "v4_" in f:
         return "Soil-Moisture-v4"
+    elif "soil-moisture-ir" in f or "moisture-ir" in f:
+        return "Soil-Moisture-IR"
     else:
-        return "Unknown"
+        return "Soil-Moisture-v4"
 
 # ═════════════════════════════════════════════════════════════════════════════
 # 8. ANNOTATE FUNCTION — exact same panel spec as Kaggle Step 27
