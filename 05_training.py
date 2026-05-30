@@ -126,9 +126,6 @@ test_dataset = datasets.ImageFolder(
     os.path.join(DATA_DIR, "test"),
     transform=val_transform
 )
-
-test_dataset.targets = [class_to_idx[test_dataset.classes[t]]
-                        for t in test_dataset.targets]
 val_dataset = datasets.ImageFolder(
     os.path.join(DATA_DIR, "validation"),
     transform=val_transform
