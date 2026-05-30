@@ -97,25 +97,30 @@ val_transform = transforms.Compose([
 
 print("\nLoading datasets...")
 
-# Fix alphabetical ordering — map folders numerically 0-10
-correct_classes = [str(i) for i in range(11)]
-class_to_idx = {c: i for i, c in enumerate(correct_classes)}
+# Build hf_to_correct map — same fix as Kaggle notebook Step 4B
+# Alphabetical folders: ['0','1','10','2','3','4','5','6','7','8','9']
+# hf index 2 = folder '10' = correct class 10, not 2
+train_folders = sorted(os.listdir(os.path.join(DATA_DIR, "train")))
+hf_to_correct = {idx: int(folder) for idx, folder in enumerate(train_folders)}
+print(f"Class remapping: {hf_to_correct}")
 
 train_dataset = datasets.ImageFolder(
     os.path.join(DATA_DIR, "train"),
     transform=train_transform
 )
-train_dataset.class_to_idx = class_to_idx
-train_dataset.targets = [class_to_idx[train_dataset.classes[t]]
-                         for t in train_dataset.targets]
+train_dataset.targets = [hf_to_correct[t] for t in train_dataset.targets]
 
 val_dataset = datasets.ImageFolder(
     os.path.join(DATA_DIR, "validation"),
     transform=val_transform
 )
-val_dataset.class_to_idx = class_to_idx
-val_dataset.targets = [class_to_idx[val_dataset.classes[t]]
-                       for t in val_dataset.targets]
+val_dataset.targets = [hf_to_correct[t] for t in val_dataset.targets]
+
+test_dataset = datasets.ImageFolder(
+    os.path.join(DATA_DIR, "test"),
+    transform=val_transform
+)
+test_dataset.targets = [hf_to_correct[t] for t in test_dataset.targets]
 
 test_dataset = datasets.ImageFolder(
     os.path.join(DATA_DIR, "test"),
