@@ -43,7 +43,7 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 # 1. CONFIG
 # ═════════════════════════════════════════════════════════════════════════════
 
-DATA_DIR     = "/data/Grace/MambaVision-MultiSpectral-Soil-Analysis/laser_crops"
+DATA_DIR     = "/data/Grace/Master_Laser_Crops"
 NUM_CLASSES  = 11
 IMAGE_SIZE   = 224
 BATCH_SIZE   = 16
