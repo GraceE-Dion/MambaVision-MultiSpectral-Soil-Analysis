@@ -1,4 +1,4 @@
- """
+"""
 03_baseline_vit_comparison.py
 ==============================
 Packages the ViT baseline results from Kaggle (soil_moisture_level2.ipynb)
