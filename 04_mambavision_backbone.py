@@ -2,7 +2,8 @@
 04_mambavision_backbone.py
 ==========================
 Sets up the MambaVision backbone with an 11-class classification head
-for the soil moisture dataset. Verifies the model loads correctly and
+for the soil moisture dataset. Loads from the NVlabs fork at
+/data/Grace/MambaVision. Verifies the model loads correctly and
 runs a forward pass on the cluster hardware.
 
 Run:
@@ -14,10 +15,16 @@ Output:
 
 import json
 import os
+import sys
 import time
 import torch
 import torch.nn as nn
-from timm import create_model
+import warnings
+warnings.filterwarnings("ignore")
+
+# ── Load MambaVision from NVlabs fork ─────────────────────────────────────────
+sys.path.insert(0, '/data/Grace/MambaVision')
+from mambavision import models
 
 # ── Required for cluster (RTX 3090 + mamba-ssm) ───────────────────────────────
 torch.backends.cudnn.enabled = False
@@ -32,8 +39,8 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 
 NUM_CLASSES   = 11
 IMAGE_SIZE    = 224
-BATCH_SIZE    = 4   # small batch for forward pass test
-MODEL_VARIANT = "mambavision_t"   # Tiny variant — best speed/accuracy tradeoff
+BATCH_SIZE    = 4
+MODEL_VARIANT = "mamba_vision_T"
 
 # ═════════════════════════════════════════════════════════════════════════════
 # 2. DEVICE
@@ -49,16 +56,16 @@ if torch.cuda.is_available():
 # 3. LOAD MAMBAVISION BACKBONE
 # ═════════════════════════════════════════════════════════════════════════════
 
-print(f"\nLoading {MODEL_VARIANT} from timm...")
+print(f"\nLoading {MODEL_VARIANT} from NVlabs fork...")
 
-model = create_model(
-    MODEL_VARIANT,
-    pretrained=True,
-    num_classes=NUM_CLASSES,
-)
+model = models.mamba_vision_T(pretrained=True)
+
+# Replace classification head with 11-class head
+in_features = model.head.in_features
+model.head = nn.Linear(in_features, NUM_CLASSES)
 
 model = model.to(device)
-print("Model loaded successfully!")
+print("Model loaded and head replaced successfully!")
 
 # ═════════════════════════════════════════════════════════════════════════════
 # 4. PARAMETER COUNT
@@ -110,17 +117,17 @@ else:
 # ═════════════════════════════════════════════════════════════════════════════
 
 summary = {
-    "model_variant"          : MODEL_VARIANT,
-    "num_classes"            : NUM_CLASSES,
-    "image_size"             : IMAGE_SIZE,
-    "total_params_millions"  : round(total_params / 1e6, 2),
-    "trainable_params_millions": round(trainable_params / 1e6, 2),
-    "forward_pass_ms_batch4" : round(elapsed * 1000, 1),
-    "forward_pass_ms_per_img": round(elapsed * 1000 / BATCH_SIZE, 1),
-    "gpu_memory_allocated_gb": round(mem_allocated, 2) if mem_allocated else None,
-    "gpu_memory_reserved_gb" : round(mem_reserved, 2) if mem_reserved else None,
-    "device"                 : str(device),
-    "cudnn_enabled"          : torch.backends.cudnn.enabled,
+    "model_variant"             : MODEL_VARIANT,
+    "num_classes"               : NUM_CLASSES,
+    "image_size"                : IMAGE_SIZE,
+    "total_params_millions"     : round(total_params / 1e6, 2),
+    "trainable_params_millions" : round(trainable_params / 1e6, 2),
+    "forward_pass_ms_batch4"    : round(elapsed * 1000, 1),
+    "forward_pass_ms_per_img"   : round(elapsed * 1000 / BATCH_SIZE, 1),
+    "gpu_memory_allocated_gb"   : round(mem_allocated, 2) if mem_allocated else None,
+    "gpu_memory_reserved_gb"    : round(mem_reserved, 2) if mem_reserved else None,
+    "device"                    : str(device),
+    "cudnn_enabled"             : torch.backends.cudnn.enabled,
 }
 
 output_path = os.path.join(RESULTS_DIR, "mambavision_model_summary.json")
@@ -136,10 +143,10 @@ print(f"\nModel summary saved → {output_path}")
 print("\n" + "=" * 55)
 print("  MAMBAVISION vs ViT — PARAMETER COMPARISON")
 print("=" * 55)
-print(f"  ViT-Base     : ~86.0M parameters")
-print(f"  {MODEL_VARIANT:<12} : ~{total_params / 1e6:.2f}M parameters")
+print(f"  ViT-Base       : ~86.0M parameters")
+print(f"  {MODEL_VARIANT:<14} : ~{total_params / 1e6:.2f}M parameters")
 diff = 86.0 - total_params / 1e6
-print(f"  Difference   : {abs(diff):.2f}M fewer params" if diff > 0
-      else f"  Difference   : {abs(diff):.2f}M more params")
+print(f"  Difference     : {abs(diff):.2f}M fewer params" if diff > 0
+      else f"  Difference     : {abs(diff):.2f}M more params")
 print("=" * 55)
-print("\nBackbone verified. Ready for 05_training.py") 
+print("\nBackbone verified. Ready for 05_training.py")
