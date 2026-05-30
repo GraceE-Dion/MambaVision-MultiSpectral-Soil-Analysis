@@ -47,7 +47,7 @@ DATA_DIR     = "/data/Grace/Master_Laser_Crops"
 NUM_CLASSES  = 11
 IMAGE_SIZE   = 224
 BATCH_SIZE   = 16
-NUM_EPOCHS   = 25
+NUM_EPOCHS   = 40
 LR           = 2e-5
 WEIGHT_DECAY = 0.01
 WARMUP_STEPS = 100
@@ -85,6 +85,7 @@ train_transform = transforms.Compose([
 val_transform = transforms.Compose([
     transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
     transforms.ToTensor(),
+    transforms.RandomErasing(p=0.2, scale=(0.02, 0.2)),
     transforms.Normalize(
         mean=[0.485, 0.456, 0.406],
         std=[0.229, 0.224, 0.225]
@@ -169,7 +170,10 @@ print(f"Classes : {train_dataset.classes}")
 print("\nLoading MambaVision_T...")
 model = models.mamba_vision_T(pretrained=True)
 in_features = model.head.in_features
-model.head = nn.Linear(in_features, NUM_CLASSES)
+model.head = nn.Sequential(
+    nn.Dropout(p=0.3),
+    nn.Linear(in_features, NUM_CLASSES)
+)
 model = model.to(device)
 print("Model ready!")
 
