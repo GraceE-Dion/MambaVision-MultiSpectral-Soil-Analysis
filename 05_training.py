@@ -1,7 +1,7 @@
 """
 05_training.py
 ==============
-Trains MambaVision_T on the soil moisture laser crop dataset.
+Trains MambaVision_S on the soil moisture laser crop dataset.
 Captures training speed, GPU memory, and accuracy metrics for
 comparison against the ViT baseline in 06_evaluation.py.
 
@@ -76,6 +76,7 @@ train_transform = transforms.Compose([
     transforms.RandomResizedCrop(IMAGE_SIZE, scale=(0.7, 1.0)),
     transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 2.0)),
     transforms.ToTensor(),
+    transforms.RandomErasing(p=0.2, scale=(0.02, 0.2)),
     transforms.Normalize(
         mean=[0.485, 0.456, 0.406],
         std=[0.229, 0.224, 0.225]
@@ -85,7 +86,6 @@ train_transform = transforms.Compose([
 val_transform = transforms.Compose([
     transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
     transforms.ToTensor(),
-    transforms.RandomErasing(p=0.2, scale=(0.02, 0.2)),
     transforms.Normalize(
         mean=[0.485, 0.456, 0.406],
         std=[0.229, 0.224, 0.225]
@@ -99,8 +99,6 @@ val_transform = transforms.Compose([
 print("\nLoading datasets...")
 
 # Build hf_to_correct map — same fix as Kaggle notebook Step 4B
-# Alphabetical folders: ['0','1','10','2','3','4','5','6','7','8','9']
-# hf index 2 = folder '10' = correct class 10, not 2
 train_folders = sorted(os.listdir(os.path.join(DATA_DIR, "train")))
 hf_to_correct = {idx: int(folder) for idx, folder in enumerate(train_folders)}
 print(f"Class remapping: {hf_to_correct}")
@@ -122,19 +120,6 @@ test_dataset = datasets.ImageFolder(
     transform=val_transform
 )
 test_dataset.targets = [hf_to_correct[t] for t in test_dataset.targets]
-
-test_dataset = datasets.ImageFolder(
-    os.path.join(DATA_DIR, "test"),
-    transform=val_transform
-)
-val_dataset = datasets.ImageFolder(
-    os.path.join(DATA_DIR, "validation"),
-    transform=val_transform
-)
-test_dataset = datasets.ImageFolder(
-    os.path.join(DATA_DIR, "test"),
-    transform=val_transform
-)
 
 # Weighted sampler to handle class imbalance
 class_counts = np.array([
@@ -167,8 +152,8 @@ print(f"Classes : {train_dataset.classes}")
 # 5. MODEL
 # ═════════════════════════════════════════════════════════════════════════════
 
-print("\nLoading MambaVision_T...")
-model = models.mamba_vision_T(pretrained=True)
+print("\nLoading MambaVision_S...")
+model = models.mamba_vision_S(pretrained=True)
 in_features = model.head.in_features
 model.head = nn.Sequential(
     nn.Dropout(p=0.3),
@@ -181,7 +166,6 @@ print("Model ready!")
 # 6. LOSS, OPTIMIZER, SCHEDULER
 # ═════════════════════════════════════════════════════════════════════════════
 
-# Class weights for loss (same as sampler but for cross entropy)
 loss_weights = torch.tensor(class_weights / class_weights.sum(),
                             dtype=torch.float32).to(device)
 criterion = nn.CrossEntropyLoss(
@@ -207,12 +191,12 @@ scheduler = optim.lr_scheduler.CosineAnnealingLR(
 print(f"\nStarting training for {NUM_EPOCHS} epochs...")
 print("=" * 60)
 
-train_losses      = []
-val_losses        = []
-val_accuracies    = []
-epoch_times       = []
-best_val_acc      = 0.0
-best_epoch        = 0
+train_losses   = []
+val_losses     = []
+val_accuracies = []
+epoch_times    = []
+best_val_acc   = 0.0
+best_epoch     = 0
 
 for epoch in range(1, NUM_EPOCHS + 1):
     epoch_start = time.time()
@@ -223,7 +207,6 @@ for epoch in range(1, NUM_EPOCHS + 1):
     for batch_idx, (images, labels) in enumerate(train_loader):
         images, labels = images.to(device), labels.to(device)
 
-        # Warmup LR
         step = (epoch - 1) * len(train_loader) + batch_idx
         if step < WARMUP_STEPS:
             warmup_lr = LR * (step + 1) / WARMUP_STEPS
@@ -245,9 +228,9 @@ for epoch in range(1, NUM_EPOCHS + 1):
 
     # ── Validate ───────────────────────────────────────────────────────────
     model.eval()
-    val_loss    = 0.0
-    correct     = 0
-    total       = 0
+    val_loss = 0.0
+    correct  = 0
+    total    = 0
 
     with torch.no_grad():
         for images, labels in val_loader:
@@ -267,14 +250,12 @@ for epoch in range(1, NUM_EPOCHS + 1):
     epoch_time = time.time() - epoch_start
     epoch_times.append(epoch_time)
 
-    # Save best model
     if val_acc > best_val_acc:
         best_val_acc = val_acc
         best_epoch   = epoch
         torch.save(model.state_dict(),
                    os.path.join(RESULTS_DIR, "mambavision_best_model.pth"))
 
-    # Peak GPU memory
     peak_mem = torch.cuda.max_memory_allocated(0) / 1e9 \
                if torch.cuda.is_available() else 0.0
 
@@ -305,14 +286,14 @@ inference_times = []
 with torch.no_grad():
     for images, labels in test_loader:
         images, labels = images.to(device), labels.to(device)
-        t0     = time.time()
+        t0      = time.time()
         outputs = model(images)
         inference_times.append((time.time() - t0) / images.size(0) * 1000)
         preds   = outputs.argmax(dim=1)
         correct += (preds == labels).sum().item()
         total   += labels.size(0)
 
-test_acc = correct / total
+test_acc         = correct / total
 avg_inference_ms = np.mean(inference_times)
 print(f"Test Accuracy    : {test_acc * 100:.2f}%")
 print(f"Avg Inference    : {avg_inference_ms:.2f} ms/image")
@@ -322,15 +303,15 @@ print(f"Avg Inference    : {avg_inference_ms:.2f} ms/image")
 # ═════════════════════════════════════════════════════════════════════════════
 
 results = {
-    "model"                      : "MambaVision_T",
-    "num_epochs"                 : NUM_EPOCHS,
-    "best_val_accuracy"          : round(best_val_acc, 6),
-    "best_val_accuracy_pct"      : round(best_val_acc * 100, 2),
-    "best_epoch"                 : best_epoch,
-    "test_accuracy_pct"          : round(test_acc * 100, 2),
-    "avg_epoch_time_seconds"     : round(np.mean(epoch_times), 2),
-    "inference_latency_ms"       : round(avg_inference_ms, 2),
-    "peak_gpu_memory_gb"         : round(peak_mem, 2),
+    "model"                    : "MambaVision_S",
+    "num_epochs"               : NUM_EPOCHS,
+    "best_val_accuracy"        : round(best_val_acc, 6),
+    "best_val_accuracy_pct"    : round(best_val_acc * 100, 2),
+    "best_epoch"               : best_epoch,
+    "test_accuracy_pct"        : round(test_acc * 100, 2),
+    "avg_epoch_time_seconds"   : round(np.mean(epoch_times), 2),
+    "inference_latency_ms"     : round(avg_inference_ms, 2),
+    "peak_gpu_memory_gb"       : round(peak_mem, 2),
     "training_curves": {
         "epochs"         : list(range(1, NUM_EPOCHS + 1)),
         "train_losses"   : [round(x, 6) for x in train_losses],
@@ -357,7 +338,7 @@ import matplotlib.pyplot as plt
 epochs = list(range(1, NUM_EPOCHS + 1))
 
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
-fig.suptitle("MambaVision_T Training — Soil Moisture Classification",
+fig.suptitle("MambaVision_S Training — Soil Moisture Classification",
              fontsize=13, fontweight="bold")
 
 axes[0].plot(epochs, train_losses, label="Train Loss", marker="o",
@@ -392,4 +373,4 @@ plt.savefig(fig_path, dpi=150, bbox_inches="tight")
 plt.close()
 print(f"Training curves saved → {fig_path}")
 
-print("\nDone! Ready for 06_evaluation.py") 
+print("\nDone! Ready for 06_evaluation.py")
