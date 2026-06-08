@@ -1,0 +1,46 @@
+{
+  "model": "MambaVision_S_FFTWavelet_LaserCrops",
+  "total_samples": 41,
+  "correct": 26,
+  "overall_accuracy": 63.41,
+  "avg_latency_ms": 12.79,
+  "per_dataset": {
+    "Soil-Moisture-v4": {
+      "correct": 5,
+      "total": 8,
+      "accuracy": 62.5
+    },
+    "Soil-Moisture-v4-IR": {
+      "correct": 7,
+      "total": 7,
+      "accuracy": 100.0
+    },
+    "Soil-Moisture-v4-UV": {
+      "correct": 7,
+      "total": 7,
+      "accuracy": 100.0
+    },
+    "Soil-Moisture-IR": {
+      "correct": 3,
+      "total": 7,
+      "accuracy": 42.86
+    },
+    "Soil-Moisture-5sagf": {
+      "correct": 0,
+      "total": 0,
+      "accuracy": 0
+    },
+    "Soil-Moisture-September": {
+      "correct": 4,
+      "total": 7,
+      "accuracy": 57.14
+    },
+    "Soil-Moisture-Stir-September": {
+      "correct": 0,
+      "total": 5,
+      "accuracy": 0.0
+    }
+  },
+  "images_saved": 41,
+  "output_dir": "./results/inference_images_fft_wavelet"
+}

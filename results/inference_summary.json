@@ -1,29 +1,29 @@
 {
   "model": "MambaVision_S",
   "total_samples": 41,
-  "correct": 8,
-  "overall_accuracy": 19.51,
-  "avg_latency_ms": 12.37,
+  "correct": 31,
+  "overall_accuracy": 75.61,
+  "avg_latency_ms": 14.23,
   "per_dataset": {
     "Soil-Moisture-v4": {
-      "correct": 3,
+      "correct": 8,
       "total": 8,
-      "accuracy": 37.5
+      "accuracy": 100.0
     },
     "Soil-Moisture-v4-IR": {
-      "correct": 0,
+      "correct": 7,
       "total": 7,
-      "accuracy": 0.0
+      "accuracy": 100.0
     },
     "Soil-Moisture-v4-UV": {
+      "correct": 7,
+      "total": 7,
+      "accuracy": 100.0
+    },
+    "Soil-Moisture-IR": {
       "correct": 3,
       "total": 7,
       "accuracy": 42.86
-    },
-    "Soil-Moisture-IR": {
-      "correct": 1,
-      "total": 7,
-      "accuracy": 14.29
     },
     "Soil-Moisture-5sagf": {
       "correct": 0,
@@ -31,14 +31,14 @@
       "accuracy": 0
     },
     "Soil-Moisture-September": {
-      "correct": 1,
+      "correct": 5,
       "total": 7,
-      "accuracy": 14.29
+      "accuracy": 71.43
     },
     "Soil-Moisture-Stir-September": {
-      "correct": 0,
+      "correct": 1,
       "total": 5,
-      "accuracy": 0.0
+      "accuracy": 20.0
     }
   },
   "images_saved": 41,

@@ -1,0 +1,42 @@
+{
+  "ViT-Base": {
+    "model": "google/vit-base-patch16-224-in21k",
+    "parameters_millions": 86.0,
+    "input_type": "Full image",
+    "best_val_accuracy_pct": 94.58,
+    "test_accuracy_pct": "N/A (not recorded on Kaggle)",
+    "avg_epoch_time_seconds": "N/A (not recorded on Kaggle)",
+    "inference_latency_ms": "N/A (not recorded on Kaggle)",
+    "peak_gpu_memory_gb": "N/A (not recorded on Kaggle)",
+    "num_epochs": 25,
+    "training_images": 2151,
+    "platform": "Kaggle T4 GPU"
+  },
+  "MambaVision_S_LaserCrops": {
+    "model": "mamba_vision_S (NVlabs fork)",
+    "parameters_millions": 50.0,
+    "input_type": "Laser crops",
+    "best_val_accuracy_pct": 90.64,
+    "test_accuracy_pct": 85.85,
+    "avg_epoch_time_seconds": 15.43,
+    "inference_latency_ms": 0.9,
+    "peak_gpu_memory_gb": 2.01,
+    "num_epochs": 80,
+    "training_images": 2151,
+    "platform": "MTSU Lambda RTX 3090"
+  },
+  "MambaVision_S_FullImage": {
+    "model": "mamba_vision_S (NVlabs fork)",
+    "parameters_millions": 50.0,
+    "input_type": "Full image",
+    "best_val_accuracy_pct": 97.04,
+    "best_epoch": 15,
+    "test_accuracy_pct": 95.28,
+    "avg_epoch_time_seconds": 21.43,
+    "inference_latency_ms": 0.98,
+    "peak_gpu_memory_gb": 2.01,
+    "num_epochs": 80,
+    "training_images": 2151,
+    "platform": "MTSU Lambda RTX 3090"
+  }
+}
