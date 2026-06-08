@@ -248,7 +248,8 @@ for ds_name, count in SAMPLES_PER_DATASET.items():
             elapsed = (time.time() - t0) * 1000
 
         inference_times.append(elapsed)
-        pred_class = output.argmax(dim=1).item()
+        pred_hf    = output.argmax(dim=1).item()
+        pred_class = hf_to_correct[pred_hf]
         true_label = f"Level {true_class}"
         pred_label = f"Level {pred_class}"
         is_correct = pred_class == true_class
