@@ -330,7 +330,7 @@ This project applies governance-first development principles at each experimenta
 | This work | MambaVision_S (50M) | Laser crops | 90.64% | 85.85% | Matches ViT Phase 4B exactly |
 | This work | MambaVision_S (50M) | Full image + FW | 97.04% | 96.23% | Best test accuracy |
 
-MambaVision_S on laser crops matches ViT Phase 4B exactly (90.64% val accuracy) — the same accuracy ceiling was reached by both architectures on the same input type with the same augmentation strategy, suggesting this ceiling reflects the information limit of the laser crop representation rather than architecture capacity. MambaVision_S on full images breaks through this ceiling (+6.40%) where ViT Phase 2 on full images reaches 94.58%, confirming MambaVision_S extracts richer features from full spatial context.
+MambaVision_S on laser crops matches ViT Phase 4B exactly (90.64% val accuracy), the same accuracy ceiling was reached by both architectures on the same input type with the same augmentation strategy, suggesting this ceiling reflects the information limit of the laser crop representation rather than architecture capacity. MambaVision_S on full images breaks through this ceiling (+6.40%) where ViT Phase 2 on full images reaches 94.58%, confirming MambaVision_S extracts richer features from full spatial context.
 
 ---
 
