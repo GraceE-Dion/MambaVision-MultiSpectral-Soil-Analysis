@@ -1,0 +1,38 @@
+{
+  "mamba_crop": {
+    "model": "MambaVision_S Laser Crops RGB",
+    "test_accuracy": 85.85,
+    "bootstrap_ci_95": {
+      "mean": 86.07,
+      "lower": 79.25,
+      "upper": 92.45
+    }
+  },
+  "mamba_full": {
+    "model": "MambaVision_S Full Image RGB",
+    "test_accuracy": 95.28,
+    "bootstrap_ci_95": {
+      "mean": 95.38,
+      "lower": 91.51,
+      "upper": 99.06
+    }
+  },
+  "mamba_crop_fw": {
+    "model": "MambaVision_S Laser Crops FFT Wavelet",
+    "test_accuracy": 82.08,
+    "bootstrap_ci_95": {
+      "mean": 82.17,
+      "lower": 75.47,
+      "upper": 88.68
+    }
+  },
+  "mamba_full_fw": {
+    "model": "MambaVision_S Full Image FFT Wavelet",
+    "test_accuracy": 96.23,
+    "bootstrap_ci_95": {
+      "mean": 96.18,
+      "lower": 92.43,
+      "upper": 99.06
+    }
+  }
+}
