@@ -321,18 +321,23 @@ full_hf_to_correct = {idx: int(f) for idx, f in enumerate(full_train_folders)}
 _crop_test = datasets.ImageFolder(
     os.path.join(CROP_DATA_DIR, "test"), transform=val_transform)
 _crop_test.targets = [crop_hf_to_correct[t] for t in _crop_test.targets]
+_crop_test.samples = [(s, crop_hf_to_correct[l]) for s, l in _crop_test.samples]
 
 _full_test = datasets.ImageFolder(
     os.path.join(FULL_DATA_DIR, "test"), transform=val_transform)
+
 _full_test.targets = [full_hf_to_correct[t] for t in _full_test.targets]
+_full_test.samples = [(s, full_hf_to_correct[l]) for s, l in _full_test.samples]
 
 _crop_test_fw = datasets.ImageFolder(
     os.path.join(CROP_DATA_DIR, "test"), transform=val_transform)
 _crop_test_fw.targets = [crop_hf_to_correct[t] for t in _crop_test_fw.targets]
+_crop_test_fw.samples = [(s, crop_hf_to_correct[l]) for s, l in _crop_test_fw.samples]
 
 _full_test_fw = datasets.ImageFolder(
     os.path.join(FULL_DATA_DIR, "test"), transform=val_transform)
 _full_test_fw.targets = [full_hf_to_correct[t] for t in _full_test_fw.targets]
+_full_test_fw.samples = [(s, full_hf_to_correct[l]) for s, l in _full_test_fw.samples]
 
 crop_test_loader    = DataLoader(_crop_test,    batch_size=BATCH_SIZE,
                                  shuffle=False, num_workers=4)
