@@ -350,7 +350,7 @@ MambaVision_S on laser crops matches ViT Phase 4B exactly (90.64% val accuracy),
 | Test Acc | 85.85% | 95.28% | 82.08% | 96.23% | N/A |
 | 95% CI | [79.25%, 92.45%] | [91.51%, 99.06%] | [75.47%, 88.68%] | [92.43%, 99.06%] | N/A |
 | Peak GPU Mem | 2.01 GB | 2.01 GB | 2.03 GB | 2.03 GB | N/A |
-| Avg inference | 0.90 ms/img | 0.98 ms/img | 0.98 ms/img | 0.94 ms/img | N/A |
+| Avg inference | 0.90 ms/img | 0.98 ms/img | 0.98 ms/img | 0.94 ms/img | 14.42 ms/img (T4) |
 | Platform | MTSU Lambda | MTSU Lambda | MTSU Lambda | MTSU Lambda | Kaggle |
 
 ---
