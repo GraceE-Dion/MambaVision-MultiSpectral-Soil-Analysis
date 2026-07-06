@@ -38,6 +38,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+torch.backends.cudnn.enabled = False
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+
 # ── Paths ─────────────────────────────────────────────────────────────────────
 MASTER_DIR  = "/data/Grace/Master_Soil_Moisture"
 RESULTS_DIR = "./results"
