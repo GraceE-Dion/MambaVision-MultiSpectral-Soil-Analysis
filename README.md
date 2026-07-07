@@ -17,16 +17,16 @@ This repository presents a systematic architectural comparison of MambaVision_S 
 ├── 02_data_preparation.py                        # Dataset preparation, laser crop extraction
 ├── 03_baseline_vit_comparison.py                 # ViT baseline result packaging
 ├── 04_mambavision_backbone.py                    # Backbone load and head verification
-├── 05_training.py                                # MambaVision_S — laser crops, RGB
-├── 05b_training_fullimage.py                     # MambaVision_S — full image, RGB
-├── 05c_training_fft_wavelet.py                   # MambaVision_S — laser crops, RGB+FFT+Wav
-├── 05bc_training_fft_wavelet_fullimage.py        # MambaVision_S — full image, RGB+FFT+Wav
+├── 05_training.py                                # MambaVision_S - laser crops, RGB
+├── 05b_training_fullimage.py                     # MambaVision_S - full image, RGB
+├── 05c_training_fft_wavelet.py                   # MambaVision_S - laser crops, RGB+FFT+Wav
+├── 05bc_training_fft_wavelet_fullimage.py        # MambaVision_S - full image, RGB+FFT+Wav
 ├── 06_evaluation.py                              # Laser crops two-way evaluation
 ├── 06b_evaluation.py                             # Three-way comparison evaluation
 ├── 06c_evaluation.py                             # Five-way final comparison evaluation
 ├── 06d_perclass_analysis.py                      # Per-class F1, confusion matrices, bootstrap CIs
-├── 07_inference_pipeline.py                      # Laser crops inference — annotated panels
-├── 07b_inference_pipeline.py                     # Full image inference — annotated panels
+├── 07_inference_pipeline.py                      # Laser crops inference - annotated panels
+├── 07b_inference_pipeline.py                     # Full image inference - annotated panels
 ├── 07c_inference_pipeline.py                     # Laser crops + FFT/Wav inference
 ├── 07bc_inference_pipeline.py                    # Full image + FFT/Wav inference
 └── results/
@@ -46,7 +46,7 @@ This repository presents a systematic architectural comparison of MambaVision_S 
 
 ## Background and Motivation
 
-The companion project ([ViT repository](https://github.com/GraceE-Dion/MambaVision-MultiSpectral-Soil-Analysis)) established ViT-Base (`google/vit-base-patch16-224-in21k`, 86M parameters) as the baseline classifier for multi-spectral laser soil moisture classification across 11 discrete moisture levels (0–10), using seven Roboflow datasets spanning standard visible, infrared, and ultraviolet spectral modalities.
+The companion project ([ViT repository](https://github.com/GraceE-Dion/MambaVision-MultiSpectral-Soil-Analysis)) established ViT-Base (`google/vit-base-patch16-224-in21k`, 86M parameters) as the baseline classifier for multi-spectral laser soil moisture classification across 11 discrete moisture levels (0-10), using seven Roboflow datasets spanning standard visible, infrared, and ultraviolet spectral modalities.
 
 **Why ViT Phase 2 is the primary comparison baseline:** Phase 2 (94.58% val accuracy, 25 epochs, full image input, on-the-fly augmentation) is used as the primary comparison point rather than Phase 4B (90.64%, laser crops) or Phase 6 (YOLOv8, 95.3% mAP50) for the following reasons. Phase 2 and the MambaVision full image variants share the same input type (full image), the same task framing (classification), and comparable training conditions, making it the only architecturally equivalent comparison. Phase 4B uses laser crops and is used as the comparison baseline for the MambaVision laser crop variants specifically. Phase 6 (YOLOv8) is a detection pipeline, not a classifier, and is not directly comparable on classification metrics.
 
@@ -117,7 +117,7 @@ class MambaVisionFFTWavelet(nn.Module):
 
 **FFT channel:** 2D FFT magnitude spectrum (log-scaled, normalized) computed from grayscale image. Captures global frequency patterns and periodic texture structure correlated with moisture-induced surface changes.
 
-**Wavelet channels:** Single-level Haar DWT producing three detail sub-bands — horizontal (cH), vertical (cV), and diagonal (cD), each resized to input spatial dimensions via bilinear interpolation. Captures multi-scale local frequency detail at different orientations.
+**Wavelet channels:** Single-level Haar DWT producing three detail sub-bands - horizontal (cH), vertical (cV), and diagonal (cD), each resized to input spatial dimensions via bilinear interpolation. Captures multi-scale local frequency detail at different orientations.
 
 ---
 
@@ -132,7 +132,7 @@ class MambaVisionFFTWavelet(nn.Module):
 | Weight decay | 0.01 | Matches ViT Phase 1 regularization |
 | Warmup steps | 100 | Smooth early-epoch learning on small dataset |
 | Scheduler | CosineAnnealingLR | Smoother than step decay for small datasets |
-| Epochs | 80 | Covers all observed convergence points (15–54) |
+| Epochs | 80 | Covers all observed convergence points (15-54) |
 | Batch size | 16 | Memory-constrained by 7-channel FFT/Wav variants |
 | Loss | CrossEntropyLoss (label smoothing 0.1) | Matches ViT Phase 2 |
 | Class weighting | Inverse frequency WeightedRandomSampler | Addresses class imbalance |
@@ -168,7 +168,7 @@ Initial training used MambaVision_T (Tiny, 31.16M parameters). The hypothesis wa
 
 | Model | Input | Features | Val Acc | Test Acc | Convergence | GPU Mem |
 |---|---|---|---|---|---|---|
-| ViT-Base | Full image | RGB | 94.58% | N/A | Epoch 25 | N/A (Kaggle) |
+| ViT-Base | Full image | RGB | 94.58% | 89.62% | Epoch 13 | 2.61 GB |
 | MambaVision_S | Laser crops | RGB | 90.64% | 85.85% | Epoch 36 | 2.01 GB |
 | **MambaVision_S** | **Full image** | **RGB** | **97.04%** | **95.28%** | **Epoch 15** | **2.01 GB** |
 | MambaVision_S | Laser crops | RGB+FFT+Wav | 90.64% | 82.08% | Epoch 54 | 2.03 GB |
@@ -179,11 +179,11 @@ Initial training used MambaVision_T (Tiny, 31.16M parameters). The hypothesis wa
 | Metric | ViT-Base | MambaVision_S | Delta |
 |---|---|---|---|
 | Val Accuracy | 94.58% | 97.04% | +2.46% |
-| Test Accuracy | N/A | 95.28% | - |
+| Test Accuracy | 89.62% | 95.28% | +5.66% |
 | Parameters | 86M | ~50M | -42% |
 | Convergence Epoch | 25 | 15 | -40% |
-| Inference Latency | N/A | 0.98 ms/image | - |
-| Peak GPU Memory | N/A | 2.01 GB | - |
+| Inference Latency | 7.26 ms/image (RTX 3090) | 0.98 ms/image (RTX 3090) | 7.4x faster |
+| Peak GPU Memory | 2.61 GB | 2.01 GB | -23% |
 
 ### Bootstrap Confidence Intervals (95%, n=1000)
 
@@ -213,7 +213,7 @@ The non-overlapping CIs between full image variants ([91.51%, 99.06%]) and laser
 | Level 10 | 9 | 0.7368 | 0.8182 | 0.7368 | 0.9474 |
 | **Macro Avg** | **106** | **0.8524** | **0.9558** | **0.8068** | **0.9585** |
 
-**Per-class findings:** The +2.46% accuracy gap between Mamba-Crop and Mamba-Full is explained at the class level by Levels 2, 3, 5, 7, and 8, all mid-range moisture levels where full spatial context resolves ambiguity that crop-scale features cannot. Level 3 shows the most dramatic improvement (0.5882 → 0.9412), suggesting mid-range moisture signatures are spatially distributed across the full image rather than concentrated at the laser spot. Level 10 is the consistently hardest class across all models (0.7368 – 0.9474), consistent with the ViT Phase 6 per-class mAP50 finding where Level 10 scored 75.9%, the highest moisture level produces the most variable surface appearance. FFT/Wavelet features on laser crops hurt Level 3 most severely (0.5882 → 0.4000), confirming that frequency noise from crop boundary artifacts disproportionately affects the already-ambiguous mid-range levels.
+**Per-class findings:** The +2.46% accuracy gap between Mamba-Crop and Mamba-Full is explained at the class level by Levels 2, 3, 5, 7, and 8, all mid-range moisture levels where full spatial context resolves ambiguity that crop-scale features cannot. Level 3 shows the most dramatic improvement (0.5882 → 0.9412), suggesting mid-range moisture signatures are spatially distributed across the full image rather than concentrated at the laser spot. Level 10 is the consistently hardest class across all models (0.7368 - 0.9474), consistent with the ViT Phase 6 per-class mAP50 finding where Level 10 scored 75.9%, the highest moisture level produces the most variable surface appearance. FFT/Wavelet features on laser crops hurt Level 3 most severely (0.5882 → 0.4000), confirming that frequency noise from crop boundary artifacts disproportionately affects the already-ambiguous mid-range levels.
 
 ![Per-Class F1 Comparison](results/perclass/perclass_f1_comparison.png)
 
@@ -248,13 +248,13 @@ The non-overlapping CIs between full image variants ([91.51%, 99.06%]) and laser
 
 ### Confusion Matrices
 
-![Confusion Matrix — Laser Crops RGB](results/perclass/confusion_matrix_mambavision_s_laser_crops_rgb.png)
+![Confusion Matrix - Laser Crops RGB](results/perclass/confusion_matrix_mambavision_s_laser_crops_rgb.png)
 
-![Confusion Matrix — Full Image RGB](results/perclass/confusion_matrix_mambavision_s_full_image_rgb.png)
+![Confusion Matrix - Full Image RGB](results/perclass/confusion_matrix_mambavision_s_full_image_rgb.png)
 
-![Confusion Matrix — Laser Crops FFT Wavelet](results/perclass/confusion_matrix_mambavision_s_laser_crops_fft_wavelet.png)
+![Confusion Matrix - Laser Crops FFT Wavelet](results/perclass/confusion_matrix_mambavision_s_laser_crops_fft_wavelet.png)
 
-![Confusion Matrix — Full Image FFT Wavelet](results/perclass/confusion_matrix_mambavision_s_full_image_fft_wavelet.png)
+![Confusion Matrix - Full Image FFT Wavelet](results/perclass/confusion_matrix_mambavision_s_full_image_fft_wavelet.png)
 
 ---
 
@@ -283,7 +283,7 @@ The same MambaVision_S model achieves 97.04% val accuracy on full images versus 
 **Hypothesis:** FFT + Wavelet features provide additive signal; that signal is conditional on input spatial scale.
 **Result:** Partially confirmed. The direction of the effect reverses between input types.
 
-FFT magnitude and Haar wavelet channels provide a small but genuine test accuracy improvement on full images (+0.95%: 95.28% → 96.23%) but actively degrade generalization on laser crops (-3.77%: 85.85% → 82.08%). The mechanistic explanation is spatial scale: FFT captures global periodic texture patterns across the full image where moisture gradients manifest as structured frequency content at macro scale. On small laser crop regions (laser spot occupying 6%–88% of image area across datasets), the same FFT operation captures primarily high-frequency noise from crop boundary artifacts rather than meaningful moisture-correlated texture. This is most severe at Level 3 (F1 drops from 0.5882 to 0.4000 with FFT/Wav on crops), already the most ambiguous mid-range class.
+FFT magnitude and Haar wavelet channels provide a small but genuine test accuracy improvement on full images (+0.95%: 95.28% → 96.23%) but actively degrade generalization on laser crops (-3.77%: 85.85% → 82.08%). The mechanistic explanation is spatial scale: FFT captures global periodic texture patterns across the full image where moisture gradients manifest as structured frequency content at macro scale. On small laser crop regions (laser spot occupying 6%-88% of image area across datasets), the same FFT operation captures primarily high-frequency noise from crop boundary artifacts rather than meaningful moisture-correlated texture. This is most severe at Level 3 (F1 drops from 0.5882 to 0.4000 with FFT/Wav on crops), already the most ambiguous mid-range class.
 
 The +0.95% test accuracy gain on full images falls within overlapping bootstrap CI ranges and should be interpreted as marginal. The -3.77% degradation on crops falls outside overlapping CI ranges and should be interpreted as a genuine negative effect.
 
@@ -323,9 +323,9 @@ This project applies governance-first development principles at each experimenta
 
 | Phase | Model | Input | Val Acc | Test / Inference Acc | Notes |
 |---|---|---|---|---|---|
-| ViT Phase 2 | ViT-Base (86M) | Full image | 94.58% | N/A | Primary comparison baseline |
+| ViT Phase 2 | ViT-Base (86M) | Full image | 94.58% | 89.62% | Primary comparison baseline - retrained on RTX 3090 |
 | ViT Phase 4B | ViT-Base (86M) | Laser crops | 90.64% | N/A | Crop comparison baseline |
-| ViT Phase 6 | YOLOv8s | Full image | 95.3% mAP50 | 89.1% inference | Detection pipeline — not directly comparable |
+| ViT Phase 6 | YOLOv8s | Full image | 95.3% mAP50 | 89.1% inference | Detection pipeline - not directly comparable |
 | **This work** | **MambaVision_S (50M)** | **Full image** | **97.04%** | **95.28%** | **Best classification result** |
 | This work | MambaVision_S (50M) | Laser crops | 90.64% | 85.85% | Matches ViT Phase 4B exactly |
 | This work | MambaVision_S (50M) | Full image + FW | 97.04% | 96.23% | Best test accuracy |
@@ -342,16 +342,16 @@ MambaVision_S on laser crops matches ViT Phase 4B exactly (90.64% val accuracy),
 | Parameters | ~50M | ~50M | ~50M | ~50M | 86M |
 | Input channels | 3 | 3 | 7 | 7 | 3 |
 | Input type | Laser crops | Full image | Laser crops | Full image | Full image |
-| Hardware | RTX 3090 | RTX 3090 | RTX 3090 | RTX 3090 | Kaggle T4 |
+| Hardware | RTX 3090 | RTX 3090 | RTX 3090 | RTX 3090 | RTX 3090 |
 | Optimizer | AdamW (2e-5) | AdamW (2e-5) | AdamW (2e-5) | AdamW (2e-5) | AdamW (2e-5) |
 | Epochs trained | 80 | 80 | 80 | 80 | 25 |
 | Convergence epoch | 36 | 15 | 54 | 17 | 25 |
 | Best Val Acc | 90.64% | 97.04% | 90.64% | 97.04% | 94.58% |
-| Test Acc | 85.85% | 95.28% | 82.08% | 96.23% | N/A |
+| Test Acc | 85.85% | 95.28% | 82.08% | 96.23% | 89.62% |
 | 95% CI | [79.25%, 92.45%] | [91.51%, 99.06%] | [75.47%, 88.68%] | [92.43%, 99.06%] | N/A |
-| Peak GPU Mem | 2.01 GB | 2.01 GB | 2.03 GB | 2.03 GB | N/A |
-| Avg inference | 0.90 ms/img | 0.98 ms/img | 0.98 ms/img | 0.94 ms/img | 14.42 ms/img (T4) |
-| Platform | MTSU Lambda | MTSU Lambda | MTSU Lambda | MTSU Lambda | Kaggle |
+| Peak GPU Mem | 2.01 GB | 2.01 GB | 2.03 GB | 2.03 GB | 2.61 GB |
+| Avg inference | 0.90 ms/img | 0.98 ms/img | 0.98 ms/img | 0.94 ms/img | 7.26 ms/img |
+| Platform | MTSU Lambda | MTSU Lambda | MTSU Lambda | MTSU Lambda | MTSU Lambda |
 
 ---
 
@@ -365,7 +365,7 @@ MambaVision_S on laser crops matches ViT Phase 4B exactly (90.64% val accuracy),
 - triton 3.0.0
 - PyWavelets 1.8.0
 - scikit-learn (any recent version)
-- `torch.backends.cudnn.enabled = False` required — cuDNN is incompatible with mamba-ssm 2.2.2 on this cluster configuration
+- `torch.backends.cudnn.enabled = False` required - cuDNN is incompatible with mamba-ssm 2.2.2 on this cluster configuration
 
 **Session start:**
 ```bash
@@ -373,7 +373,7 @@ cd /data/Grace/MambaVision-MultiSpectral-Soil-Analysis
 conda activate mambavision
 ```
 
-**MambaVision loading — critical note:**
+**MambaVision loading - critical note:**
 ```python
 sys.path.insert(0, '/data/Grace/MambaVision')
 from mambavision import models
@@ -397,7 +397,7 @@ This project establishes three original findings on multi-spectral laser soil mo
 
 **Future work - four priority directions:**
 
-1. *Per-class confusion matrix analysis for the ViT Phase 6 YOLOv8 model* — the companion project lacks per-class F1 in the same format as this project, preventing direct class-level comparison. Implementing equivalent per-class analysis would enable a complete architectural comparison across all phases.
+1. *Per-class confusion matrix analysis for the ViT Phase 6 YOLOv8 model* - the companion project lacks per-class F1 in the same format as this project, preventing direct class-level comparison. Implementing equivalent per-class analysis would enable a complete architectural comparison across all phases.
 
 2. *MambaVision_S as the YOLOv8 detection backbone* - replacing the YOLOv8s backbone with MambaVision_S feature extraction would test whether the classification accuracy advantage translates to detection mAP improvement over Phase 6 (95.3% mAP50), which remains the highest result across both projects.
 
@@ -408,4 +408,5 @@ This project establishes three original findings on multi-spectral laser soil mo
 ---
 
 **GitHub:** https://github.com/GraceE-Dion/MambaVision-MultiSpectral-Soil-Analysis
-**Department:** Information Systems, IT Project Management — MTSU
+**Department:** Information Systems, IT Project Management - MTSU
+
