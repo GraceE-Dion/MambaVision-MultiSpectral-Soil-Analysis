@@ -55,7 +55,7 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 # ═════════════════════════════════════════════════════════════════════════════
 
 NUM_CLASSES  = 11
-IMAGE_SIZE   = 640          # YOLOv8 standard input size
+IMAGE_SIZE   = 320          # YOLOv8 standard input size
 BATCH_SIZE   = 8
 NUM_EPOCHS   = 50
 LR           = 1e-4
@@ -66,12 +66,12 @@ PATIENCE     = 10
 # Anchor boxes (3 scales x 3 ratios) — designed for laser spot sizes
 # Laser spots typically occupy 6-30% of image area
 ANCHORS = [
-    # P3 — small spots (stride 8)
-    [(10, 13), (16, 30), (33, 23)],
-    # P4 — medium spots (stride 16)
-    [(30, 61), (62, 45), (59, 119)],
-    # P5 — large spots (stride 32)
-    [(116, 90), (156, 198), (373, 326)],
+    # P3 — small spots (stride 8, 320px input)
+    [(5, 7),  (8, 15),  (17, 12)],
+    # P4 — medium spots (stride 16, 320px input)
+    [(15, 30), (31, 22), (30, 60)],
+    # P5 — large spots (stride 32, 320px input)
+    [(58, 45), (78, 99), (187, 163)],
 ]
 STRIDES = [8, 16, 32]
 
