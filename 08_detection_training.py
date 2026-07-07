@@ -509,119 +509,171 @@ class YOLOLoss(nn.Module):
         return loss_obj + loss_noobj + loss_box + loss_cls
 
 # ═════════════════════════════════════════════════════════════════════════════
-# 7. mAP EVALUATION
+# 7. mAP EVALUATION — vectorized
 # ═════════════════════════════════════════════════════════════════════════════
 
-def decode_predictions(pred, anchors, stride, img_size,
-                       conf_thresh=0.25):
-    """Decode raw predictions to [conf, cx, cy, w, h, cls] boxes."""
+def decode_predictions_vectorized(pred, anchors, stride,
+                                   img_size, conf_thresh=0.01):
+    """Vectorized decode — no nested pixel loops."""
     B, _, H, W = pred.shape
     A  = len(anchors)
     NC = NUM_CLASSES
 
-    pred = pred.view(B, A, 5 + NC, H, W).permute(0, 1, 3, 4, 2)
-    pred = pred.sigmoid()
+    pred = pred.view(B, A, 5 + NC, H, W).permute(0, 1, 3, 4, 2).sigmoid()
+
+    # Grid offsets
+    grid_y, grid_x = torch.meshgrid(
+        torch.arange(H, device=pred.device),
+        torch.arange(W, device=pred.device),
+        indexing="ij"
+    )
+    grid_x = grid_x.float().unsqueeze(0).unsqueeze(0)  # (1,1,H,W)
+    grid_y = grid_y.float().unsqueeze(0).unsqueeze(0)
+
+    anchor_w = torch.tensor(
+        [a[0] for a in anchors], device=pred.device
+    ).float().view(1, A, 1, 1)
+    anchor_h = torch.tensor(
+        [a[1] for a in anchors], device=pred.device
+    ).float().view(1, A, 1, 1)
+
+    cx = (pred[..., 0] + grid_x) / W
+    cy = (pred[..., 1] + grid_y) / H
+    bw = (anchor_w * torch.exp(pred[..., 2].clamp(-4, 4))) / img_size
+    bh = (anchor_h * torch.exp(pred[..., 3].clamp(-4, 4))) / img_size
+
+    obj_conf  = pred[..., 4]
+    cls_probs = pred[..., 5:]
+    cls_conf, cls_ids = cls_probs.max(dim=-1)
+    scores = obj_conf * cls_conf
 
     boxes_all = []
     for b in range(B):
-        boxes = []
-        for a_idx in range(A):
-            aw, ah = anchors[a_idx]
-            for gj in range(H):
-                for gi in range(W):
-                    conf = pred[b, a_idx, gj, gi, 4].item()
-                    if conf < conf_thresh:
-                        continue
-                    cx = (gi + pred[b, a_idx, gj, gi, 0].item()) / W
-                    cy = (gj + pred[b, a_idx, gj, gi, 1].item()) / H
-                    w  = (aw * torch.exp(
-                        pred[b, a_idx, gj, gi, 2]).item()) / img_size
-                    h  = (ah * torch.exp(
-                        pred[b, a_idx, gj, gi, 3]).item()) / img_size
-                    cls_scores = pred[b, a_idx, gj, gi, 5:].cpu().numpy()
-                    cls_id     = int(np.argmax(cls_scores))
-                    cls_conf   = conf * cls_scores[cls_id]
-                    boxes.append([cls_conf, cx, cy, w, h, cls_id])
+        mask = scores[b] > conf_thresh
+        if mask.sum() == 0:
+            boxes_all.append([])
+            continue
+        s   = scores[b][mask].cpu().numpy()
+        c   = cx[b][mask].cpu().numpy()
+        cy_ = cy[b][mask].cpu().numpy()
+        w_  = bw[b][mask].cpu().numpy()
+        h_  = bh[b][mask].cpu().numpy()
+        cl  = cls_ids[b][mask].cpu().numpy()
+        boxes = [[float(s[i]), float(c[i]), float(cy_[i]),
+                  float(w_[i]), float(h_[i]), int(cl[i])]
+                 for i in range(len(s))]
         boxes_all.append(boxes)
     return boxes_all
 
 
+def box_iou_batch(boxes1, boxes2):
+    """Vectorized IoU between two sets of boxes [cx,cy,w,h]."""
+    if len(boxes1) == 0 or len(boxes2) == 0:
+        return np.zeros((len(boxes1), len(boxes2)))
+
+    b1 = np.array(boxes1)
+    b2 = np.array(boxes2)
+
+    b1_x1 = b1[:, 0:1] - b1[:, 2:3] / 2
+    b1_y1 = b1[:, 1:2] - b1[:, 3:4] / 2
+    b1_x2 = b1[:, 0:1] + b1[:, 2:3] / 2
+    b1_y2 = b1[:, 1:2] + b1[:, 3:4] / 2
+
+    b2_x1 = b2[:, 0] - b2[:, 2] / 2
+    b2_y1 = b2[:, 1] - b2[:, 3] / 2
+    b2_x2 = b2[:, 0] + b2[:, 2] / 2
+    b2_y2 = b2[:, 1] + b2[:, 3] / 2
+
+    inter_x1 = np.maximum(b1_x1, b2_x1)
+    inter_y1 = np.maximum(b1_y1, b2_y1)
+    inter_x2 = np.minimum(b1_x2, b2_x2)
+    inter_y2 = np.minimum(b1_y2, b2_y2)
+
+    inter = np.maximum(0, inter_x2 - inter_x1) * \
+            np.maximum(0, inter_y2 - inter_y1)
+    b1_area = b1[:, 2:3] * b1[:, 3:4]
+    b2_area = b2[:, 2] * b2[:, 3]
+    union   = b1_area + b2_area - inter + 1e-6
+
+    return inter / union
+
+
 def compute_map50(model, loader, anchors_list, strides,
-                  img_size=IMAGE_SIZE, conf_thresh=0.25,
+                  img_size=IMAGE_SIZE, conf_thresh=0.01,
                   iou_thresh=0.5):
-    """Compute mAP50 across all classes."""
+    """Vectorized mAP50 computation."""
     model.eval()
-    all_preds  = {c: [] for c in range(NUM_CLASSES)}
-    all_labels = {c: [] for c in range(NUM_CLASSES)}
+    # Collect per-class TP/FP and ground truth counts
+    all_detections = {c: [] for c in range(NUM_CLASSES)}
+    all_gt_counts  = {c: 0  for c in range(NUM_CLASSES)}
 
     with torch.no_grad():
         for imgs, targets in loader:
             imgs = imgs.to(device)
             outs = model(imgs)
 
-            for scale_idx, (out, anchors, stride) in enumerate(
-                    zip(outs, anchors_list, strides)):
-                preds = decode_predictions(
-                    out, anchors, stride, img_size, conf_thresh)
+            # Merge detections from all scales per image
+            batch_preds = [[] for _ in range(imgs.shape[0])]
+            for out, anchors in zip(outs, anchors_list):
+                scale_preds = decode_predictions_vectorized(
+                    out, anchors, None, img_size, conf_thresh)
+                for b_idx, preds in enumerate(scale_preds):
+                    batch_preds[b_idx].extend(preds)
 
-                for b_idx, (pred_boxes, gt_boxes) in enumerate(
-                        zip(preds, targets)):
-                    for cls in range(NUM_CLASSES):
-                        gt  = [box for box in gt_boxes
-                               if int(box[0]) == cls]
-                        det = [box for box in pred_boxes
-                               if int(box[5]) == cls]
+            for b_idx, (pred_boxes, gt_boxes) in enumerate(
+                    zip(batch_preds, targets)):
 
-                        det_sorted = sorted(
-                            det, key=lambda x: x[0], reverse=True)
+                for cls in range(NUM_CLASSES):
+                    gt_cls  = [[b[1], b[2], b[3], b[4]]
+                                for b in gt_boxes if int(b[0]) == cls]
+                    det_cls = sorted(
+                        [b for b in pred_boxes if int(b[5]) == cls],
+                        key=lambda x: x[0], reverse=True
+                    )
+                    all_gt_counts[cls] += len(gt_cls)
 
-                        matched = [False] * len(gt)
-                        for d in det_sorted:
-                            best_iou  = 0
-                            best_gt   = -1
-                            for g_idx, g in enumerate(gt):
-                                if matched[g_idx]:
-                                    continue
-                                iou = compute_iou(d[1:5], g[1:5])
-                                if iou > best_iou:
-                                    best_iou = iou
-                                    best_gt  = g_idx
-                            if best_iou >= iou_thresh and best_gt >= 0:
-                                all_preds[cls].append(
-                                    (d[0], 1))
-                                matched[best_gt] = True
-                            else:
-                                all_preds[cls].append(
-                                    (d[0], 0))
-
-                        all_labels[cls].append(len(gt))
+                    matched = [False] * len(gt_cls)
+                    for d in det_cls:
+                        if len(gt_cls) == 0:
+                            all_detections[cls].append((d[0], 0))
+                            continue
+                        ious = box_iou_batch(
+                            [[d[1], d[2], d[3], d[4]]], gt_cls)[0]
+                        best_idx = int(np.argmax(ious))
+                        if ious[best_idx] >= iou_thresh and \
+                                not matched[best_idx]:
+                            all_detections[cls].append((d[0], 1))
+                            matched[best_idx] = True
+                        else:
+                            all_detections[cls].append((d[0], 0))
 
     # Compute AP per class
     aps = []
     for cls in range(NUM_CLASSES):
-        preds_cls = sorted(
-            all_preds[cls], key=lambda x: x[0], reverse=True)
-        n_gt = sum(all_labels[cls])
+        n_gt = all_gt_counts[cls]
         if n_gt == 0:
+            continue
+        dets = sorted(all_detections[cls],
+                      key=lambda x: x[0], reverse=True)
+        if len(dets) == 0:
+            aps.append(0.0)
             continue
 
         tp = 0
         fp = 0
-        precisions = []
-        recalls    = []
-
-        for conf, is_tp in preds_cls:
+        precs = []
+        recs  = []
+        for _, is_tp in dets:
             if is_tp:
                 tp += 1
             else:
                 fp += 1
-            precisions.append(tp / (tp + fp))
-            recalls.append(tp / n_gt)
+            precs.append(tp / (tp + fp))
+            recs.append(tp / n_gt)
 
-        # Area under PR curve
         ap = 0.0
-        for i in range(1, len(precisions)):
-            ap += (recalls[i] - recalls[i-1]) * precisions[i]
+        for i in range(1, len(precs)):
+            ap += (recs[i] - recs[i-1]) * precs[i]
         aps.append(ap)
 
     return np.mean(aps) * 100 if aps else 0.0
