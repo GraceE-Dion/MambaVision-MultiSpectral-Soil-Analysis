@@ -1,0 +1,39 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "vit_base_ms": 7.26,
+  "optimizations": {
+    "baseline_fp32": {
+      "mean_ms": 7.795,
+      "min_ms": 7.462,
+      "p95_ms": 8.044,
+      "std_ms": 0.171,
+      "peak_gpu_gb": 0.23
+    },
+    "fp16": {
+      "mean_ms": 7.893,
+      "min_ms": 7.585,
+      "p95_ms": 8.193,
+      "std_ms": 0.179,
+      "peak_gpu_gb": 0.23
+    },
+    "tf32_compile_reduce": {
+      "mean_ms": 4.961,
+      "min_ms": 4.73,
+      "p95_ms": 5.263,
+      "std_ms": 0.156,
+      "peak_gpu_gb": 0.23
+    },
+    "tf32_compile_autotune": {
+      "mean_ms": 5.262,
+      "min_ms": 5.026,
+      "p95_ms": 5.594,
+      "std_ms": 0.17,
+      "peak_gpu_gb": 0.69
+    }
+  },
+  "best_method": "tf32_compile_reduce",
+  "best_mean_ms": 4.961,
+  "best_min_ms": 4.73,
+  "speedup_vs_baseline": 1.57,
+  "speedup_vs_vit": 1.46
+}

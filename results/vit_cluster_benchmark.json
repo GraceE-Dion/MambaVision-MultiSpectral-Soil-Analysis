@@ -1,0 +1,20 @@
+{
+  "model": "ViT-Base-patch16-224",
+  "platform": "MTSU Lambda RTX 3090",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "images_tested": 55,
+  "mean_latency_ms": 7.26,
+  "std_latency_ms": 0.96,
+  "median_latency_ms": 7.1,
+  "min_latency_ms": 6.53,
+  "max_latency_ms": 13.58,
+  "p95_latency_ms": 7.73,
+  "peak_gpu_memory_gb": 2.61,
+  "parameters_millions": 85.8,
+  "kaggle_t4_latency_ms": 14.42,
+  "comparison": {
+    "vit_rtx3090_vs_mamba_crop": 8.07,
+    "vit_rtx3090_vs_mamba_full": 7.41,
+    "vit_t4_vs_vit_rtx3090": 1.99
+  }
+}
