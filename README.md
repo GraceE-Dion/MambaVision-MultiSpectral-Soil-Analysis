@@ -29,6 +29,7 @@ This repository presents a systematic architectural comparison of MambaVision_S 
 ├── 07b_inference_pipeline.py                     # Full image inference - annotated panels
 ├── 07c_inference_pipeline.py                     # Laser crops + FFT/Wav inference
 ├── 07bc_inference_pipeline.py                    # Full image + FFT/Wav inference
+├── 11_speed_optimization.py                      # GPU-synchronized latency benchmarking, TF32/torch.compile sweep
 └── results/
     ├── inference_images/                         # Laser crops inference annotated panels
     ├── inference_images_fullimage/               # Full image inference annotated panels
@@ -37,10 +38,11 @@ This repository presents a systematic architectural comparison of MambaVision_S 
     ├── fullimage/                                # Full image training results and figures
     ├── fft_wavelet/                              # FFT/Wavelet laser crops results
     ├── fft_wavelet_fullimage/                    # FFT/Wavelet full image results
-    └── perclass/                                 # Per-class F1, confusion matrices, bootstrap CIs
+    ├── perclass/                                 # Per-class F1, confusion matrices, bootstrap CIs
+    └── speed_optimization/                       # Latency benchmark results and figures
 ```
 
-**Script execution order:** 02 → 03 → 04 → 05 (or 05b/05c/05bc) → 06 (or 06b/06c/06d) → 07 (or 07b/07c/07bc). Scripts 05b, 05c, and 05bc are independent variants of 05 and can be run in any order after 04. Scripts 06b and 06c require all relevant training results to be present in `./results/`. Script 06d requires all four MambaVision model checkpoints.
+**Script execution order:** 02 → 03 → 04 → 05 (or 05b/05c/05bc) → 06 (or 06b/06c/06d) → 07 (or 07b/07c/07bc) → 11. Scripts 05b, 05c, and 05bc are independent variants of 05 and can be run in any order after 04. Scripts 06b and 06c require all relevant training results to be present in `./results/`. Script 06d requires all four MambaVision model checkpoints. Script 11 requires a trained Full Image + FFT/Wavelet checkpoint.
 
 ---
 
@@ -174,6 +176,8 @@ Initial training used MambaVision_T (Tiny, 31.16M parameters). The hypothesis wa
 | MambaVision_S | Laser crops | RGB+FFT+Wav | 90.64% | 82.08% | Epoch 54 | 2.03 GB |
 | MambaVision_S | Full image | RGB+FFT+Wav | 97.04% | 96.23% | Epoch 17 | 2.03 GB |
 
+*Inference latency is reported separately in [Speed Optimization](#speed-optimization) below — see that section for the GPU-synchronized measurement methodology and why earlier per-variant figures in this table were withdrawn.*
+
 ### MambaVision_S vs ViT-Base (Full Image, Research Question 1)
 
 | Metric | ViT-Base | MambaVision_S | Delta |
@@ -182,8 +186,11 @@ Initial training used MambaVision_T (Tiny, 31.16M parameters). The hypothesis wa
 | Test Accuracy | 89.62% | 95.28% | +5.66% |
 | Parameters | 86M | ~50M | -42% |
 | Convergence Epoch | 25 | 15 | -40% |
-| Inference Latency | 7.26 ms/image (RTX 3090) | 0.98 ms/image (RTX 3090) | 7.4x faster |
+| Inference Latency (unoptimized, RTX 3090) | 7.26 ms/image | 7.795 ms/image | +7.4% (MambaVision_S slower) |
+| Inference Latency (MambaVision_S optimized, TF32 + torch.compile) | 7.26 ms/image | 4.961 ms/image | 1.46x faster |
 | Peak GPU Memory | 2.61 GB | 2.01 GB | -23% |
+
+**Note on latency correction:** An earlier version of this table reported MambaVision_S at 0.98 ms/image (7.4x faster than ViT-Base). That figure was measured without CUDA synchronization and understated true latency by roughly 8x. The corrected, GPU-synchronized baseline is 7.795 ms/image - marginally *slower* than ViT-Base's unoptimized figure. MambaVision_S only overtakes ViT-Base after explicit optimization (TF32 + `torch.compile`, mode="reduce-overhead"), reaching 4.961 ms/image, a 1.46x advantage. ViT-Base was not run through the same optimization pass, so this is a best-optimized-Mamba vs. baseline-ViT comparison, not an apples-to-apples optimized-vs-optimized one. See [Speed Optimization](#speed-optimization) for full methodology.
 
 ### Bootstrap Confidence Intervals (95%, n=1000)
 
@@ -229,6 +236,39 @@ The non-overlapping CIs between full image variants ([91.51%, 99.06%]) and laser
 | Soil-Moisture-September | 5/7 (71.43%) | 5/7 (71.43%) | 4/7 (57.14%) | 5/7 (71.43%) |
 | Soil-Moisture-Stir-September | 4/5 (80%) | 4/5 (80%) | 0/5 (0%) | 4/5 (80%) |
 | **OVERALL** | **38/41 (92.68%)** | **38/41 (92.68%)** | **26/41 (63.41%)** | **38/41 (92.68%)** |
+
+---
+
+## Speed Optimization
+
+### Why This Section Exists
+
+Earlier reporting in this repository (and in the Five-Way Comparison table above) cited MambaVision_S inference latency at ~0.90-0.98 ms/image, implying a 7-8x speed advantage over ViT-Base. That measurement was taken with naive Python-side wall-clock timing and did not call `torch.cuda.synchronize()` before stopping the timer. Because CUDA kernel launches are asynchronous, this understated true latency by roughly an order of magnitude. This section documents the corrected measurement methodology and the subsequent optimization work.
+
+### Corrected Measurement Methodology
+
+- CUDA events (`torch.cuda.Event(enable_timing=True)`) used for timing instead of Python wall-clock
+- Explicit `torch.cuda.synchronize()` calls bracketing each timed region
+- 20 warm-up iterations discarded before timing begins (excludes CUDA context/kernel compilation overhead)
+- Latency averaged over 100 timed iterations, single-image batch, RTX 3090
+- Benchmarked on the Full Image + FFT/Wavelet checkpoint (best-accuracy variant, 96.23% test)
+
+### Results
+
+| Configuration | Latency (RTX 3090) | vs. Baseline |
+|---|---|---|
+| Baseline (FP32, eager mode) | 7.795 ms/image | - |
+| FP16 / AMP | ~7.8 ms/image | No measurable benefit |
+| TF32 only | ~6.3 ms/image | ~1.24x |
+| TF32 + `torch.compile` (mode="reduce-overhead") | **4.961 ms/image** | **1.57x** |
+
+**FP16 gave no benefit.** This was investigated and attributed to the Mamba selective-scan operation: `mamba-ssm`'s custom CUDA kernel is not optimized for half-precision execution paths on this hardware/kernel version, so the SSM layers remain the latency bottleneck regardless of numeric precision elsewhere in the network.
+
+**Sub-0.5 ms target not achieved.** Dr. Zhang's informal target of pushing latency below 0.5 ms/image (for tighter edge-deployment margins) was not reachable with MambaVision_S under any tested configuration. The floor appears to be set by the fixed per-call overhead of the Mamba SSM CUDA kernel, which does not shrink further under compilation or precision changes. Reaching sub-millisecond latency would likely require a different SSM kernel implementation or architecture, not further optimization of MambaVision_S as-is.
+
+### Comparison to ViT-Base
+
+At best-optimized latency, MambaVision_S (4.961 ms) is **1.46x faster** than ViT-Base's unoptimized baseline (7.26 ms). This is not a fully controlled comparison, ViT-Base was not run through the same TF32/`torch.compile` sweep, so the honest claim for the paper is "MambaVision_S can be optimized to run faster than ViT-Base's baseline latency," not "MambaVision_S is inherently N times faster." An optimized-vs-optimized comparison is flagged as follow-up work.
 
 ---
 
@@ -299,7 +339,7 @@ The consistent September performance across all five models, including the archi
 
 ### Finding 5: Generalization Stability Under Extended Training
 
-The full image model locked at 97.04% val accuracy from epoch 15 through epoch 80 - 65 consecutive epochs of zero accuracy movement with no degradation. Val loss trended mildly downward (0.7500 → 0.7130) while train loss continued decreasing, confirming continued internal representation refinement without generalization degradation. This stability is atypical for a 106-sample test set and suggests MambaVision_S learned highly robust features from the full multispectral image context. Peak GPU memory of 2.01 GB and 0.98 ms/image inference latency confirm real-time deployment viability in precision agriculture edge contexts.
+The full image model locked at 97.04% val accuracy from epoch 15 through epoch 80 - 65 consecutive epochs of zero accuracy movement with no degradation. Val loss trended mildly downward (0.7500 → 0.7130) while train loss continued decreasing, confirming continued internal representation refinement without generalization degradation. This stability is atypical for a 106-sample test set and suggests MambaVision_S learned highly robust features from the full multispectral image context. Peak GPU memory of 2.01 GB and an optimized inference latency of 4.961 ms/image (see [Speed Optimization](#speed-optimization)) support real-time deployment viability in precision agriculture edge contexts, though sub-millisecond latency was not achievable with this architecture.
 
 ---
 
@@ -311,11 +351,13 @@ The full image model locked at 97.04% val accuracy from epoch 15 through epoch 8
 
 **Class index remapping - Pipeline bug identified and corrected:** HuggingFace ImageFolder assigns class indices alphabetically. For 11 numerical classes (0 - 10), alphabetical order places Level_10 at index 1, not index 10. All training scripts apply `hf_to_correct` remapping. A bug was discovered in the initial 07 and 07b inference scripts where `argmax` output was not passed through `hf_to_correct` before comparison, predictions were in HuggingFace index space while ground truth labels were in correct numerical space. This was identified through anomaly detection: 9.76% inference accuracy inconsistent with 95.28% test accuracy triggered investigation. The bug was identified, root-caused, and corrected across all four inference pipelines (07, 07b, 07c, 07bc). A secondary instance of this bug appeared in 06d where `.samples` was not remapped alongside `.targets` in the DataLoader, also identified and corrected. Both corrections are documented here as governance findings.
 
+**Inference latency measurement - Corrected:** Earlier reported latency figures (~0.90-0.98 ms/image) lacked CUDA synchronization and understated true latency by roughly an order of magnitude. Corrected, GPU-synchronized measurements are documented in [Speed Optimization](#speed-optimization). This correction is preserved here alongside the class index remapping bug as a second governance-relevant measurement error identified and fixed within this project.
+
 ---
 
 ## AI Governance and Responsible Development
 
-This project applies governance-first development principles at each experimental phase, not as a post-hoc addition. The decision to upgrade from MambaVision_T to MambaVision_S was driven by documented evidence of a capacity ceiling (79.80% plateau at 40 epochs) rather than assumption, and both underperforming T-variant runs are preserved in the training history table rather than discarded, providing an honest audit trail of why the upgrade was made. When accuracy dropped from 82.27% to 81.28% on extending training from 40 to 60 epochs without augmentation, this overfitting signal directly motivated the physical augmentation decision rather than further hyperparameter tuning, the causal chain is fully documented. The laser crop FFT/Wavelet experiment produced a -3.77% test accuracy degradation; the standard practice of discarding negative results was explicitly rejected, and the result is preserved in the repository, documented with mechanistic explanation, and included in all comparison tables, reflecting the principle that negative findings carry equal evidentiary value to positive ones. A class index remapping bug in the initial inference scripts was identified through anomaly detection, 9.76% inference accuracy against a known 95.28% test accuracy was immediately flagged as inconsistent and triggered root cause investigation rather than manual explanation, demonstrating that rigorous validation surfaces pipeline errors invisible to training metrics alone. Per-class F1 reporting was implemented across all four models so that weak performance on specific moisture levels (Levels 3, 5, and 10) is surfaced and documented rather than hidden behind aggregate accuracy numbers, with the support column included in all tables to enable readers to assess the statistical reliability of each class estimate. The 0/0 inference result for Soil-Moisture-5sagf was not accepted without investigation and is flagged explicitly as a dataset integrity issue requiring audit rather than silently reported as zero accuracy. Finally, per-dataset inference results are reported separately rather than as aggregate accuracy only, enabling risk-informed field deployment decisions: the full image RGB model achieves 100% accuracy on five of seven datasets with clearly documented limitations for the remaining two, allowing practitioners to assess suitability against their specific operating environment before deployment.
+This project applies governance-first development principles at each experimental phase, not as a post-hoc addition. The decision to upgrade from MambaVision_T to MambaVision_S was driven by documented evidence of a capacity ceiling (79.80% plateau at 40 epochs) rather than assumption, and both underperforming T-variant runs are preserved in the training history table rather than discarded, providing an honest audit trail of why the upgrade was made. When accuracy dropped from 82.27% to 81.28% on extending training from 40 to 60 epochs without augmentation, this overfitting signal directly motivated the physical augmentation decision rather than further hyperparameter tuning, the causal chain is fully documented. The laser crop FFT/Wavelet experiment produced a -3.77% test accuracy degradation; the standard practice of discarding negative results was explicitly rejected, and the result is preserved in the repository, documented with mechanistic explanation, and included in all comparison tables, reflecting the principle that negative findings carry equal evidentiary value to positive ones. A class index remapping bug in the initial inference scripts was identified through anomaly detection, 9.76% inference accuracy against a known 95.28% test accuracy was immediately flagged as inconsistent and triggered root cause investigation rather than manual explanation, demonstrating that rigorous validation surfaces pipeline errors invisible to training metrics alone. A second measurement error - unsynchronized inference latency timing that understated true latency by roughly an order of magnitude - was likewise identified, root-caused, corrected, and disclosed here rather than left uncorrected in the published record. Per-class F1 reporting was implemented across all four models so that weak performance on specific moisture levels (Levels 3, 5, and 10) is surfaced and documented rather than hidden behind aggregate accuracy numbers, with the support column included in all tables to enable readers to assess the statistical reliability of each class estimate. The 0/0 inference result for Soil-Moisture-5sagf was not accepted without investigation and is flagged explicitly as a dataset integrity issue requiring audit rather than silently reported as zero accuracy. Finally, per-dataset inference results are reported separately rather than as aggregate accuracy only, enabling risk-informed field deployment decisions: the full image RGB model achieves 100% accuracy on five of seven datasets with clearly documented limitations for the remaining two, allowing practitioners to assess suitability against their specific operating environment before deployment.
 
 ---
 
@@ -328,7 +370,7 @@ This project applies governance-first development principles at each experimenta
 | ViT Phase 6 | YOLOv8s | Full image | 95.3% mAP50 | 89.1% inference | Detection pipeline - not directly comparable |
 | **This work** | **MambaVision_S (50M)** | **Full image** | **97.04%** | **95.28%** | **Best classification result** |
 | This work | MambaVision_S (50M) | Laser crops | 90.64% | 85.85% | Matches ViT Phase 4B exactly |
-| This work | MambaVision_S (50M) | Full image + FW | 97.04% | 96.23% | Best test accuracy |
+| This work | MambaVision_S (50M) | Full image + FW | 97.04% | 96.23% | Best test accuracy; 4.961 ms/image optimized latency |
 
 MambaVision_S on laser crops matches ViT Phase 4B exactly (90.64% val accuracy), the same accuracy ceiling was reached by both architectures on the same input type with the same augmentation strategy, suggesting this ceiling reflects the information limit of the laser crop representation rather than architecture capacity. MambaVision_S on full images breaks through this ceiling (+6.40%) where ViT Phase 2 on full images reaches 94.58%, confirming MambaVision_S extracts richer features from full spatial context.
 
@@ -350,8 +392,11 @@ MambaVision_S on laser crops matches ViT Phase 4B exactly (90.64% val accuracy),
 | Test Acc | 85.85% | 95.28% | 82.08% | 96.23% | 89.62% |
 | 95% CI | [79.25%, 92.45%] | [91.51%, 99.06%] | [75.47%, 88.68%] | [92.43%, 99.06%] | N/A |
 | Peak GPU Mem | 2.01 GB | 2.01 GB | 2.03 GB | 2.03 GB | 2.61 GB |
-| Avg inference | 0.90 ms/img | 0.98 ms/img | 0.98 ms/img | 0.94 ms/img | 7.26 ms/img |
+| Avg inference (baseline, GPU-sync) | 7.795 ms/img | 7.795 ms/img | 7.795 ms/img | 7.795 ms/img | 7.26 ms/img |
+| Avg inference (TF32 + torch.compile) | - | - | - | 4.961 ms/img | - |
 | Platform | MTSU Lambda | MTSU Lambda | MTSU Lambda | MTSU Lambda | MTSU Lambda |
+
+*Baseline MambaVision_S latency is architecture-driven and consistent across input variants (the 7-channel input projection adds negligible overhead); optimization was benchmarked on the Full Image + FW checkpoint specifically since it is the accuracy-best variant. See [Speed Optimization](#speed-optimization) for methodology and the earlier-figure correction.*
 
 ---
 
@@ -383,30 +428,35 @@ timm-based loading (`timm.create_model('mamba_vision_S', pretrained=True)`) rais
 
 **Class index remapping - critical note:** All scripts apply `hf_to_correct` remapping to both `.targets` and `.samples` in ImageFolder datasets, and to both ground truth labels and `argmax` predictions in inference. Omitting either remapping produces artificially low accuracy. See the Known Limitations section for the full history of this bug.
 
+**Latency benchmarking - critical note:** Any future latency measurement must use CUDA event timing with explicit `torch.cuda.synchronize()` calls and warm-up iterations (see `11_speed_optimization.py`). Python wall-clock timing without synchronization will understate latency due to CUDA's asynchronous kernel launch model. See [Speed Optimization](#speed-optimization) for the full history of this measurement error.
+
 ---
 
 ## Conclusion
 
 This project establishes three original findings on multi-spectral laser soil moisture classification:
 
-**Finding 1 - Architecture:** MambaVision_S outperforms ViT-Base by +2.46% validation accuracy on full multispectral images (97.04% vs 94.58%) with 42% fewer parameters, 40% faster convergence, and zero overfitting across 80 training epochs. Bootstrap CIs [91.51%, 99.06%] confirm this result is statistically robust. The per-class analysis reveals that MambaVision_S resolves mid-range moisture level ambiguity (Levels 2, 3, 5, 7, 8) that ViT-equivalent laser crop models cannot, driven by richer spatial context rather than architectural superiority per se.
+**Finding 1 - Architecture:** MambaVision_S outperforms ViT-Base by +2.46% validation accuracy on full multispectral images (97.04% vs 94.58%) with 42% fewer parameters, 40% faster convergence, and zero overfitting across 80 training epochs. Bootstrap CIs [91.51%, 99.06%] confirm this result is statistically robust. The per-class analysis reveals that MambaVision_S resolves mid-range moisture level ambiguity (Levels 2, 3, 5, 7, 8) that ViT-equivalent laser crop models cannot, driven by richer spatial context rather than architectural superiority per se. On inference speed, MambaVision_S's unoptimized latency (7.795 ms/image) is comparable to ViT-Base (7.26 ms/image); a 1.46x speed advantage is achievable only after TF32 + `torch.compile` optimization (4.961 ms/image), and sub-millisecond latency was not reachable with this architecture due to a fixed Mamba SSM CUDA kernel overhead.
 
 **Finding 2 - Input representation:** The same model achieves a 6.40% accuracy gap between full image and laser crop inputs, 2.6x larger than the architectural gain over ViT. The accuracy ceiling reached by both ViT Phase 4B and MambaVision_S on laser crops (90.64%) reflects the information limit of the crop representation, not architecture capacity. Input representation is the dominant design variable for this task.
 
 **Finding 3 - Frequency features:** FFT and Wavelet features provide marginal test accuracy improvement on full images (+0.95%, within overlapping CI ranges) and genuine degradation on laser crops (-3.77%, outside overlapping CI ranges). The direction of the effect reverses between input scales, establishing a practical guideline: frequency feature augmentation is only appropriate when input spatial context is sufficient to produce meaningful global frequency content.
 
-**Future work - four priority directions:**
+**Future work - five priority directions:**
 
 1. *Per-class confusion matrix analysis for the ViT Phase 6 YOLOv8 model* - the companion project lacks per-class F1 in the same format as this project, preventing direct class-level comparison. Implementing equivalent per-class analysis would enable a complete architectural comparison across all phases.
 
-2. *MambaVision_S as the YOLOv8 detection backbone* - replacing the YOLOv8s backbone with MambaVision_S feature extraction would test whether the classification accuracy advantage translates to detection mAP improvement over Phase 6 (95.3% mAP50), which remains the highest result across both projects.
+2. *MambaVision_S as the YOLOv8 detection backbone* - replacing the YOLOv8s backbone with MambaVision_S feature extraction would test whether the classification accuracy advantage translates to detection mAP improvement over Phase 6 (95.3% mAP50), which remains the highest result across both projects. Superseded in near-term priority by the negative detection finding documented above; revisit only after the classification papers are complete.
 
 3. *Attention visualization* - generating attention maps for MambaVision_S on moisture-ambiguous samples (particularly Levels 3, 5, and 10) would identify which spatial regions the model prioritizes relative to ViT, providing mechanistic evidence for why full image context resolves mid-range moisture ambiguity.
 
 4. *Capture environment standardization for stir_september* - all five model variants fail to achieve reliable accuracy on Soil-Moisture-Stir-September. A controlled recapture protocol (fixed container, consistent laser angle, stable background, undisturbed soil surface) is the only intervention expected to resolve this limitation based on the visual investigation evidence from both projects.
 
+5. *Faster Mamba variants for sub-millisecond latency* - Zamba2 (Mamba2 + attention hybrid) and Mamba YOLO (AAAI 2025, ~1.5 ms on RTX 4090) are candidate directions for further latency reduction beyond what MambaVision_S's fixed SSM kernel overhead allows. Feasibility and architectural fit (particularly Mamba YOLO's detection-specific design) require discussion with Dr. Zhang before implementation.
+
 ---
 
 **GitHub:** https://github.com/GraceE-Dion/MambaVision-MultiSpectral-Soil-Analysis
 **Department:** Information Systems, IT Project Management - MTSU
+
 
