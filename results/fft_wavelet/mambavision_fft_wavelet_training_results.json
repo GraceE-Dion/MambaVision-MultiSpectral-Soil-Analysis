@@ -8,7 +8,7 @@
   "best_epoch": 54,
   "test_accuracy_pct": 82.08,
   "avg_epoch_time_seconds": 15.92,
-  "inference_latency_ms": 0.98,
+  "inference_latency_ms": 7.795,
   "peak_gpu_memory_gb": 2.03,
   "training_curves": {
     "epochs": [
