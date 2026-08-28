@@ -145,6 +145,14 @@ class MaskedDataset(Dataset):
     def _get_box(self, img_path, W, H):
         """Look up bounding box for this image."""
         stem = os.path.splitext(os.path.basename(img_path))[0]
+        # Master_Soil_Moisture filenames have dataset prefix e.g.
+        # Soil-Moisture-v4-3_4_png.rf.xxx -> 4_png.rf.xxx
+        # Strip everything up to and including the first underscore after dataset name
+        if stem not in self.label_lookup:
+            # Try stripping dataset prefix (format: DatasetName_originalname)
+            parts = stem.split('_', 1)
+            if len(parts) > 1:
+                stem = parts[1]
         if stem in self.label_lookup:
             cx, cy, w, h = self.label_lookup[stem]
             x1 = int((cx - w / 2) * W)
