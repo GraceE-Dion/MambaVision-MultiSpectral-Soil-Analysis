@@ -243,7 +243,10 @@ def evaluate_condition(condition, split="test"):
             imgs   = imgs.to(device)
             labels = labels.to(device)
             outputs = model(imgs)
-            preds   = outputs.argmax(dim=1)
+            pred_hf = outputs.argmax(dim=1)
+            preds   = torch.tensor(
+                [hf_to_correct[p.item()] for p in pred_hf],
+                device=device)
             correct += (preds == labels).sum().item()
             total   += labels.size(0)
             all_preds.extend(preds.cpu().numpy().tolist())
