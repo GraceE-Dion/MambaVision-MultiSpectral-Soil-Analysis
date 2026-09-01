@@ -2,18 +2,17 @@
 12_background_roi_experiment.py
 ================================
 Dataset integrity and generalization audit.
-Tests four conditions to determine whether the network is learning
+Tests five conditions to determine whether the network is learning
 moisture-related features or exploiting contextual/acquisition variables:
 
-  Condition 1 — Full image (baseline, already known: 97.04% val)
-  Condition 2 — ROI only (laser spot region, cropped from bounding box)
-  Condition 3 — Background only (full image with laser ROI masked/blacked out)
-  Condition 4 — Outside region only (everything outside a 2x expanded ROI)
+  Condition 1 — Full image (baseline)
+  Condition 2 — ROI only (laser spot, background blacked out)
+  Condition 3 — Background only (full image with laser ROI blacked out)
+  Condition 4 — Outside region only (everything outside 2x expanded ROI)
+  Condition 5 — Cropped and resized ROI (matches Phase 4A/4B methodology)
 
-If Condition 3 achieves substantial accuracy, the model is exploiting
-background/acquisition variables rather than laser moisture signatures.
-If Condition 2 matches Condition 1, the laser ROI contains all the
-discriminative information and full-image context adds nothing meaningful.
+Condition 5 is the key addition — it extracts the laser patch and resizes
+to 224x224, matching exactly how Paper 1 Phase 4A/4B achieved 87-90%.
 
 Run:
     python 12_background_roi_experiment.py
@@ -76,14 +75,9 @@ print(f"\nClass remapping: {hf_to_correct}")
 
 # ═════════════════════════════════════════════════════════════════════════════
 # 2. LOAD BOUNDING BOX LABELS
-# Maps filename stem → [cx, cy, w, h] (normalized YOLO format)
 # ═════════════════════════════════════════════════════════════════════════════
 
 def build_label_lookup():
-    """
-    Build a lookup dict: filename_stem -> (cx, cy, w, h) normalized.
-    Searches all source dataset label folders.
-    """
     lookup = {}
     for ds_name in os.listdir(LABEL_DIR_BASE):
         ds_path = os.path.join(LABEL_DIR_BASE, ds_name)
@@ -91,7 +85,6 @@ def build_label_lookup():
             continue
         for split in ["train", "valid", "test"]:
             lbl_dir = os.path.join(ds_path, split, "labels")
-            img_dir = os.path.join(ds_path, split, "images")
             if not os.path.exists(lbl_dir):
                 continue
             for lbl_file in os.listdir(lbl_dir):
@@ -102,7 +95,6 @@ def build_label_lookup():
                     lines = f.readlines()
                 if not lines:
                     continue
-                # Take first box only
                 parts = lines[0].strip().split()
                 if len(parts) < 5:
                     continue
@@ -115,19 +107,22 @@ def build_label_lookup():
 label_lookup = build_label_lookup()
 
 # ═════════════════════════════════════════════════════════════════════════════
-# 3. CUSTOM DATASET — four conditions
+# 3. CUSTOM DATASET — five conditions
 # ═════════════════════════════════════════════════════════════════════════════
 
 class MaskedDataset(Dataset):
     """
-    Loads test images and applies one of four masking conditions:
-      'full'       — original full image (baseline)
-      'roi'        — laser ROI only, background blacked out
-      'background' — background only, laser ROI blacked out
-      'outside'    — everything outside 2x expanded ROI blacked out
+    Loads test images and applies one of five conditions:
+      'full'        — original full image (baseline)
+      'roi'         — laser ROI only, background blacked out
+      'background'  — background only, laser ROI blacked out
+      'outside'     — everything outside 2x expanded ROI blacked out
+      'crop_resize' — laser patch cropped and resized to 224x224
+                      (matches Phase 4A/4B methodology from Paper 1)
     """
     def __init__(self, split, condition, label_lookup, transform):
-        assert condition in ["full", "roi", "background", "outside"]
+        assert condition in ["full", "roi", "background",
+                             "outside", "crop_resize"]
         self.condition    = condition
         self.label_lookup = label_lookup
         self.transform    = transform
@@ -145,11 +140,7 @@ class MaskedDataset(Dataset):
     def _get_box(self, img_path, W, H):
         """Look up bounding box for this image."""
         stem = os.path.splitext(os.path.basename(img_path))[0]
-        # Master_Soil_Moisture filenames have dataset prefix e.g.
-        # Soil-Moisture-v4-3_4_png.rf.xxx -> 4_png.rf.xxx
-        # Strip everything up to and including the first underscore after dataset name
         if stem not in self.label_lookup:
-            # Try stripping dataset prefix (format: DatasetName_originalname)
             parts = stem.split('_', 1)
             if len(parts) > 1:
                 stem = parts[1]
@@ -172,33 +163,44 @@ class MaskedDataset(Dataset):
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         H, W = img.shape[:2]
 
+        # ── Condition 5: crop and resize — matches Phase 4A/4B ────────────
+        if self.condition == "crop_resize":
+            box = self._get_box(img_path, W, H)
+            if box is not None:
+                x1, y1, x2, y2 = box
+                # Ensure minimum patch size
+                if (x2 - x1) > 4 and (y2 - y1) > 4:
+                    patch = img[y1:y2, x1:x2]
+                    img   = patch  # Will be resized by transform
+                # If box too small fall back to full image
+            img_pil = PILImage.fromarray(img)
+            tensor  = self.transform(img_pil)
+            return tensor, true_class
+
+        # ── Conditions 1-4: masking ────────────────────────────────────────
         if self.condition != "full":
             box = self._get_box(img_path, W, H)
-
             if box is not None:
                 x1, y1, x2, y2 = box
                 masked = img.copy()
 
                 if self.condition == "roi":
-                    # Keep only the laser ROI, black out everything else
                     mask = np.zeros_like(img)
                     mask[y1:y2, x1:x2] = img[y1:y2, x1:x2]
                     masked = mask
 
                 elif self.condition == "background":
-                    # Black out the laser ROI, keep background
                     masked[y1:y2, x1:x2] = 0
 
                 elif self.condition == "outside":
-                    # Expand ROI by 2x and black out everything outside
-                    cx = (x1 + x2) // 2
-                    cy = (y1 + y2) // 2
-                    bw = (x2 - x1) * 2
-                    bh = (y2 - y1) * 2
-                    ex1 = max(0, cx - bw // 2)
-                    ey1 = max(0, cy - bh // 2)
-                    ex2 = min(W, cx + bw // 2)
-                    ey2 = min(H, cy + bh // 2)
+                    cx_c = (x1 + x2) // 2
+                    cy_c = (y1 + y2) // 2
+                    bw   = (x2 - x1) * 2
+                    bh   = (y2 - y1) * 2
+                    ex1  = max(0, cx_c - bw // 2)
+                    ey1  = max(0, cy_c - bh // 2)
+                    ex2  = min(W, cx_c + bw // 2)
+                    ey2  = min(H, cy_c + bh // 2)
                     mask = np.zeros_like(img)
                     mask[ey1:ey2, ex1:ex2] = img[ey1:ey2, ex1:ex2]
                     masked = mask
@@ -241,8 +243,8 @@ def evaluate_condition(condition, split="test"):
     loader  = DataLoader(dataset, batch_size=BATCH_SIZE,
                          shuffle=False, num_workers=4)
 
-    correct = 0
-    total   = 0
+    correct    = 0
+    total      = 0
     all_preds  = []
     all_labels = []
 
@@ -264,13 +266,13 @@ def evaluate_condition(condition, split="test"):
     return acc, all_preds, all_labels
 
 # ═════════════════════════════════════════════════════════════════════════════
-# 6. RUN ALL FOUR CONDITIONS
+# 6. RUN ALL FIVE CONDITIONS
 # ═════════════════════════════════════════════════════════════════════════════
 
-print("\nRunning four masking conditions on test set...")
+print("\nRunning five conditions on test set...")
 print("-" * 65)
 
-conditions = ["full", "roi", "background", "outside"]
+conditions = ["full", "crop_resize", "roi", "background", "outside"]
 results    = {}
 
 for cond in conditions:
@@ -279,63 +281,42 @@ for cond in conditions:
     results[cond] = {
         "accuracy_pct": round(acc, 2),
         "correct"     : sum(p == l for p, l in zip(preds, labels)),
-        "total"       : len(labels),
+        "total"        : len(labels),
     }
     print(f"  Accuracy: {acc:.2f}% ({results[cond]['correct']}/{results[cond]['total']})")
 
 # ═════════════════════════════════════════════════════════════════════════════
-# 7. SUMMARY AND INTERPRETATION
+# 7. SUMMARY
 # ═════════════════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 65)
 print("  RESULTS SUMMARY")
 print("=" * 65)
-print(f"  {'Condition':<20} {'Accuracy':>10} {'Interpretation'}")
+print(f"  {'Condition':<25} {'Accuracy':>10} {'Interpretation'}")
 print("-" * 65)
 interp = {
-    "full":       "Baseline — known result",
-    "roi":        "Laser spot only — pure moisture signal",
-    "background": "Background only — acquisition confound check",
-    "outside":    "Expanded context — spatial context check",
+    "full"       : "Baseline — full image",
+    "crop_resize": "Cropped ROI resized 224x224 — matches Phase 4A/4B",
+    "roi"        : "ROI in-place, background blacked out",
+    "background" : "Background only — acquisition confound check",
+    "outside"    : "Expanded 2x context only",
 }
 for cond in conditions:
     acc = results[cond]["accuracy_pct"]
-    print(f"  {cond:<20} {acc:>9.2f}%  {interp[cond]}")
+    print(f"  {cond:<25} {acc:>9.2f}%  {interp[cond]}")
 print("=" * 65)
 
-# Interpretation guidance
-bg_acc   = results["background"]["accuracy_pct"]
-roi_acc  = results["roi"]["accuracy_pct"]
-full_acc = results["full"]["accuracy_pct"]
+full_acc   = results["full"]["accuracy_pct"]
+crop_acc   = results["crop_resize"]["accuracy_pct"]
+roi_acc    = results["roi"]["accuracy_pct"]
+bg_acc     = results["background"]["accuracy_pct"]
 
-print("\n  INTERPRETATION:")
-if bg_acc > 60:
-    print(f"  WARNING: Background-only accuracy {bg_acc:.2f}% is substantial.")
-    print(f"  This suggests the model may be exploiting acquisition")
-    print(f"  conditions (background, lighting, tray, session) rather")
-    print(f"  than laser moisture signatures alone.")
-elif bg_acc > 30:
-    print(f"  CAUTION: Background-only accuracy {bg_acc:.2f}% is moderate.")
-    print(f"  Some acquisition-correlated information may be present.")
-else:
-    print(f"  GOOD: Background-only accuracy {bg_acc:.2f}% is low.")
-    print(f"  The model is not primarily exploiting background context.")
-
-if roi_acc > 90:
-    print(f"  GOOD: ROI-only accuracy {roi_acc:.2f}% is high.")
-    print(f"  The laser spot contains strong discriminative signal.")
-elif roi_acc > 70:
-    print(f"  MODERATE: ROI-only accuracy {roi_acc:.2f}%.")
-    print(f"  Laser spot has useful signal but context also contributes.")
-else:
-    print(f"  NOTE: ROI-only accuracy {roi_acc:.2f}% is lower than expected.")
-    print(f"  Full image context is critical for classification.")
-
-gap = full_acc - roi_acc
-if gap > 10:
-    print(f"  The {gap:.2f}% gap between full ({full_acc:.2f}%) and ROI-only")
-    print(f"  ({roi_acc:.2f}%) suggests context adds genuine signal — but")
-    print(f"  cross-check with background accuracy to rule out confounding.")
+print(f"\n  KEY COMPARISONS:")
+print(f"  Full image          : {full_acc:.2f}%")
+print(f"  Cropped ROI (Ph4B)  : {crop_acc:.2f}%  "
+      f"({'consistent' if crop_acc > 80 else 'lower than'} with Paper 1 Phase 4B ~90%)")
+print(f"  ROI in-place        : {roi_acc:.2f}%")
+print(f"  Background only     : {bg_acc:.2f}%")
 
 # ═════════════════════════════════════════════════════════════════════════════
 # 8. SAVE RESULTS AND FIGURE
@@ -345,10 +326,11 @@ output = {
     "model"     : "MambaVision_S Full Image Best",
     "split"     : "test",
     "conditions": results,
-    "interpretation": {
-        "background_confound_risk": "high" if bg_acc > 60 else "moderate" if bg_acc > 30 else "low",
-        "laser_signal_strength"   : "high" if roi_acc > 90 else "moderate" if roi_acc > 70 else "low",
-        "full_vs_roi_gap_pct"     : round(full_acc - roi_acc, 2),
+    "paper1_phase4b_reference": 90.64,
+    "notes": {
+        "crop_resize": "Extracted laser patch resized to 224x224 — matches Phase 4A/4B methodology",
+        "roi"        : "ROI kept in original position, background blacked out",
+        "background" : "ROI blacked out, background retained — confound check",
     }
 }
 
@@ -356,27 +338,35 @@ with open(os.path.join(RESULTS_DIR, "background_roi_experiment.json"), "w") as f
     json.dump(output, f, indent=2)
 
 # Figure
-fig, ax = plt.subplots(figsize=(10, 6))
+fig, ax = plt.subplots(figsize=(12, 6))
 fig.patch.set_facecolor("white")
 
-labels_plot = ["Full Image\n(baseline)", "ROI Only\n(laser spot)", "Background Only\n(confound check)", "Expanded Context\n(2x ROI)"]
-accs        = [results[c]["accuracy_pct"] for c in conditions]
-colors      = ["#2E7D5E", "#4C72B0", "#C0392B", "#E07B39"]
+labels_plot = [
+    "Full Image\n(baseline)",
+    "Cropped ROI\n(Phase 4A/4B method)",
+    "ROI In-Place\n(background blacked)",
+    "Background Only\n(confound check)",
+    "Expanded Context\n(2x ROI)",
+]
+accs   = [results[c]["accuracy_pct"] for c in conditions]
+colors = ["#2E7D5E", "#4C72B0", "#1A5C44", "#C0392B", "#E07B39"]
 
 bars = ax.bar(labels_plot, accs, color=colors, width=0.5)
 for bar, val in zip(bars, accs):
     ax.text(bar.get_x() + bar.get_width() / 2,
             bar.get_height() + 0.5,
-            f"{val:.2f}%", ha="center", fontsize=11, fontweight="bold")
+            f"{val:.2f}%", ha="center", fontsize=10, fontweight="bold")
 
-ax.axhline(y=50, color="gray", linestyle="--", linewidth=1.5,
-           alpha=0.5, label="Random chance baseline (~9% for 11 classes)")
-ax.axhline(y=100/11, color="red", linestyle=":", linewidth=1.5,
-           alpha=0.5, label="Random chance (9.09%)")
+ax.axhline(y=90.64, color="#4C72B0", linestyle="--",
+           linewidth=1.5, alpha=0.7,
+           label="Paper 1 Phase 4B reference: 90.64%")
+ax.axhline(y=100/11, color="red", linestyle=":",
+           linewidth=1.5, alpha=0.5,
+           label="Random chance (9.09%)")
 
 ax.set_ylabel("Test Accuracy (%)", fontsize=12)
 ax.set_title("Background vs ROI Experiment — Dataset Integrity Audit\n"
-             "MambaVision_S Full Image Model — What Is the Network Learning?",
+             "Five Conditions including Phase 4A/4B-matched Crop-Resize",
              fontsize=12, fontweight="bold")
 ax.set_ylim([0, 110])
 ax.legend(fontsize=9)
@@ -391,4 +381,4 @@ plt.close()
 
 print(f"\nResults saved → results/background_roi_experiment.json")
 print(f"Figure saved  → results/background_roi_experiment.png")
-print("\nDone! Share results with peer reviewer before proceeding.")
+print("\nDone!")
