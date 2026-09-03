@@ -381,4 +381,129 @@ plt.close()
 
 print(f"\nResults saved → results/background_roi_experiment.json")
 print(f"Figure saved  → results/background_roi_experiment.png")
+
+# ═════════════════════════════════════════════════════════════════════════════
+# 9. GENERATE VISUAL EXAMPLES FOR PPT / PAPER FIGURE
+# ═════════════════════════════════════════════════════════════════════════════
+
+print("\nGenerating visual condition examples for PPT...")
+
+# Pick one representative test image that has a bounding box
+sample_img_path = None
+sample_box      = None
+
+test_dataset_check = MaskedDataset("test", "full", label_lookup, val_transform)
+for img_path, _ in test_dataset_check.samples:
+    H_t = cv2.imread(img_path)
+    if H_t is None:
+        continue
+    H_, W_ = H_t.shape[:2]
+    box = test_dataset_check._get_box(img_path, W_, H_)
+    if box is not None:
+        sample_img_path = img_path
+        sample_box      = box
+        break
+
+if sample_img_path is not None:
+    img_orig = cv2.imread(sample_img_path)
+    img_orig = cv2.cvtColor(img_orig, cv2.COLOR_BGR2RGB)
+    H_, W_   = img_orig.shape[:2]
+    x1, y1, x2, y2 = sample_box
+
+    # Condition images
+    def make_conditions(img, x1, y1, x2, y2):
+        # Full
+        full = img.copy()
+
+        # ROI only — background blacked
+        roi = np.zeros_like(img)
+        roi[y1:y2, x1:x2] = img[y1:y2, x1:x2]
+
+        # Background only — ROI blacked
+        bg = img.copy()
+        bg[y1:y2, x1:x2] = 0
+
+        # Crop resize — extract and resize
+        patch = img[y1:y2, x1:x2]
+        crop  = cv2.resize(patch, (224, 224),
+                           interpolation=cv2.INTER_LINEAR)
+
+        # Full with bounding box drawn
+        boxed = img.copy()
+        cv2.rectangle(boxed, (x1, y1), (x2, y2),
+                      (255, 50, 50), 3)
+
+        return full, roi, bg, crop, boxed
+
+    full, roi, bg, crop, boxed = make_conditions(
+        img_orig, x1, y1, x2, y2)
+
+    # Resize all to same display size
+    display_size = (320, 320)
+    imgs_display = [
+        cv2.resize(full,  display_size),
+        cv2.resize(boxed, display_size),
+        cv2.resize(roi,   display_size),
+        cv2.resize(bg,    display_size),
+        crop if crop.shape[:2] == (224, 224)
+             else cv2.resize(crop, display_size),
+    ]
+    titles = [
+        f"1. Full Image\n(baseline: 95.28%)",
+        f"2. Bounding Box\n(laser spot located)",
+        f"3. ROI Only\n(background blacked: 24.53%)",
+        f"4. Background Only\n(ROI blacked: 85.85%)",
+        f"5. Crop Resize\n(patch extracted: 23.58%)",
+    ]
+
+    fig, axes = plt.subplots(1, 5, figsize=(22, 5))
+    fig.suptitle(
+        "Masking Conditions — Dataset Integrity Audit (Script 12)\n"
+        "Same image shown under five conditions",
+        fontsize=13, fontweight="bold")
+    fig.patch.set_facecolor("white")
+
+    colors_title = ["#2E7D5E", "#534AB7",
+                    "#1A5C44", "#C0392B", "#4C72B0"]
+
+    for ax_i, (img_d, title, col) in enumerate(
+            zip(imgs_display, titles, colors_title)):
+        axes[ax_i].imshow(img_d)
+        axes[ax_i].set_title(title, fontsize=10,
+                              fontweight="bold", color=col,
+                              pad=8)
+        axes[ax_i].axis("off")
+        for spine in axes[ax_i].spines.values():
+            spine.set_edgecolor(col)
+            spine.set_linewidth(2)
+            spine.set_visible(True)
+
+    plt.tight_layout()
+    vis_path = os.path.join(RESULTS_DIR,
+                            "masking_conditions_visual.png")
+    plt.savefig(vis_path, dpi=150,
+                bbox_inches="tight", facecolor="white")
+    plt.close()
+    print(f"Visual examples saved → {vis_path}")
+
+    # Also save individual condition images for PPT
+    os.makedirs(os.path.join(RESULTS_DIR, "masking_conditions"),
+                exist_ok=True)
+    pairs = [
+        ("1_full_image.png",       full),
+        ("2_bounding_box.png",     boxed),
+        ("3_roi_only.png",         roi),
+        ("4_background_only.png",  bg),
+        ("5_crop_resize_224.png",  crop),
+    ]
+    for fname, img_save in pairs:
+        save_path = os.path.join(RESULTS_DIR,
+                                 "masking_conditions", fname)
+        cv2.imwrite(save_path,
+                    cv2.cvtColor(img_save, cv2.COLOR_RGB2BGR))
+    print(f"Individual condition images saved → "
+          f"results/masking_conditions/")
+else:
+    print("No sample image with bounding box found — "
+          "skipping visual generation")
 print("\nDone!")
