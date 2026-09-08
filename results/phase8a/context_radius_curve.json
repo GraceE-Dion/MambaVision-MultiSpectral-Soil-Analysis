@@ -1,0 +1,27 @@
+{
+  "1x": {
+    "accuracy": 0.19047619047619047,
+    "n": 105,
+    "mean_area_fraction_of_full_image": 0.024818033854166668
+  },
+  "2x": {
+    "accuracy": 0.29523809523809524,
+    "n": 105,
+    "mean_area_fraction_of_full_image": 0.09857528831845239
+  },
+  "3x": {
+    "accuracy": 0.5523809523809524,
+    "n": 105,
+    "mean_area_fraction_of_full_image": 0.2199842354910714
+  },
+  "4x": {
+    "accuracy": 0.6037735849056604,
+    "n": 106,
+    "mean_area_fraction_of_full_image": 0.37175509470813684
+  },
+  "5x": {
+    "accuracy": 0.6415094339622641,
+    "n": 106,
+    "mean_area_fraction_of_full_image": 0.5186317990860848
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "min_examples_per_class_threshold": 3,
+  "datasets_checked": [
+    "5sagf",
+    "IR",
+    "September",
+    "Stir-Sept",
+    "v4",
+    "v4-IR",
+    "v4-UV"
+  ],
+  "unknown_file_count": 0,
+  "unknown_file_samples": [],
+  "feasibility_by_held_out_dataset": {
+    "5sagf": {
+      "feasible_full_11_class": true,
+      "missing_or_underrepresented_classes": [],
+      "min_examples_threshold": 3,
+      "held_out_set_total_images": 70,
+      "held_out_set_classes_present": 5,
+      "remaining_training_class_counts": {
+        "Level_0": 34,
+        "Level_1": 47,
+        "Level_2": 65,
+        "Level_3": 50,
+        "Level_4": 109,
+        "Level_5": 92,
+        "Level_6": 42,
+        "Level_7": 53,
+        "Level_8": 48,
+        "Level_9": 36,
+        "Level_10": 71
+      }
+    },
+    "IR": {
+      "feasible_full_11_class": true,
+      "missing_or_underrepresented_classes": [],
+      "min_examples_threshold": 3,
+      "held_out_set_total_images": 70,
+      "held_out_set_classes_present": 5,
+      "remaining_training_class_counts": {
+        "Level_0": 34,
+        "Level_1": 44,
+        "Level_2": 63,
+        "Level_3": 53,
+        "Level_4": 109,
+        "Level_5": 90,
+        "Level_6": 42,
+        "Level_7": 53,
+        "Level_8": 52,
+        "Level_9": 36,
+        "Level_10": 71
+      }
+    },
+    "September": {
+      "feasible_full_11_class": true,
+      "missing_or_underrepresented_classes": [],
+      "min_examples_threshold": 3,
+      "held_out_set_total_images": 46,
+      "held_out_set_classes_present": 9,
+      "remaining_training_class_counts": {
+        "Level_0": 32,
+        "Level_1": 58,
+        "Level_2": 78,
+        "Level_3": 63,
+        "Level_4": 108,
+        "Level_5": 104,
+        "Level_6": 42,
+        "Level_7": 48,
+        "Level_8": 63,
+        "Level_9": 32,
+        "Level_10": 43
+      }
+    },
+    "Stir-Sept": {
+      "feasible_full_11_class": true,
+      "missing_or_underrepresented_classes": [],
+      "min_examples_threshold": 3,
+      "held_out_set_total_images": 39,
+      "held_out_set_classes_present": 5,
+      "remaining_training_class_counts": {
+        "Level_0": 34,
+        "Level_1": 54,
+        "Level_2": 78,
+        "Level_3": 59,
+        "Level_4": 109,
+        "Level_5": 105,
+        "Level_6": 42,
+        "Level_7": 47,
+        "Level_8": 60,
+        "Level_9": 36,
+        "Level_10": 54
+      }
+    },
+    "v4": {
+      "feasible_full_11_class": true,
+      "missing_or_underrepresented_classes": [],
+      "min_examples_threshold": 3,
+      "held_out_set_total_images": 246,
+      "held_out_set_classes_present": 11,
+      "remaining_training_class_counts": {
+        "Level_0": 18,
+        "Level_1": 46,
+        "Level_2": 53,
+        "Level_3": 50,
+        "Level_4": 55,
+        "Level_5": 67,
+        "Level_6": 21,
+        "Level_7": 32,
+        "Level_8": 51,
+        "Level_9": 20,
+        "Level_10": 58
+      }
+    },
+    "v4-IR": {
+      "feasible_full_11_class": true,
+      "missing_or_underrepresented_classes": [],
+      "min_examples_threshold": 3,
+      "held_out_set_total_images": 104,
+      "held_out_set_classes_present": 7,
+      "remaining_training_class_counts": {
+        "Level_0": 34,
+        "Level_1": 59,
+        "Level_2": 73,
+        "Level_3": 65,
+        "Level_4": 71,
+        "Level_5": 86,
+        "Level_6": 25,
+        "Level_7": 53,
+        "Level_8": 59,
+        "Level_9": 26,
+        "Level_10": 62
+      }
+    },
+    "v4-UV": {
+      "feasible_full_11_class": true,
+      "missing_or_underrepresented_classes": [],
+      "min_examples_threshold": 3,
+      "held_out_set_total_images": 142,
+      "held_out_set_classes_present": 11,
+      "remaining_training_class_counts": {
+        "Level_0": 18,
+        "Level_1": 46,
+        "Level_2": 58,
+        "Level_3": 50,
+        "Level_4": 93,
+        "Level_5": 86,
+        "Level_6": 38,
+        "Level_7": 32,
+        "Level_8": 57,
+        "Level_9": 30,
+        "Level_10": 67
+      }
+    }
+  },
+  "full_class_dataset_matrix": {
+    "Level_0": {
+      "5sagf": 0,
+      "IR": 0,
+      "September": 2,
+      "Stir-Sept": 0,
+      "v4": 16,
+      "v4-IR": 0,
+      "v4-UV": 16
+    },
+    "Level_1": {
+      "5sagf": 12,
+      "IR": 15,
+      "September": 1,
+      "Stir-Sept": 5,
+      "v4": 13,
+      "v4-IR": 0,
+      "v4-UV": 13
+    },
+    "Level_2": {
+      "5sagf": 13,
+      "IR": 15,
+      "September": 0,
+      "Stir-Sept": 0,
+      "v4": 25,
+      "v4-IR": 5,
+      "v4-UV": 20
+    },
+    "Level_3": {
+      "5sagf": 15,
+      "IR": 12,
+      "September": 2,
+      "Stir-Sept": 6,
+      "v4": 15,
+      "v4-IR": 0,
+      "v4-UV": 15
+    },
+    "Level_4": {
+      "5sagf": 0,
+      "IR": 0,
+      "September": 1,
+      "Stir-Sept": 0,
+      "v4": 54,
+      "v4-IR": 38,
+      "v4-UV": 16
+    },
+    "Level_5": {
+      "5sagf": 13,
+      "IR": 15,
+      "September": 1,
+      "Stir-Sept": 0,
+      "v4": 38,
+      "v4-IR": 19,
+      "v4-UV": 19
+    },
+    "Level_6": {
+      "5sagf": 0,
+      "IR": 0,
+      "September": 0,
+      "Stir-Sept": 0,
+      "v4": 21,
+      "v4-IR": 17,
+      "v4-UV": 4
+    },
+    "Level_7": {
+      "5sagf": 0,
+      "IR": 0,
+      "September": 5,
+      "Stir-Sept": 6,
+      "v4": 21,
+      "v4-IR": 0,
+      "v4-UV": 21
+    },
+    "Level_8": {
+      "5sagf": 17,
+      "IR": 13,
+      "September": 2,
+      "Stir-Sept": 5,
+      "v4": 14,
+      "v4-IR": 6,
+      "v4-UV": 8
+    },
+    "Level_9": {
+      "5sagf": 0,
+      "IR": 0,
+      "September": 4,
+      "Stir-Sept": 0,
+      "v4": 16,
+      "v4-IR": 10,
+      "v4-UV": 6
+    },
+    "Level_10": {
+      "5sagf": 0,
+      "IR": 0,
+      "September": 28,
+      "Stir-Sept": 17,
+      "v4": 13,
+      "v4-IR": 9,
+      "v4-UV": 4
+    }
+  }
+}

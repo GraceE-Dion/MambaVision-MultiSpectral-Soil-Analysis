@@ -1,0 +1,37 @@
+{
+  "model": "MambaVision_S Full Image Best",
+  "split": "test",
+  "conditions": {
+    "full": {
+      "accuracy_pct": 95.28,
+      "correct": 101,
+      "total": 106
+    },
+    "crop_resize": {
+      "accuracy_pct": 18.87,
+      "correct": 20,
+      "total": 106
+    },
+    "roi": {
+      "accuracy_pct": 17.92,
+      "correct": 19,
+      "total": 106
+    },
+    "background": {
+      "accuracy_pct": 85.85,
+      "correct": 91,
+      "total": 106
+    },
+    "outside": {
+      "accuracy_pct": 42.45,
+      "correct": 45,
+      "total": 106
+    }
+  },
+  "paper1_phase4b_reference": 90.64,
+  "notes": {
+    "crop_resize": "Extracted laser patch resized to 224x224 \u2014 matches Phase 4A/4B methodology",
+    "roi": "ROI kept in original position, background blacked out",
+    "background": "ROI blacked out, background retained \u2014 confound check"
+  }
+}
