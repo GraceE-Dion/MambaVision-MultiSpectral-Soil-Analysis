@@ -276,8 +276,11 @@ def run_context_radius_curve():
     unmatched = 0
 
     for class_idx in range(NUM_CLASSES):
-        class_dir = os.path.join(test_dir, CLASS_NAMES[class_idx])
+        # Actual folder names are plain digit strings ("0".."10"), NOT
+        # "Level_X" — CLASS_NAMES is display-only, not a directory name.
+        class_dir = os.path.join(test_dir, str(class_idx))
         if not os.path.isdir(class_dir):
+            print(f"  WARNING: directory not found: {class_dir}")
             continue
         for fname in os.listdir(class_dir):
             if not fname.lower().endswith((".png", ".jpg", ".jpeg")):
@@ -576,8 +579,9 @@ def run_ordinal_metrics():
     unmatched = 0
 
     for class_idx in range(NUM_CLASSES):
-        class_dir = os.path.join(test_dir, CLASS_NAMES[class_idx])
+        class_dir = os.path.join(test_dir, str(class_idx))
         if not os.path.isdir(class_dir):
+            print(f"  WARNING: directory not found: {class_dir}")
             continue
         for fname in os.listdir(class_dir):
             if not fname.lower().endswith((".png", ".jpg", ".jpeg")):
@@ -661,7 +665,7 @@ class HeldOutDataset(Dataset):
         self.samples = []
         self.transform = transform
         for class_idx in range(NUM_CLASSES):
-            class_dir = os.path.join(root_dir, CLASS_NAMES[class_idx])
+            class_dir = os.path.join(root_dir, str(class_idx))
             if not os.path.isdir(class_dir):
                 continue
             for fname in os.listdir(class_dir):
