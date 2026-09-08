@@ -49,22 +49,19 @@ MIN_EXAMPLES_PER_CLASS = 3
 # your actual filenames before trusting the output — copy the exact function
 # from 06c_evaluation.py or 07_inference_pipeline.py if it differs from this.
 DATASET_PATTERNS = {
-    "v4":         re.compile(r"(?<!-)v4(?!-)", re.IGNORECASE),   # v4 but not v4-IR/v4-UV
-    "v4-IR":      re.compile(r"v4-IR", re.IGNORECASE),
-    "v4-UV":      re.compile(r"v4-UV", re.IGNORECASE),
-    "IR":         re.compile(r"(?<!v4-)IR(?!-)", re.IGNORECASE), # IR but not v4-IR
-    "5sagf":      re.compile(r"5sagf", re.IGNORECASE),
-    "September":  re.compile(r"september(?!.*stir)", re.IGNORECASE),
-    "Stir-Sept":  re.compile(r"stir.*september", re.IGNORECASE),
+    "v4"        : lambda f: f.startswith("Soil-Moisture-v4-") and "-IR-" not in f and "-UV-" not in f,
+    "v4-IR"     : lambda f: f.startswith("Soil-Moisture-v4-IR-"),
+    "v4-UV"     : lambda f: f.startswith("Soil-Moisture-v4-UV-"),
+    "IR"        : lambda f: f.startswith("Soil-Moisture-IR-"),
+    "5sagf"     : lambda f: f.startswith("Soil-Moisture-1_"),
+    "September" : lambda f: f.startswith("Soil_Moisture_September-"),
+    "Stir-Sept" : lambda f: f.startswith("Soil_Moisture_Stir_September-"),
 }
 
 
 def get_dataset_name(filename):
-    """Match filename against known dataset patterns. Returns 'Unknown' if
-    no pattern matches — check the report for any 'Unknown' bucket, since
-    that means the patterns above need adjusting for your actual naming."""
-    for name, pattern in DATASET_PATTERNS.items():
-        if pattern.search(filename):
+    for name, matcher in DATASET_PATTERNS.items():
+        if matcher(filename):
             return name
     return "Unknown"
 
