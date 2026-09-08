@@ -170,15 +170,37 @@ def build_label_lookup():
     return lookup
 
 
+import re
+
 def resolve_stem(stem, label_lookup):
-    """Match Script 12's _get_box fallback exactly: if the stem isn't found
-    directly, strip everything before the first underscore and retry.
-    Returns the resolved stem if found, else None."""
+    """Match a test image's filename stem to its label file stem.
+
+    Tier 1: direct match.
+    Tier 2: Script 12's original fallback — strip up to the first
+      underscore. Works when the dataset prefix contains exactly one
+      underscore before the image number (v4, v4-IR, v4-UV, IR, 5sagf).
+    Tier 3: regex extraction of the trailing '<digits>_png.rf.<hash>'
+      pattern, which is present verbatim in both image and label
+      filenames regardless of how many underscores the dataset prefix
+      itself contains. Fixes September/Stir-Sept, whose prefixes
+      ("Soil_Moisture_September-8_", "Soil_Moisture_Stir_September-4_")
+      contain 3-4 underscores, so tier 2's single-split fails for them.
+      ROOT CAUSE CONFIRMED: this was a real bug in Script 12's _get_box
+      fallback, not a missing-annotation problem — the labels exist,
+      they just weren't being matched.
+
+    Returns the resolved stem if found, else None.
+    """
     if stem in label_lookup:
         return stem
     parts = stem.split('_', 1)
     if len(parts) > 1 and parts[1] in label_lookup:
         return parts[1]
+    match = re.search(r'(\d+_png\.rf\.[0-9a-f]+)$', stem)
+    if match:
+        candidate = match.group(1)
+        if candidate in label_lookup:
+            return candidate
     return None
 
 
