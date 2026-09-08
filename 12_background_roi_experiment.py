@@ -26,6 +26,7 @@ import os
 import sys
 import json
 import time
+import re
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -138,12 +139,29 @@ class MaskedDataset(Dataset):
         return len(self.samples)
 
     def _get_box(self, img_path, W, H):
-        """Look up bounding box for this image."""
+        """Look up bounding box for this image.
+
+        Tier 1: direct stem match.
+        Tier 2: strip up to first underscore (works for single-underscore
+          prefixes like v4/v4-IR/v4-UV/IR/5sagf).
+        Tier 3: regex extraction of trailing '<digits>_png.rf.<hash>'
+          pattern — fixes September/Stir-Sept, whose prefixes contain
+          multiple underscores ("Soil_Moisture_September-8_",
+          "Soil_Moisture_Stir_September-4_"), which broke Tier 2 for
+          all 16 of their test images. CONFIRMED via diagnostic: these
+          labels exist on disk and load correctly into label_lookup —
+          they just weren't being matched to their images due to this
+          stem-resolution bug.
+        """
         stem = os.path.splitext(os.path.basename(img_path))[0]
         if stem not in self.label_lookup:
             parts = stem.split('_', 1)
-            if len(parts) > 1:
+            if len(parts) > 1 and parts[1] in self.label_lookup:
                 stem = parts[1]
+            else:
+                match = re.search(r'(\d+_png\.rf\.[0-9a-f]+)$', stem)
+                if match and match.group(1) in self.label_lookup:
+                    stem = match.group(1)
         if stem in self.label_lookup:
             cx, cy, w, h = self.label_lookup[stem]
             x1 = int((cx - w / 2) * W)
