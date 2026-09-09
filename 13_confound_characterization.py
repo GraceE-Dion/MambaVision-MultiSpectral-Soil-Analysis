@@ -658,8 +658,9 @@ def run_ordinal_metrics():
         print(f"    Within-±1 accuracy       : {metrics['within_1_accuracy']*100:.2f}%")
         print(f"    Quadratic weighted kappa : {metrics['quadratic_weighted_kappa']:.3f}")
         if key == "roi":
-            print(f"    (Cross-check: exact accuracy should be close to Script 12's")
-            print(f"     'roi' condition result, 24.53% — this uses the same masking.)")
+            print(f"    (Cross-check: exact accuracy should match Script 12's")
+            print(f"     corrected 'roi' condition result, 17.92% — post stem-fix.")
+            print(f"     Pre-fix reference was 24.53%, now superseded.)")
         print()
 
         out_path = os.path.join(RESULTS_DIR, f"ordinal_metrics_{key}.json")
