@@ -455,7 +455,7 @@ def run_source_probe(epochs=15, lr=1e-4):
 
     shared_label_lookup = build_label_lookup()  # built once, reused across all 3 splits
     train_ds = BackgroundOnlyDataset(os.path.join(DATA_DIR, "train"), shared_label_lookup, transform)
-    val_ds   = BackgroundOnlyDataset(os.path.join(DATA_DIR, "val"), shared_label_lookup, transform)
+    val_ds   = BackgroundOnlyDataset(os.path.join(DATA_DIR, "validation"), shared_label_lookup, transform)
     test_ds  = BackgroundOnlyDataset(os.path.join(DATA_DIR, "test"), shared_label_lookup, transform)
 
     train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
@@ -730,12 +730,12 @@ def run_heldout(held_out_dataset, partial=False, epochs=80, lr=2e-5):
 
     train_ds = HeldOutDataset(os.path.join(DATA_DIR, "train"),
                                exclude_dataset=held_out_dataset, transform=transform)
-    val_ds   = HeldOutDataset(os.path.join(DATA_DIR, "val"),
+    val_ds   = HeldOutDataset(os.path.join(DATA_DIR, "validation"),
                                exclude_dataset=held_out_dataset, transform=transform)
     # Test on the held-out dataset — pooled across train+val+test splits of
     # that source, since it's entirely excluded from training
     test_ds_parts = []
-    for split in ["train", "val", "test"]:
+    for split in ["train", "validation", "test"]:
         split_dir = os.path.join(DATA_DIR, split)
         if os.path.isdir(split_dir):
             test_ds_parts.append(HeldOutDataset(split_dir, include_only_dataset=held_out_dataset,
