@@ -290,8 +290,40 @@ def repair_donor_roi(donor_img, donor_bbox, pad_fraction=0.6, min_pad_px=15):
         candidates.append({"dx": dx, "dy": dy, "sx_min": sx_min, "sy_min": sy_min,
                             "patch": patch, "score": score})
 
+    # TIER 2: the fixed 1.0/1.5/2.0x radii can fail entirely when the
+    # padded region is large or sits near an image edge (found via
+    # pilot-v3 real-data QA -- two composites silently hit the old
+    # fallback_inpaint path and reproduced attempt-2's streaking bug).
+    # Before ever falling back to PDE inpainting, retry with smaller
+    # radii, which are more likely to fit near edges.
+    used_smaller_radii = False
+    if not candidates:
+        used_smaller_radii = True
+        for r in [0.75, 0.5, 0.25]:
+            directions = [(1, 0), (-1, 0), (0, 1), (0, -1),
+                          (1, 1), (1, -1), (-1, 1), (-1, -1)]
+            for dx_sign, dy_sign in directions:
+                dx, dy = int(dx_sign * region_w * r), int(dy_sign * region_h * r)
+                sx_min, sy_min = px_min + dx, py_min + dy
+                sx_max, sy_max = px_max + dx, py_max + dy
+                if sx_min < 0 or sy_min < 0 or sx_max > img_w or sy_max > img_h:
+                    continue
+                overlaps = not (sx_max <= px_min or sx_min >= px_max or
+                                 sy_max <= py_min or sy_min >= py_max)
+                if overlaps:
+                    continue
+                patch = donor_img[sy_min:sy_max, sx_min:sx_max]
+                if patch.shape[0] != region_h or patch.shape[1] != region_w:
+                    continue
+                score = patch_similarity_score(patch, surround_stats)
+                candidates.append({"dx": dx, "dy": dy, "sx_min": sx_min, "sy_min": sy_min,
+                                    "patch": patch, "score": score})
+            if candidates:
+                break
+
     diagnostic = {
         "candidate_count": len(candidates),
+        "used_smaller_radii_tier": used_smaller_radii,
         "pad_x": pad_x, "pad_y": pad_y,
         "region": (px_min, py_min, px_max, py_max),
     }
@@ -299,12 +331,20 @@ def repair_donor_roi(donor_img, donor_bbox, pad_fraction=0.6, min_pad_px=15):
     result = donor_img.copy()
 
     if not candidates:
-        # Fallback -- should be rare on this project's 640x640 images.
-        mask = np.zeros(donor_img.shape[:2], dtype=np.uint8)
-        mask[py_min:py_max, px_min:px_max] = 255
-        result = cv2.inpaint(donor_img, mask, inpaintRadius=7, flags=cv2.INPAINT_TELEA)
-        diagnostic.update({"method": "fallback_inpaint", "selected_score": None,
-                            "selected_source": None})
+        # TIER 3 (last resort, should now be extremely rare): reflection
+        # fill via cv2.copyMakeBorder(BORDER_REFLECT). This still uses
+        # genuine nearby texture (mirrored), NOT PDE boundary-propagation
+        # interpolation -- so it does NOT reproduce attempt-2's streaking
+        # artifact, unlike the old cv2.inpaint() fallback it replaces.
+        strip = 4  # thin strip just outside the region to reflect from
+        top = donor_img[max(0, py_min - strip):py_min, px_min:px_max] if py_min > 0 else None
+        if top is not None and top.shape[0] > 0:
+            reflected = cv2.flip(np.tile(top, (region_h // max(1, top.shape[0]) + 1, 1, 1))[:region_h], 0)
+        else:
+            reflected = np.full((region_h, region_w, 3), surround_stats["mean"], dtype=np.uint8)
+        result[py_min:py_max, px_min:px_max] = reflected
+        diagnostic.update({"method": "reflection_fill_last_resort",
+                            "selected_score": None, "selected_source": None})
         return result, diagnostic
 
     best = min(candidates, key=lambda c: c["score"])
