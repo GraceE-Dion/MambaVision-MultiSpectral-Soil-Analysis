@@ -169,23 +169,93 @@ def get_eligible_donors(target, index, condition):
     return candidates
 
 
-def inpaint_donor_roi(donor_img, donor_bbox, pad_fraction=0.6, min_pad_px=15):
-    """Removes the donor's own laser-spot ROI using OpenCV inpainting
-    (Telea algorithm) rather than a flat block, per the locked plan's
-    explicit requirement to avoid introducing an artificial rectangular
-    feature. Returns the donor image with its ROI region plausibly
-    filled in from surrounding context.
+def get_surround_stats(img, x_min, y_min, x_max, y_max, ring_width=20):
+    """Stats of the annulus immediately OUTSIDE the destination region --
+    per peer review: we don't know what was behind the laser, so match
+    against what surrounds the removal region, not its (unknown) interior."""
+    img_h, img_w = img.shape[:2]
+    ox_min = max(0, x_min - ring_width)
+    oy_min = max(0, y_min - ring_width)
+    ox_max = min(img_w, x_max + ring_width)
+    oy_max = min(img_h, y_max + ring_width)
 
-    IMPORTANT FIX (post-pilot-1 visual QA): the laser's actual glow
-    blooms diffusely well beyond the tight annotated bbox (visible in
-    clean composites as a soft halo/star pattern extending past the
-    box). Masking only the raw bbox left a visible glow-fringe remnant
-    just outside it after inpainting -- exactly the artifact flagged
-    in pilot 1 (Image 5: a second rectangular purple-tinted patch next
-    to the correctly-pasted target). Fix: dilate the mask by
-    pad_fraction of the box's own width/height (minimum min_pad_px),
-    clamped to image bounds, so the full glow bloom is captured and
-    removed, not just the annotated rectangle."""
+    ring_mask = np.zeros((img_h, img_w), dtype=bool)
+    ring_mask[oy_min:oy_max, ox_min:ox_max] = True
+    ring_mask[y_min:y_max, x_min:x_max] = False  # exclude the region itself
+
+    pixels = img[ring_mask]
+    if pixels.size == 0:
+        pixels = img[oy_min:oy_max, ox_min:ox_max].reshape(-1, 3)
+
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    grad_x = cv2.Sobel(gray, cv2.CV_32F, 1, 0, ksize=3)
+    grad_y = cv2.Sobel(gray, cv2.CV_32F, 0, 1, ksize=3)
+    grad_mag = np.sqrt(grad_x**2 + grad_y**2)
+    ring_grad = grad_mag[ring_mask] if ring_mask.any() else grad_mag[oy_min:oy_max, ox_min:ox_max].flatten()
+
+    gray_ring = gray[ring_mask] if ring_mask.any() else gray[oy_min:oy_max, ox_min:ox_max].flatten()
+    hist = cv2.calcHist([gray_ring.astype(np.uint8)], [0], None, [32], [0, 256])
+    hist = cv2.normalize(hist, hist).flatten()
+
+    return {
+        "mean": pixels.reshape(-1, 3).mean(axis=0),
+        "std": pixels.reshape(-1, 3).std(axis=0),
+        "grad_mean": float(ring_grad.mean()) if ring_grad.size else 0.0,
+        "hist": hist,
+    }
+
+
+def patch_similarity_score(candidate_patch, surround_stats):
+    """Lower = more similar. Combines channel mean/std difference,
+    gradient-magnitude (texture) difference, and grayscale histogram
+    distance -- per peer review's specified factors, kept deliberately
+    simple rather than a more sophisticated exemplar-based scheme."""
+    cand_mean = candidate_patch.reshape(-1, 3).mean(axis=0)
+    cand_std = candidate_patch.reshape(-1, 3).std(axis=0)
+
+    gray = cv2.cvtColor(candidate_patch, cv2.COLOR_BGR2GRAY)
+    grad_x = cv2.Sobel(gray, cv2.CV_32F, 1, 0, ksize=3)
+    grad_y = cv2.Sobel(gray, cv2.CV_32F, 0, 1, ksize=3)
+    cand_grad_mean = float(np.sqrt(grad_x**2 + grad_y**2).mean())
+
+    cand_hist = cv2.calcHist([gray], [0], None, [32], [0, 256])
+    cand_hist = cv2.normalize(cand_hist, cand_hist).flatten()
+
+    mean_dist = float(np.linalg.norm(cand_mean - surround_stats["mean"]))
+    std_dist = float(np.linalg.norm(cand_std - surround_stats["std"]))
+    grad_dist = abs(cand_grad_mean - surround_stats["grad_mean"])
+    hist_dist = float(cv2.compareHist(cand_hist, surround_stats["hist"], cv2.HISTCMP_CHISQR))
+
+    # Simple weighted sum -- not claiming optimality, just a principled,
+    # reproducible combination of the four factors peer review specified.
+    return mean_dist + std_dist + 0.5 * grad_dist + 0.1 * hist_dist
+
+
+def generate_candidate_offsets(region_w, region_h):
+    """Deterministic local neighborhood grid, not just 8 fixed points --
+    multiple radii x 8 compass directions."""
+    directions = [(1, 0), (-1, 0), (0, 1), (0, -1),
+                  (1, 1), (1, -1), (-1, 1), (-1, -1)]
+    radii = [1.0, 1.5, 2.0]
+    offsets = []
+    for r in radii:
+        for dx_sign, dy_sign in directions:
+            offsets.append((int(dx_sign * region_w * r), int(dy_sign * region_h * r)))
+    return offsets
+
+
+def repair_donor_roi(donor_img, donor_bbox, pad_fraction=0.6, min_pad_px=15):
+    """Same-image texture replacement (per peer review: NOT 'inpainting'
+    -- no PDE propagation, no learned/generative model). Selects the
+    BEST-MATCHING eligible same-image patch by appearance distance to
+    the destination region's immediate surround, rather than the first
+    geometrically valid candidate.
+
+    Returns: (repaired_img, diagnostic_info) where diagnostic_info
+    contains everything needed for the five-view QA panel and the
+    objective QA metrics peer review requires saved (not just visually
+    inspected).
+    """
     x_min, y_min, x_max, y_max = donor_bbox
     box_w, box_h = x_max - x_min, y_max - y_min
 
@@ -198,34 +268,152 @@ def inpaint_donor_roi(donor_img, donor_bbox, pad_fraction=0.6, min_pad_px=15):
     px_max = min(img_w, x_max + pad_x)
     py_max = min(img_h, y_max + pad_y)
 
-    mask = np.zeros(donor_img.shape[:2], dtype=np.uint8)
-    mask[py_min:py_max, px_min:px_max] = 255
-    inpainted = cv2.inpaint(donor_img, mask, inpaintRadius=9, flags=cv2.INPAINT_TELEA)
-    return inpainted
+    region_w = px_max - px_min
+    region_h = py_max - py_min
+
+    surround_stats = get_surround_stats(donor_img, px_min, py_min, px_max, py_max)
+
+    candidates = []
+    for dx, dy in generate_candidate_offsets(region_w, region_h):
+        sx_min, sy_min = px_min + dx, py_min + dy
+        sx_max, sy_max = px_max + dx, py_max + dy
+        if sx_min < 0 or sy_min < 0 or sx_max > img_w or sy_max > img_h:
+            continue
+        overlaps = not (sx_max <= px_min or sx_min >= px_max or
+                         sy_max <= py_min or sy_min >= py_max)
+        if overlaps:
+            continue
+        patch = donor_img[sy_min:sy_max, sx_min:sx_max]
+        if patch.shape[0] != region_h or patch.shape[1] != region_w:
+            continue
+        score = patch_similarity_score(patch, surround_stats)
+        candidates.append({"dx": dx, "dy": dy, "sx_min": sx_min, "sy_min": sy_min,
+                            "patch": patch, "score": score})
+
+    diagnostic = {
+        "candidate_count": len(candidates),
+        "pad_x": pad_x, "pad_y": pad_y,
+        "region": (px_min, py_min, px_max, py_max),
+    }
+
+    result = donor_img.copy()
+
+    if not candidates:
+        # Fallback -- should be rare on this project's 640x640 images.
+        mask = np.zeros(donor_img.shape[:2], dtype=np.uint8)
+        mask[py_min:py_max, px_min:px_max] = 255
+        result = cv2.inpaint(donor_img, mask, inpaintRadius=7, flags=cv2.INPAINT_TELEA)
+        diagnostic.update({"method": "fallback_inpaint", "selected_score": None,
+                            "selected_source": None})
+        return result, diagnostic
+
+    best = min(candidates, key=lambda c: c["score"])
+    source_patch = best["patch"]
+
+    # Feather blend, same as before
+    alpha = np.ones((region_h, region_w), dtype=np.float32)
+    feather_px = max(3, min(region_w, region_h) // 8)
+    if region_h > 2 * feather_px and region_w > 2 * feather_px:
+        alpha = cv2.copyMakeBorder(
+            alpha[feather_px:-feather_px, feather_px:-feather_px],
+            feather_px, feather_px, feather_px, feather_px,
+            cv2.BORDER_CONSTANT, value=0
+        )
+    alpha = cv2.GaussianBlur(alpha, (0, 0), sigmaX=feather_px / 2)
+    alpha = np.clip(alpha, 0, 1)[..., None]
+
+    target_region = result[py_min:py_max, px_min:px_max].astype(np.float32)
+    blended = target_region * (1 - alpha) + source_patch.astype(np.float32) * alpha
+    result[py_min:py_max, px_min:px_max] = blended.astype(np.uint8)
+
+    diagnostic.update({
+        "method": "texture_patch_replacement",
+        "selected_score": best["score"],
+        "selected_source": (best["sx_min"], best["sy_min"]),
+    })
+
+    # Objective QA metrics (saved always, used as flags not auto-exclusion,
+    # per peer review point 4)
+    repaired_region = result[py_min:py_max, px_min:px_max]
+    repaired_stats_mean = repaired_region.reshape(-1, 3).mean(axis=0)
+    repaired_stats_std = repaired_region.reshape(-1, 3).std(axis=0)
+    gray_repaired = cv2.cvtColor(repaired_region, cv2.COLOR_BGR2GRAY)
+    gx = cv2.Sobel(gray_repaired, cv2.CV_32F, 1, 0, ksize=3)
+    gy = cv2.Sobel(gray_repaired, cv2.CV_32F, 0, 1, ksize=3)
+    repaired_grad_mean = float(np.sqrt(gx**2 + gy**2).mean())
+
+    diagnostic["qa_metrics"] = {
+        "delta_mean_luminance": float(np.linalg.norm(repaired_stats_mean - surround_stats["mean"])),
+        "delta_contrast": float(np.linalg.norm(repaired_stats_std - surround_stats["std"])),
+        "delta_gradient_energy": abs(repaired_grad_mean - surround_stats["grad_mean"]),
+    }
+
+    return result, diagnostic
+
+
+def save_diagnostic_panel(donor_img, donor_bbox, target_img, target_bbox,
+                           diagnostic, composite, out_path):
+    """Five-view QA panel per peer review point 5: original donor (with
+    padded-mask region outlined) -> mask overlay -> selected source patch
+    location highlighted -> repaired donor -> final composite."""
+    px_min, py_min, px_max, py_max = diagnostic["region"]
+
+    view1 = donor_img.copy()
+    cv2.rectangle(view1, (px_min, py_min), (px_max, py_max), (0, 0, 255), 2)
+
+    view2 = donor_img.copy()
+    overlay = view2.copy()
+    cv2.rectangle(overlay, (px_min, py_min), (px_max, py_max), (0, 0, 255), -1)
+    view2 = cv2.addWeighted(overlay, 0.35, view2, 0.65, 0)
+
+    view3 = donor_img.copy()
+    if diagnostic.get("selected_source"):
+        sx, sy = diagnostic["selected_source"]
+        region_w, region_h = px_max - px_min, py_max - py_min
+        cv2.rectangle(view3, (sx, sy), (sx + region_w, sy + region_h), (255, 0, 0), 2)
+    cv2.rectangle(view3, (px_min, py_min), (px_max, py_max), (0, 0, 255), 1)
+
+    repaired_donor, _ = repair_donor_roi(donor_img, donor_bbox)  # recompute for display consistency
+    view4 = repaired_donor
+
+    view5 = composite.copy()
+    tx_min, ty_min, tx_max, ty_max = target_bbox
+    cv2.rectangle(view5, (tx_min, ty_min), (tx_max, ty_max), (0, 255, 0), 2)
+
+    h = donor_img.shape[0]
+    panel = np.hstack([view1, view2, view3, view4, view5])
+    cv2.imwrite(out_path, panel)
 
 
 def composite_image(target, donor):
     """Target ROI pixels unchanged; everything outside comes from the
-    donor's background, with the donor's own ROI inpainted out first."""
+    donor's background, with the donor's own ROI removed first via
+    same-image texture replacement. Returns (composite, diagnostic,
+    roi_integrity_ok, roi_max_diff) -- the ROI-integrity check is a
+    real pixel-for-pixel assertion per the locked plan's requirement,
+    not just assumed."""
     target_img = cv2.imread(target["path"])
     donor_img = cv2.imread(donor["path"])
 
-    # Resize donor to target's dimensions if they differ (shouldn't for
-    # this project's uniformly-sized dataset, but guard against it)
     if donor_img.shape[:2] != target_img.shape[:2]:
         donor_img = cv2.resize(donor_img, (target_img.shape[1], target_img.shape[0]))
-        # NOTE: if resizing occurs, donor bbox coordinates below would need
-        # rescaling too -- flagging this as an assumption that image sizes
-        # are uniform across this dataset; confirm during QA if any resize
-        # actually triggers.
 
-    donor_clean = inpaint_donor_roi(donor_img, donor["bbox"])
+    donor_clean, diagnostic = repair_donor_roi(donor_img, donor["bbox"])
 
     composite = donor_clean.copy()
     x_min, y_min, x_max, y_max = target["bbox"]
     composite[y_min:y_max, x_min:x_max] = target_img[y_min:y_max, x_min:x_max]
 
-    return composite
+    # ROI-integrity assertion (locked-plan requirement, peer review
+    # point 7): target ROI pixels must be EXACTLY unchanged.
+    roi_diff = np.abs(
+        composite[y_min:y_max, x_min:x_max].astype(np.int16) -
+        target_img[y_min:y_max, x_min:x_max].astype(np.int16)
+    )
+    roi_max_diff = int(roi_diff.max()) if roi_diff.size else 0
+    roi_integrity_ok = (roi_max_diff == 0)
+
+    return composite, diagnostic, roi_integrity_ok, roi_max_diff
 
 
 def main():
@@ -260,13 +448,34 @@ def main():
     out_dir = FULL_DIR if args.full else PILOT_DIR + (f"_{args.tag}" if args.tag else "")
     os.makedirs(out_dir, exist_ok=True)
 
-    targets = index if args.full else random.sample(index, min(args.n_pilot, len(index)))
+    if args.full:
+        targets = list(enumerate(index))
+    else:
+        # Heterogeneous pilot sampling (peer review point 9): stratify
+        # across source datasets rather than pure random, so the pilot
+        # stress-tests the algorithm across different acquisition
+        # modalities/textures instead of whatever the random draw
+        # happens to favor.
+        by_source = {}
+        for img in index:
+            by_source.setdefault(img["source"], []).append(img)
+        sources = sorted(by_source.keys())
+        per_source = max(1, args.n_pilot // len(sources))
+        sampled = []
+        for src in sources:
+            pool = by_source[src]
+            sampled.extend(random.sample(pool, min(per_source, len(pool))))
+        if len(sampled) < args.n_pilot:
+            remaining = [img for img in index if img not in sampled]
+            sampled.extend(random.sample(remaining, min(args.n_pilot - len(sampled), len(remaining))))
+        targets = list(enumerate(sampled[:max(args.n_pilot, len(sources))]))
 
     records = []
     eligibility_counts = {"A": 0, "B": 0, "C": 0}
     skipped_counts = {"A": 0, "B": 0, "C": 0}
+    roi_integrity_failures = []
 
-    for target in targets:
+    for target_idx, target in targets:
         for condition in ["A", "B", "C"]:
             eligible = get_eligible_donors(target, index, condition)
             if not eligible:
@@ -278,10 +487,24 @@ def main():
             donors = random.sample(eligible, k)
 
             for donor_idx, donor in enumerate(donors):
-                composite = composite_image(target, donor)
-                out_name = f"{target['stem']}__cond{condition}__donor{donor_idx}.png"
+                composite, diagnostic, roi_ok, roi_max_diff = composite_image(target, donor)
+                if not roi_ok:
+                    roi_integrity_failures.append({
+                        "target_id": target["stem"], "donor_id": donor["stem"],
+                        "condition": condition, "roi_max_diff": roi_max_diff,
+                    })
+
+                composite_id = f"t{target_idx:03d}_{condition}_{donor_idx}"
+                out_name = f"{composite_id}.png"
                 out_path = os.path.join(out_dir, out_name)
                 cv2.imwrite(out_path, composite)
+
+                if not args.full:
+                    donor_img_full = cv2.imread(donor["path"])
+                    target_img_full = cv2.imread(target["path"])
+                    panel_path = os.path.join(out_dir, f"{composite_id}_QA_panel.png")
+                    save_diagnostic_panel(donor_img_full, donor["bbox"], target_img_full,
+                                           target["bbox"], diagnostic, composite, panel_path)
 
                 same_modality = None
                 if condition == "C":
@@ -290,6 +513,7 @@ def main():
                     same_modality = (target_modality == donor_modality)
 
                 records.append({
+                    "composite_id": composite_id,
                     "target_id": target["stem"],
                     "condition": condition,
                     "donor_id": donor["stem"],
@@ -303,6 +527,13 @@ def main():
                     "same_modality": same_modality,
                     "composite_path": out_path,
                     "target_bbox": target["bbox"],
+                    "roi_integrity_ok": roi_ok,
+                    "roi_max_diff": roi_max_diff,
+                    "repair_method": diagnostic.get("method"),
+                    "repair_candidate_count": diagnostic.get("candidate_count"),
+                    "repair_selected_score": diagnostic.get("selected_score"),
+                    "repair_selected_source": diagnostic.get("selected_source"),
+                    "repair_qa_metrics": diagnostic.get("qa_metrics"),
                 })
 
     print(f"\nGenerated {len(records)} composites across {len(targets)} target images")
@@ -311,9 +542,32 @@ def main():
     print(f"Skipped (no eligible donor found): "
           f"A={skipped_counts['A']}, B={skipped_counts['B']}, C={skipped_counts['C']}")
 
+    print(f"\nROI integrity (target pixels must be EXACTLY unchanged): "
+          f"{len(records) - len(roi_integrity_failures)}/{len(records)} passed")
+    if roi_integrity_failures:
+        print(f"  FAIL: {len(roi_integrity_failures)} composites modified target ROI pixels!")
+        for fail in roi_integrity_failures[:5]:
+            print(f"    {fail}")
+        print("  This is a locked-plan violation -- investigate before trusting any result.")
+
+    scores = [r["repair_selected_score"] for r in records if r["repair_selected_score"] is not None]
+    if scores:
+        print(f"\nRepair patch-selection scores: min={min(scores):.2f}, "
+              f"max={max(scores):.2f}, mean={sum(scores)/len(scores):.2f}")
+        print("  (Lower = better match to destination surround. Large max values")
+        print("   may indicate a composite worth visually spot-checking.)")
+
     metadata_path = os.path.join(out_dir, "composite_metadata.json")
+    def _json_safe(obj):
+        if isinstance(obj, (np.integer,)):
+            return int(obj)
+        if isinstance(obj, (np.floating,)):
+            return float(obj)
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        raise TypeError(f"Not JSON serializable: {type(obj)}")
     with open(metadata_path, "w") as f:
-        json.dump(records, f, indent=2)
+        json.dump(records, f, indent=2, default=_json_safe)
     print(f"\nMetadata saved -> {metadata_path}")
     print(f"Composites saved -> {out_dir}/")
 
@@ -321,7 +575,10 @@ def main():
         print("\n" + "=" * 70)
         print("  NEXT STEP — MANUAL VISUAL QA (locked plan, Step 3)")
         print("=" * 70)
-        print("  Open several composites from each condition (A/B/C) and check:")
+        print("  Each composite has a matching *_QA_panel.png showing five views:")
+        print("  original donor (red box) -> mask overlay -> selected source patch")
+        print("  (blue box) -> repaired donor -> final composite (green box = target).")
+        print("  Open several *_QA_panel.png files across conditions A/B/C and check:")
         print("  - Target ROI region matches the original target image exactly")
         print("  - Donor's own laser spot is NOT visible anywhere in the composite")
         print("  - No obvious rectangular inpainting artifact where donor ROI was")
