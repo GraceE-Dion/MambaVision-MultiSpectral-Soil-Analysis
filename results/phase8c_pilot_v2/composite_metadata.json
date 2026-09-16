@@ -1,0 +1,2562 @@
+[
+  {
+    "target_id": "Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_64_png.rf.03e80f97cc70ce037cd06da1d6c04c89",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d__condA__donor0.png",
+    "target_bbox": [
+      233,
+      210,
+      289,
+      353
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_67_png.rf.297b72219e217c4458e2f361e8f90cf0",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d__condA__donor1.png",
+    "target_bbox": [
+      233,
+      210,
+      289,
+      353
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d__condA__donor2.png",
+    "target_bbox": [
+      233,
+      210,
+      289,
+      353
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_55_png.rf.87b412b8d90b37d6645e397e36d5e042",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 63,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d__condB__donor0.png",
+    "target_bbox": [
+      233,
+      210,
+      289,
+      353
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_15_png.rf.2758f5b6e3522469c5febf104513b860",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 63,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 7,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d__condB__donor1.png",
+    "target_bbox": [
+      233,
+      210,
+      289,
+      353
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_43_png.rf.59acb16a45e92b59999f98877c1966ce",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 63,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d__condB__donor2.png",
+    "target_bbox": [
+      233,
+      210,
+      289,
+      353
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_9_png.rf.39466d9144ca64ede4b5b8be799bee59",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4-UV",
+    "donor_class": 0,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d__condC__donor0.png",
+    "target_bbox": [
+      233,
+      210,
+      289,
+      353
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_58_47_Pro_jpg.rf.ac8c7906ad8eca3084600080c6129dd2",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "IR",
+    "donor_class": 2,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d__condC__donor1.png",
+    "target_bbox": [
+      233,
+      210,
+      289,
+      353
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d",
+    "condition": "C",
+    "donor_id": "Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "Stir-Sept",
+    "donor_class": 1,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d__condC__donor2.png",
+    "target_bbox": [
+      233,
+      210,
+      289,
+      353
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24",
+    "condition": "A",
+    "donor_id": "Soil_Moisture_Stir_September-4_18_png.rf.9b6399e2f0b97753daaf2d3fb51b315c",
+    "donor_index": 0,
+    "donor_count_used": 1,
+    "donor_count_eligible": 1,
+    "target_source": "Stir-Sept",
+    "target_class": 8,
+    "donor_source": "Stir-Sept",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24__condA__donor0.png",
+    "target_bbox": [
+      264,
+      293,
+      355,
+      506
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_29_png.rf.2c7feb200240ad92cafc5c8b21b4f212",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "Stir-Sept",
+    "target_class": 8,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24__condB__donor0.png",
+    "target_bbox": [
+      264,
+      293,
+      355,
+      506
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_1_png.rf.51e870a03aa32f891e105180781821e1",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "Stir-Sept",
+    "target_class": 8,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24__condB__donor1.png",
+    "target_bbox": [
+      264,
+      293,
+      355,
+      506
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_5_png.rf.b9db5a121d051f7482db79e7028b1b5f",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "Stir-Sept",
+    "target_class": 8,
+    "donor_source": "Stir-Sept",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24__condB__donor2.png",
+    "target_bbox": [
+      264,
+      293,
+      355,
+      506
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24",
+    "condition": "C",
+    "donor_id": "Soil_Moisture_September-8_27_png.rf.6706e9f0bdecb216bdb6bce51affe718",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 179,
+    "target_source": "Stir-Sept",
+    "target_class": 8,
+    "donor_source": "September",
+    "donor_class": 10,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24__condC__donor0.png",
+    "target_bbox": [
+      264,
+      293,
+      355,
+      506
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_61_png.rf.804d9ddc0f6f6e5fdaf5e2b0c5224585",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 179,
+    "target_source": "Stir-Sept",
+    "target_class": 8,
+    "donor_source": "v4",
+    "donor_class": 2,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24__condC__donor1.png",
+    "target_bbox": [
+      264,
+      293,
+      355,
+      506
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 179,
+    "target_source": "Stir-Sept",
+    "target_class": 8,
+    "donor_source": "v4-IR",
+    "donor_class": 9,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24__condC__donor2.png",
+    "target_bbox": [
+      264,
+      293,
+      355,
+      506
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_87_png.rf.65b34d43758f026fc06b0808fe174255",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 9,
+    "target_source": "v4",
+    "target_class": 5,
+    "donor_source": "v4",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609__condA__donor0.png",
+    "target_bbox": [
+      286,
+      297,
+      361,
+      426
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_109_png.rf.d3d906819d2d1c1e9c538e093f2f3e17",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 9,
+    "target_source": "v4",
+    "target_class": 5,
+    "donor_source": "v4",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609__condA__donor1.png",
+    "target_bbox": [
+      286,
+      297,
+      361,
+      426
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_110_png.rf.21b7f49eaebb4e41bf2b506033c5caf6",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 9,
+    "target_source": "v4",
+    "target_class": 5,
+    "donor_source": "v4",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609__condA__donor2.png",
+    "target_bbox": [
+      286,
+      297,
+      361,
+      426
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_39_png.rf.25f689640e049e12bf856bc3923ab477",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 60,
+    "target_source": "v4",
+    "target_class": 5,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609__condB__donor0.png",
+    "target_bbox": [
+      286,
+      297,
+      361,
+      426
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 60,
+    "target_source": "v4",
+    "target_class": 5,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609__condB__donor1.png",
+    "target_bbox": [
+      286,
+      297,
+      361,
+      426
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_53_png.rf.b095b63dd0f682907d37edab0c42c4e7",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 60,
+    "target_source": "v4",
+    "target_class": 5,
+    "donor_source": "v4",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609__condB__donor2.png",
+    "target_bbox": [
+      286,
+      297,
+      361,
+      426
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_63_png.rf.e2ee0639bd26acf8048a60a774997bcd",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 114,
+    "target_source": "v4",
+    "target_class": 5,
+    "donor_source": "v4-UV",
+    "donor_class": 10,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609__condC__donor0.png",
+    "target_bbox": [
+      286,
+      297,
+      361,
+      426
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_58_19_Pro_jpg.rf.c1a6b165317b0308fd543433f2b92490",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 114,
+    "target_source": "v4",
+    "target_class": 5,
+    "donor_source": "IR",
+    "donor_class": 2,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609__condC__donor1.png",
+    "target_bbox": [
+      286,
+      297,
+      361,
+      426
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_28_png.rf.9b25969fc1f2e246dcc24a4f50d6c386",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 114,
+    "target_source": "v4",
+    "target_class": 5,
+    "donor_source": "v4-UV",
+    "donor_class": 1,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_88_png.rf.24de1269e30320b96704f1822aa03609__condC__donor2.png",
+    "target_bbox": [
+      286,
+      297,
+      361,
+      426
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_00_14_Pro_jpg.rf.7dea9efa2855ca4e27f33072e9756b84",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 3,
+    "target_source": "5sagf",
+    "target_class": 2,
+    "donor_source": "5sagf",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641__condA__donor0.png",
+    "target_bbox": [
+      280,
+      290,
+      335,
+      409
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_17_47_Pro_jpg.rf.2d449c9205ff16b967fe13703eb2796e",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 3,
+    "target_source": "5sagf",
+    "target_class": 2,
+    "donor_source": "5sagf",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641__condA__donor1.png",
+    "target_bbox": [
+      280,
+      290,
+      335,
+      409
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_00_05_Pro_jpg.rf.6efe643aca4c6363a804c607b475a1f3",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 3,
+    "target_source": "5sagf",
+    "target_class": 2,
+    "donor_source": "5sagf",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641__condA__donor2.png",
+    "target_bbox": [
+      280,
+      290,
+      335,
+      409
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_14_41_10_Pro_jpg.rf.b7fa175238a1c9981b440a5f25a050c3",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 16,
+    "target_source": "5sagf",
+    "target_class": 2,
+    "donor_source": "5sagf",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641__condB__donor0.png",
+    "target_bbox": [
+      280,
+      290,
+      335,
+      409
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_40_15_Pro_jpg.rf.f31d8d6d58679e39a5779081775db871",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 16,
+    "target_source": "5sagf",
+    "target_class": 2,
+    "donor_source": "5sagf",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641__condB__donor1.png",
+    "target_bbox": [
+      280,
+      290,
+      335,
+      409
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_39_59_Pro_jpg.rf.9eee5f528b1ac07f8159653657575c05",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 16,
+    "target_source": "5sagf",
+    "target_class": 2,
+    "donor_source": "5sagf",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641__condB__donor2.png",
+    "target_bbox": [
+      280,
+      290,
+      335,
+      409
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_38_25_Pro_jpg.rf.bf3cb0c55d239d79bc1c7608e10e2092",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 170,
+    "target_source": "5sagf",
+    "target_class": 2,
+    "donor_source": "IR",
+    "donor_class": 8,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641__condC__donor0.png",
+    "target_bbox": [
+      280,
+      290,
+      335,
+      409
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_15_png.rf.2758f5b6e3522469c5febf104513b860",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 170,
+    "target_source": "5sagf",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 7,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641__condC__donor1.png",
+    "target_bbox": [
+      280,
+      290,
+      335,
+      409
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_53_png.rf.4b4bacbe6932b9925bf77baa91cedb0a",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 170,
+    "target_source": "5sagf",
+    "target_class": 2,
+    "donor_source": "v4-IR",
+    "donor_class": 6,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641__condC__donor2.png",
+    "target_bbox": [
+      280,
+      290,
+      335,
+      409
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_41_png.rf.c5688f32b2fb6a41af7fcd00eda26a27",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 14,
+    "target_source": "v4",
+    "target_class": 4,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4__condA__donor0.png",
+    "target_bbox": [
+      265,
+      190,
+      329,
+      391
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_5_png.rf.2899cace741e83399949c8da4b2a9504",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 14,
+    "target_source": "v4",
+    "target_class": 4,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4__condA__donor1.png",
+    "target_bbox": [
+      265,
+      190,
+      329,
+      391
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_39_png.rf.25f689640e049e12bf856bc3923ab477",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 14,
+    "target_source": "v4",
+    "target_class": 4,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4__condA__donor2.png",
+    "target_bbox": [
+      265,
+      190,
+      329,
+      391
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_64_png.rf.03e80f97cc70ce037cd06da1d6c04c89",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 55,
+    "target_source": "v4",
+    "target_class": 4,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4__condB__donor0.png",
+    "target_bbox": [
+      265,
+      190,
+      329,
+      391
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_103_png.rf.9dd52d8ef921626b7310fe3e45f269e7",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 55,
+    "target_source": "v4",
+    "target_class": 4,
+    "donor_source": "v4",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4__condB__donor1.png",
+    "target_bbox": [
+      265,
+      190,
+      329,
+      391
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_63_png.rf.f41f59830c6c13fc212e7edfa5fea1e6",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 55,
+    "target_source": "v4",
+    "target_class": 4,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4__condB__donor2.png",
+    "target_bbox": [
+      265,
+      190,
+      329,
+      391
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_15_png.rf.6512222b19ee1a3f85ed0d875b34d840",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 4,
+    "donor_source": "v4-UV",
+    "donor_class": 7,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4__condC__donor0.png",
+    "target_bbox": [
+      265,
+      190,
+      329,
+      391
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4",
+    "condition": "C",
+    "donor_id": "Soil_Moisture_September-8_9_png.rf.2db72e84f99b05fd67300a55be5270be",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 4,
+    "donor_source": "September",
+    "donor_class": 10,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4__condC__donor1.png",
+    "target_bbox": [
+      265,
+      190,
+      329,
+      391
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4",
+    "condition": "C",
+    "donor_id": "Soil_Moisture_Stir_September-4_28_png.rf.be5c32e6a07946339efdfea6afe7b469",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 4,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4__condC__donor2.png",
+    "target_bbox": [
+      265,
+      190,
+      329,
+      391
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_47_png.rf.2112976d08765050658932d78510f85c",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27__condA__donor0.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_46_png.rf.2f4a12e0d278661fdec915151e5858dd",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27__condA__donor1.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_55_png.rf.7ea705a0973ea46938ec31b5e77c229f",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27__condA__donor2.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_34_png.rf.7986086ade26a7ce8ab49b5ead35a71c",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 24,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27__condB__donor0.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 24,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27__condB__donor1.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_15_png.rf.4d036fadea1d293700c5b45730d54236",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 24,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27__condB__donor2.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_16_png.rf.05fb9d03d45ebaad000fa315cdb5f36b",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 167,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27__condC__donor0.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27",
+    "condition": "C",
+    "donor_id": "Soil_Moisture_September-8_13_png.rf.18cef01cb85752f61838bb7088c7f0f8",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 167,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "September",
+    "donor_class": 5,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27__condC__donor1.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_23_png.rf.703fe7e8f2bbd13acdd5b56b69332f0d",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 167,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4",
+    "donor_class": 7,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27__condC__donor2.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_2_png.rf.58f4a69cca876c4e2b9db262f026739f",
+    "donor_index": 0,
+    "donor_count_used": 2,
+    "donor_count_eligible": 2,
+    "target_source": "v4-IR",
+    "target_class": 2,
+    "donor_source": "v4-IR",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938__condA__donor0.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_5_png.rf.c2dfebca2b4e852ca53c5977a64df841",
+    "donor_index": 1,
+    "donor_count_used": 2,
+    "donor_count_eligible": 2,
+    "target_source": "v4-IR",
+    "target_class": 2,
+    "donor_source": "v4-IR",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938__condA__donor1.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 27,
+    "target_source": "v4-IR",
+    "target_class": 2,
+    "donor_source": "v4-IR",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938__condB__donor0.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 27,
+    "target_source": "v4-IR",
+    "target_class": 2,
+    "donor_source": "v4-IR",
+    "donor_class": 9,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938__condB__donor1.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_43_png.rf.1390d1849b95c4bd54cbd617f085098b",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 27,
+    "target_source": "v4-IR",
+    "target_class": 2,
+    "donor_source": "v4-IR",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938__condB__donor2.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_08_Pro_jpg.rf.13582124a184b0892a9a16543ba06ad0",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 159,
+    "target_source": "v4-IR",
+    "target_class": 2,
+    "donor_source": "IR",
+    "donor_class": 1,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938__condC__donor0.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_38_39_Pro_jpg.rf.5736bd3263c732bbe05ea3a9a7f7a4ac",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 159,
+    "target_source": "v4-IR",
+    "target_class": 2,
+    "donor_source": "IR",
+    "donor_class": 8,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938__condC__donor1.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_5_png.rf.3ae37f4f578fc58c636457722064667f",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 159,
+    "target_source": "v4-IR",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_3_png.rf.010e7b0ce461dc3e7aadec65f36ff938__condC__donor2.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36__condA__donor0.png",
+    "target_bbox": [
+      240,
+      187,
+      288,
+      333
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_68_png.rf.b93a48c4db244df103aba537b7106d14",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36__condA__donor1.png",
+    "target_bbox": [
+      240,
+      187,
+      288,
+      333
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_63_png.rf.f41f59830c6c13fc212e7edfa5fea1e6",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36__condA__donor2.png",
+    "target_bbox": [
+      240,
+      187,
+      288,
+      333
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_24_png.rf.cbf78469fc4952a890898cf7d45fca31",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 63,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 0,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36__condB__donor0.png",
+    "target_bbox": [
+      240,
+      187,
+      288,
+      333
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_39_png.rf.25f689640e049e12bf856bc3923ab477",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 63,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36__condB__donor1.png",
+    "target_bbox": [
+      240,
+      187,
+      288,
+      333
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_24_png.rf.373fa379e9b52f67af6a5475f42e4614",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 63,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36__condB__donor2.png",
+    "target_bbox": [
+      240,
+      187,
+      288,
+      333
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_43_png.rf.2d8020dbeffcb8eb7deec9d48b34457b",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4-UV",
+    "donor_class": 8,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36__condC__donor0.png",
+    "target_bbox": [
+      240,
+      187,
+      288,
+      333
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_40_13_Pro_jpg.rf.917f27c10c18d222751b2a847e2e884f",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "5sagf",
+    "donor_class": 5,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36__condC__donor1.png",
+    "target_bbox": [
+      240,
+      187,
+      288,
+      333
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_14_png.rf.19be35c2a1548ae8ca9924f66e98c2e4",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4-UV",
+    "donor_class": 0,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_79_png.rf.52f68594e5617b645ea232a102a78e36__condC__donor2.png",
+    "target_bbox": [
+      240,
+      187,
+      288,
+      333
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf",
+    "condition": "A",
+    "donor_id": "Soil_Moisture_Stir_September-4_6_png.rf.9ea4f2c25308bd7cba3785e6c0cbbd76",
+    "donor_index": 0,
+    "donor_count_used": 1,
+    "donor_count_eligible": 1,
+    "target_source": "Stir-Sept",
+    "target_class": 1,
+    "donor_source": "Stir-Sept",
+    "donor_class": 1,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf__condA__donor0.png",
+    "target_bbox": [
+      285,
+      353,
+      316,
+      401
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_4_png.rf.020041899fc4e7041a276f62d036c1ff",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "Stir-Sept",
+    "target_class": 1,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf__condB__donor0.png",
+    "target_bbox": [
+      285,
+      353,
+      316,
+      401
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "Stir-Sept",
+    "target_class": 1,
+    "donor_source": "Stir-Sept",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf__condB__donor1.png",
+    "target_bbox": [
+      285,
+      353,
+      316,
+      401
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_24_png.rf.baae9568fadbc1c677ef12cada3621da",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "Stir-Sept",
+    "target_class": 1,
+    "donor_source": "Stir-Sept",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf__condB__donor2.png",
+    "target_bbox": [
+      285,
+      353,
+      316,
+      401
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_48_png.rf.d67a3447ac42bcdaeb67fbb7733c4a27",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 168,
+    "target_source": "Stir-Sept",
+    "target_class": 1,
+    "donor_source": "v4-IR",
+    "donor_class": 6,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf__condC__donor0.png",
+    "target_bbox": [
+      285,
+      353,
+      316,
+      401
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_15_37_59_Pro_jpg.rf.35dee695daf204260d906a8084e70099",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 168,
+    "target_source": "Stir-Sept",
+    "target_class": 1,
+    "donor_source": "IR",
+    "donor_class": 5,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf__condC__donor1.png",
+    "target_bbox": [
+      285,
+      353,
+      316,
+      401
+    ]
+  },
+  {
+    "target_id": "Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_85_png.rf.e7c6d0aa786691f959e55a0e5e6754ad",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 168,
+    "target_source": "Stir-Sept",
+    "target_class": 1,
+    "donor_source": "v4-UV",
+    "donor_class": 3,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf__condC__donor2.png",
+    "target_bbox": [
+      285,
+      353,
+      316,
+      401
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_61_png.rf.804d9ddc0f6f6e5fdaf5e2b0c5224585",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c__condA__donor0.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c__condA__donor1.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_2_png.rf.6903fd2923d4b95b9d57364e46760ce1",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c__condA__donor2.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_43_png.rf.59acb16a45e92b59999f98877c1966ce",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 65,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c__condB__donor0.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_2_png.rf.1510216eb396bdaeb53ebbc710dadf7e",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 65,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c__condB__donor1.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_30_png.rf.41d49c57b816b80b78ce446911c1ac35",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 65,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c__condB__donor2.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c",
+    "condition": "C",
+    "donor_id": "Soil_Moisture_September-8_2_png.rf.9c927bb42933094f174bff07c77502de",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 121,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "September",
+    "donor_class": 8,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c__condC__donor0.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_08_Pro_jpg.rf.13582124a184b0892a9a16543ba06ad0",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 121,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "IR",
+    "donor_class": 1,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c__condC__donor1.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_14_50_38_Pro_jpg.rf.599209ffbc5217be78ed495537c9cf2c",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 121,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "5sagf",
+    "donor_class": 1,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c__condC__donor2.png",
+    "target_bbox": [
+      237,
+      161,
+      297,
+      336
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_5_png.rf.eff8d29b77f403470554f78def423a05",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "v4-IR",
+    "target_class": 4,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284__condA__donor0.png",
+    "target_bbox": [
+      266,
+      206,
+      328,
+      390
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_31_png.rf.7fec5207bc2145e89d880cbf66e06033",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "v4-IR",
+    "target_class": 4,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284__condA__donor1.png",
+    "target_bbox": [
+      266,
+      206,
+      328,
+      390
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_41_png.rf.d07bd2b464efa32379f5542d3b1021bb",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "v4-IR",
+    "target_class": 4,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284__condA__donor2.png",
+    "target_bbox": [
+      266,
+      206,
+      328,
+      390
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_25_png.rf.fccde6b533ea4cd3458841a8cd7491aa",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 19,
+    "target_source": "v4-IR",
+    "target_class": 4,
+    "donor_source": "v4-IR",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284__condB__donor0.png",
+    "target_bbox": [
+      266,
+      206,
+      328,
+      390
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_79_png.rf.5039e0027ac0935693897cdccbab49fa",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 19,
+    "target_source": "v4-IR",
+    "target_class": 4,
+    "donor_source": "v4-IR",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284__condB__donor1.png",
+    "target_bbox": [
+      266,
+      206,
+      328,
+      390
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_33_png.rf.8d952e6789623b3896213ec1bf19532b",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 19,
+    "target_source": "v4-IR",
+    "target_class": 4,
+    "donor_source": "v4-IR",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284__condB__donor2.png",
+    "target_bbox": [
+      266,
+      206,
+      328,
+      390
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_16_Pro_jpg.rf.4a6a5bfb7b7cad74fda93291c219163b",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 154,
+    "target_source": "v4-IR",
+    "target_class": 4,
+    "donor_source": "IR",
+    "donor_class": 3,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284__condC__donor0.png",
+    "target_bbox": [
+      266,
+      206,
+      328,
+      390
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_00_14_Pro_jpg.rf.7dea9efa2855ca4e27f33072e9756b84",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 154,
+    "target_source": "v4-IR",
+    "target_class": 4,
+    "donor_source": "5sagf",
+    "donor_class": 2,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284__condC__donor1.png",
+    "target_bbox": [
+      266,
+      206,
+      328,
+      390
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_25_Pro_jpg.rf.2745faae8dcaa5cfa1900648c698512a",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 154,
+    "target_source": "v4-IR",
+    "target_class": 4,
+    "donor_source": "IR",
+    "donor_class": 8,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284__condC__donor2.png",
+    "target_bbox": [
+      266,
+      206,
+      328,
+      390
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_61_png.rf.804d9ddc0f6f6e5fdaf5e2b0c5224585",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885__condA__donor0.png",
+    "target_bbox": [
+      239,
+      168,
+      299,
+      321
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_60_png.rf.2946a3e8e8a1e2b55c6790c86235fdff",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885__condA__donor1.png",
+    "target_bbox": [
+      239,
+      168,
+      299,
+      321
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_3_png.rf.4255bf61df62967517da6cacdab6279c",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885__condA__donor2.png",
+    "target_bbox": [
+      239,
+      168,
+      299,
+      321
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_34_png.rf.9dd182d5bdf3b9f9697a715b6a3c193b",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 65,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885__condB__donor0.png",
+    "target_bbox": [
+      239,
+      168,
+      299,
+      321
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_33_png.rf.6741dd28b12481a961c39551aea12354",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 65,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885__condB__donor1.png",
+    "target_bbox": [
+      239,
+      168,
+      299,
+      321
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_70_png.rf.aa565bbb16925656831bbc079018e75d",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 65,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885__condB__donor2.png",
+    "target_bbox": [
+      239,
+      168,
+      299,
+      321
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_24_png.rf.688b89626f15a05ffdfe6b28fa999a38",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 121,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4-UV",
+    "donor_class": 0,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885__condC__donor0.png",
+    "target_bbox": [
+      239,
+      168,
+      299,
+      321
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_15_png.rf.4d036fadea1d293700c5b45730d54236",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 121,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885__condC__donor1.png",
+    "target_bbox": [
+      239,
+      168,
+      299,
+      321
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_70_png.rf.183153983ef45834728e16cd69eba7f9",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 121,
+    "target_source": "v4",
+    "target_class": 2,
+    "donor_source": "v4-IR",
+    "donor_class": 10,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885__condC__donor2.png",
+    "target_bbox": [
+      239,
+      168,
+      299,
+      321
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-UV-1_24_png.rf.688b89626f15a05ffdfe6b28fa999a38",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4-UV",
+    "target_class": 0,
+    "donor_source": "v4-UV",
+    "donor_class": 0,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4__condA__donor0.png",
+    "target_bbox": [
+      284,
+      296,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-UV-1_22_png.rf.2e50eabf3fec2181878fd8aaea9f924a",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4-UV",
+    "target_class": 0,
+    "donor_source": "v4-UV",
+    "donor_class": 0,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4__condA__donor1.png",
+    "target_bbox": [
+      284,
+      296,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-UV-1_14_png.rf.19be35c2a1548ae8ca9924f66e98c2e4",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4-UV",
+    "target_class": 0,
+    "donor_source": "v4-UV",
+    "donor_class": 0,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4__condA__donor2.png",
+    "target_bbox": [
+      284,
+      296,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-UV-1_60_png.rf.edaf59af2a41c2b6fc8c508a41fdb789",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 34,
+    "target_source": "v4-UV",
+    "target_class": 0,
+    "donor_source": "v4-UV",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4__condB__donor0.png",
+    "target_bbox": [
+      284,
+      296,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-UV-1_18_png.rf.ed30a621f5a0b34b1295518d26027b18",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 34,
+    "target_source": "v4-UV",
+    "target_class": 0,
+    "donor_source": "v4-UV",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4__condB__donor1.png",
+    "target_bbox": [
+      284,
+      296,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-UV-1_87_png.rf.d07567b818a802b96e0eecd21de07637",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 34,
+    "target_source": "v4-UV",
+    "target_class": 0,
+    "donor_source": "v4-UV",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4__condB__donor2.png",
+    "target_bbox": [
+      284,
+      296,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4",
+    "condition": "C",
+    "donor_id": "Soil_Moisture_Stir_September-4_28_png.rf.be5c32e6a07946339efdfea6afe7b469",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 157,
+    "target_source": "v4-UV",
+    "target_class": 0,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4__condC__donor0.png",
+    "target_bbox": [
+      284,
+      296,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_5_png.rf.3ae37f4f578fc58c636457722064667f",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 157,
+    "target_source": "v4-UV",
+    "target_class": 0,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4__condC__donor1.png",
+    "target_bbox": [
+      284,
+      296,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_16_png.rf.6c1b07cd506f9c89cd8eafb1cc88a887",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 157,
+    "target_source": "v4-UV",
+    "target_class": 0,
+    "donor_source": "v4",
+    "donor_class": 7,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4__condC__donor2.png",
+    "target_bbox": [
+      284,
+      296,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_19_png.rf.a873f157fe9834f3da1ce68b59802371",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4",
+    "target_class": 0,
+    "donor_source": "v4",
+    "donor_class": 0,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f__condA__donor0.png",
+    "target_bbox": [
+      287,
+      294,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_14_png.rf.33a5a3de8868670bbeec7e8cf5cf541d",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4",
+    "target_class": 0,
+    "donor_source": "v4",
+    "donor_class": 0,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f__condA__donor1.png",
+    "target_bbox": [
+      287,
+      294,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_20_png.rf.702e833aaba0298e3f6d8f153bed1da3",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4",
+    "target_class": 0,
+    "donor_source": "v4",
+    "donor_class": 0,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f__condA__donor2.png",
+    "target_bbox": [
+      287,
+      294,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_43_png.rf.59acb16a45e92b59999f98877c1966ce",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 64,
+    "target_source": "v4",
+    "target_class": 0,
+    "donor_source": "v4",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f__condB__donor0.png",
+    "target_bbox": [
+      287,
+      294,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_24_png.rf.373fa379e9b52f67af6a5475f42e4614",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 64,
+    "target_source": "v4",
+    "target_class": 0,
+    "donor_source": "v4",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f__condB__donor1.png",
+    "target_bbox": [
+      287,
+      294,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_36_png.rf.25f220c20b79b546e570529764421b0b",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 64,
+    "target_source": "v4",
+    "target_class": 0,
+    "donor_source": "v4",
+    "donor_class": 7,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f__condB__donor2.png",
+    "target_bbox": [
+      287,
+      294,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_2_png.rf.8bdd7651487822bbb5b3609b95b5d49a",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 127,
+    "target_source": "v4",
+    "target_class": 0,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f__condC__donor0.png",
+    "target_bbox": [
+      287,
+      294,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_87_png.rf.d07567b818a802b96e0eecd21de07637",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 127,
+    "target_source": "v4",
+    "target_class": 0,
+    "donor_source": "v4-UV",
+    "donor_class": 5,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f__condC__donor1.png",
+    "target_bbox": [
+      287,
+      294,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_40_Pro_jpg.rf.b72716e5a752aef80aaafd6f3c5e8036",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 127,
+    "target_source": "v4",
+    "target_class": 0,
+    "donor_source": "IR",
+    "donor_class": 8,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-3_22_png.rf.60ff63addeec6ecf7584eb68b3068f9f__condC__donor2.png",
+    "target_bbox": [
+      287,
+      294,
+      365,
+      424
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_50_png.rf.bfe02d71044f536daf1bec4462142151",
+    "donor_index": 0,
+    "donor_count_used": 1,
+    "donor_count_eligible": 1,
+    "target_source": "v4-IR",
+    "target_class": 9,
+    "donor_source": "v4-IR",
+    "donor_class": 9,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1__condA__donor0.png",
+    "target_bbox": [
+      263,
+      243,
+      336,
+      435
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_39_png.rf.f0ea0ed5a7935d7cbf83e26b2a49c7f9",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 28,
+    "target_source": "v4-IR",
+    "target_class": 9,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1__condB__donor0.png",
+    "target_bbox": [
+      263,
+      243,
+      336,
+      435
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 28,
+    "target_source": "v4-IR",
+    "target_class": 9,
+    "donor_source": "v4-IR",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1__condB__donor1.png",
+    "target_bbox": [
+      263,
+      243,
+      336,
+      435
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_11_png.rf.cc7d3fee09fbdee09616154d15dbec73",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 28,
+    "target_source": "v4-IR",
+    "target_class": 9,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1__condB__donor2.png",
+    "target_bbox": [
+      263,
+      243,
+      336,
+      435
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_47_39_Pro_jpg.rf.d907fd128d3ca33b5fc4e521af066205",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 169,
+    "target_source": "v4-IR",
+    "target_class": 9,
+    "donor_source": "IR",
+    "donor_class": 1,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1__condC__donor0.png",
+    "target_bbox": [
+      263,
+      243,
+      336,
+      435
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_11_Pro_jpg.rf.98d07a38d1d13ba931b2e33f4ce83656",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 169,
+    "target_source": "v4-IR",
+    "target_class": 9,
+    "donor_source": "IR",
+    "donor_class": 3,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1__condC__donor1.png",
+    "target_bbox": [
+      263,
+      243,
+      336,
+      435
+    ]
+  },
+  {
+    "target_id": "Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_23_png.rf.703fe7e8f2bbd13acdd5b56b69332f0d",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 169,
+    "target_source": "v4-IR",
+    "target_class": 9,
+    "donor_source": "v4",
+    "donor_class": 7,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v2/Soil-Moisture-v4-IR-1_48_png.rf.d24a753fc36f458b40248d1cf67ec5a1__condC__donor2.png",
+    "target_bbox": [
+      263,
+      243,
+      336,
+      435
+    ]
+  }
+]
