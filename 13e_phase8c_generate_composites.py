@@ -169,16 +169,38 @@ def get_eligible_donors(target, index, condition):
     return candidates
 
 
-def inpaint_donor_roi(donor_img, donor_bbox):
+def inpaint_donor_roi(donor_img, donor_bbox, pad_fraction=0.6, min_pad_px=15):
     """Removes the donor's own laser-spot ROI using OpenCV inpainting
     (Telea algorithm) rather than a flat block, per the locked plan's
     explicit requirement to avoid introducing an artificial rectangular
     feature. Returns the donor image with its ROI region plausibly
-    filled in from surrounding context."""
+    filled in from surrounding context.
+
+    IMPORTANT FIX (post-pilot-1 visual QA): the laser's actual glow
+    blooms diffusely well beyond the tight annotated bbox (visible in
+    clean composites as a soft halo/star pattern extending past the
+    box). Masking only the raw bbox left a visible glow-fringe remnant
+    just outside it after inpainting -- exactly the artifact flagged
+    in pilot 1 (Image 5: a second rectangular purple-tinted patch next
+    to the correctly-pasted target). Fix: dilate the mask by
+    pad_fraction of the box's own width/height (minimum min_pad_px),
+    clamped to image bounds, so the full glow bloom is captured and
+    removed, not just the annotated rectangle."""
     x_min, y_min, x_max, y_max = donor_bbox
+    box_w, box_h = x_max - x_min, y_max - y_min
+
+    pad_x = max(min_pad_px, int(box_w * pad_fraction))
+    pad_y = max(min_pad_px, int(box_h * pad_fraction))
+
+    img_h, img_w = donor_img.shape[:2]
+    px_min = max(0, x_min - pad_x)
+    py_min = max(0, y_min - pad_y)
+    px_max = min(img_w, x_max + pad_x)
+    py_max = min(img_h, y_max + pad_y)
+
     mask = np.zeros(donor_img.shape[:2], dtype=np.uint8)
-    mask[y_min:y_max, x_min:x_max] = 255
-    inpainted = cv2.inpaint(donor_img, mask, inpaintRadius=7, flags=cv2.INPAINT_TELEA)
+    mask[py_min:py_max, px_min:px_max] = 255
+    inpainted = cv2.inpaint(donor_img, mask, inpaintRadius=9, flags=cv2.INPAINT_TELEA)
     return inpainted
 
 
@@ -212,6 +234,9 @@ def main():
                          help="Number of target images to use for pilot QA mode")
     parser.add_argument("--full", action="store_true",
                          help="Run the full sweep instead of pilot mode")
+    parser.add_argument("--tag", type=str, default="",
+                         help="Optional suffix for pilot output folder (e.g. 'v2') "
+                              "so repeated pilot runs don't overwrite each other")
     args = parser.parse_args()
 
     random.seed(SEED)
@@ -232,7 +257,7 @@ def main():
               f"(dataset-detection pattern may need updating). Sample: "
               f"{unknown_sources[0]['filename']}")
 
-    out_dir = PILOT_DIR if not args.full else FULL_DIR
+    out_dir = FULL_DIR if args.full else PILOT_DIR + (f"_{args.tag}" if args.tag else "")
     os.makedirs(out_dir, exist_ok=True)
 
     targets = index if args.full else random.sample(index, min(args.n_pilot, len(index)))
