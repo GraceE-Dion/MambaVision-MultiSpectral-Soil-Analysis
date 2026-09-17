@@ -350,26 +350,65 @@ def repair_donor_roi(donor_img, donor_bbox, pad_fraction=0.6, min_pad_px=15):
         space_right = img_w - px_max
         best_space = max(space_top, space_bottom, space_left, space_right)
 
-        if best_space == space_top and space_top > 0:
-            source = donor_img[0:py_min, px_min:px_max]
-        elif best_space == space_bottom and space_bottom > 0:
-            source = donor_img[py_max:img_h, px_min:px_max]
-        elif best_space == space_left and space_left > 0:
-            source = donor_img[py_min:py_max, 0:px_min]
-        elif best_space == space_right and space_right > 0:
-            source = donor_img[py_min:py_max, px_max:img_w]
-        else:
-            source = None
+        # Evaluate ALL directions with any available space (not just the
+        # single largest), score each by appearance-similarity to the
+        # destination surround (same scoring already used for tier 1/2),
+        # and pick the best-scoring one -- NOT simply the geometrically
+        # largest. Pure size-based selection (previous version) picked
+        # whichever direction had the most physical room regardless of
+        # content, which on real donor images sometimes grabbed a bright/
+        # overexposed region (pot rim, background, glare) and stretched
+        # it across the fill, producing a visible white/flat block (found
+        # via pilot-v5 real-data QA).
+        tier3_candidates = []
+        if space_top > 0:
+            src = donor_img[0:py_min, px_min:px_max]
+            tier3_candidates.append(("top", src))
+        if space_bottom > 0:
+            src = donor_img[py_max:img_h, px_min:px_max]
+            tier3_candidates.append(("bottom", src))
+        if space_left > 0:
+            src = donor_img[py_min:py_max, 0:px_min]
+            tier3_candidates.append(("left", src))
+        if space_right > 0:
+            src = donor_img[py_min:py_max, px_max:img_w]
+            tier3_candidates.append(("right", src))
 
-        if source is not None and source.shape[0] > 0 and source.shape[1] > 0:
-            reflected = cv2.resize(source, (region_w, region_h), interpolation=cv2.INTER_LINEAR)
+        scored_tier3 = []
+        for direction, src in tier3_candidates:
+            if src.shape[0] == 0 or src.shape[1] == 0:
+                continue
+            resized_src = cv2.resize(src, (region_w, region_h), interpolation=cv2.INTER_LINEAR)
+            score = patch_similarity_score(resized_src, surround_stats)
+            scored_tier3.append({"direction": direction, "resized": resized_src,
+                                  "raw_shape": src.shape, "score": score})
+
+        if scored_tier3:
+            best3 = min(scored_tier3, key=lambda c: c["score"])
+            reflected = best3["resized"]
+            chosen_dir = best3["direction"]
+            source_shape = list(best3["raw_shape"])
+            source_min = int(reflected.min())
+            source_max = int(reflected.max())
+            source_mean = float(reflected.mean())
         else:
-            # Genuinely no adjacent space at all (region covers ~whole
-            # image) -- flat fill from surround color as absolute last
-            # resort; should be exceptionally rare.
+            # Genuinely no adjacent space at all -- flat fill from
+            # surround color as absolute last resort; should be
+            # exceptionally rare.
             reflected = np.full((region_h, region_w, 3), surround_stats["mean"], dtype=np.uint8)
+            chosen_dir = "none"
+            source_shape, source_min, source_max, source_mean = None, None, None, None
 
         result[py_min:py_max, px_min:px_max] = reflected
+        diagnostic.update({
+            "tier3_chosen_direction": chosen_dir,
+            "tier3_candidates_scored": len(scored_tier3),
+            "tier3_space_top": int(space_top), "tier3_space_bottom": int(space_bottom),
+            "tier3_space_left": int(space_left), "tier3_space_right": int(space_right),
+            "tier3_source_shape": source_shape,
+            "tier3_source_min": source_min, "tier3_source_max": source_max,
+            "tier3_source_mean": source_mean,
+        })
         diagnostic.update({"method": "reflection_fill_last_resort",
                             "selected_score": None, "selected_source": None})
         return result, diagnostic
@@ -606,6 +645,11 @@ def main():
                     "repair_region_h": diagnostic.get("region_h"),
                     "repair_donor_img_shape": diagnostic.get("donor_img_shape"),
                     "repair_used_smaller_radii_tier": diagnostic.get("used_smaller_radii_tier"),
+                    "tier3_chosen_direction": diagnostic.get("tier3_chosen_direction"),
+                    "tier3_source_shape": diagnostic.get("tier3_source_shape"),
+                    "tier3_source_min": diagnostic.get("tier3_source_min"),
+                    "tier3_source_max": diagnostic.get("tier3_source_max"),
+                    "tier3_source_mean": diagnostic.get("tier3_source_mean"),
                 })
 
     print(f"\nGenerated {len(records)} composites across {len(targets)} target images")
