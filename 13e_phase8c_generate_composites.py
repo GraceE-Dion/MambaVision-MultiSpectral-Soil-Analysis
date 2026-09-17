@@ -326,22 +326,49 @@ def repair_donor_roi(donor_img, donor_bbox, pad_fraction=0.6, min_pad_px=15):
         "used_smaller_radii_tier": used_smaller_radii,
         "pad_x": pad_x, "pad_y": pad_y,
         "region": (px_min, py_min, px_max, py_max),
+        # Logged so tier-3/failure cases are diagnosable from metadata
+        # alone, without needing to re-derive them from a different
+        # image's bbox by mistake (as happened investigating t000_C_1).
+        "donor_bbox": donor_bbox,
+        "donor_img_shape": (img_w, img_h),
+        "region_w": region_w, "region_h": region_h,
     }
 
     result = donor_img.copy()
 
     if not candidates:
-        # TIER 3 (last resort, should now be extremely rare): reflection
-        # fill via cv2.copyMakeBorder(BORDER_REFLECT). This still uses
-        # genuine nearby texture (mirrored), NOT PDE boundary-propagation
-        # interpolation -- so it does NOT reproduce attempt-2's streaking
-        # artifact, unlike the old cv2.inpaint() fallback it replaces.
-        strip = 4  # thin strip just outside the region to reflect from
-        top = donor_img[max(0, py_min - strip):py_min, px_min:px_max] if py_min > 0 else None
-        if top is not None and top.shape[0] > 0:
-            reflected = cv2.flip(np.tile(top, (region_h // max(1, top.shape[0]) + 1, 1, 1))[:region_h], 0)
+        # TIER 3 (last resort): take the LARGEST available space adjacent
+        # to the region (whichever of top/bottom/left/right has the most
+        # room within image bounds) and RESIZE it (interpolation) to fit
+        # the destination region -- NOT tiled/repeated, which was the
+        # previous implementation and produced a visible mechanical
+        # stripe-repetition artifact (found via pilot-v4 real-data QA on
+        # t000_C_1). Resizing avoids repeating patterns entirely.
+        space_top = py_min
+        space_bottom = img_h - py_max
+        space_left = px_min
+        space_right = img_w - px_max
+        best_space = max(space_top, space_bottom, space_left, space_right)
+
+        if best_space == space_top and space_top > 0:
+            source = donor_img[0:py_min, px_min:px_max]
+        elif best_space == space_bottom and space_bottom > 0:
+            source = donor_img[py_max:img_h, px_min:px_max]
+        elif best_space == space_left and space_left > 0:
+            source = donor_img[py_min:py_max, 0:px_min]
+        elif best_space == space_right and space_right > 0:
+            source = donor_img[py_min:py_max, px_max:img_w]
         else:
+            source = None
+
+        if source is not None and source.shape[0] > 0 and source.shape[1] > 0:
+            reflected = cv2.resize(source, (region_w, region_h), interpolation=cv2.INTER_LINEAR)
+        else:
+            # Genuinely no adjacent space at all (region covers ~whole
+            # image) -- flat fill from surround color as absolute last
+            # resort; should be exceptionally rare.
             reflected = np.full((region_h, region_w, 3), surround_stats["mean"], dtype=np.uint8)
+
         result[py_min:py_max, px_min:px_max] = reflected
         diagnostic.update({"method": "reflection_fill_last_resort",
                             "selected_score": None, "selected_source": None})
