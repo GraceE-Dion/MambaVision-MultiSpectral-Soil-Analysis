@@ -32,7 +32,20 @@
       "delta_mean_luminance": 6.06445819239686,
       "delta_contrast": 17.763886306143345,
       "delta_gradient_energy": 1.4528846740722656
-    }
+    },
+    "repair_donor_bbox": [
+      305,
+      288,
+      348,
+      400
+    ],
+    "repair_region_w": 93,
+    "repair_region_h": 246,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t000_A_1",
@@ -67,7 +80,20 @@
       "delta_mean_luminance": 9.854062300428257,
       "delta_contrast": 7.660638689164403,
       "delta_gradient_energy": 6.965963363647461
-    }
+    },
+    "repair_donor_bbox": [
+      308,
+      290,
+      354,
+      396
+    ],
+    "repair_region_w": 100,
+    "repair_region_h": 232,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t000_A_2",
@@ -102,7 +128,20 @@
       "delta_mean_luminance": 3.1955675004562774,
       "delta_contrast": 4.024266800252101,
       "delta_gradient_energy": 23.66659927368164
-    }
+    },
+    "repair_donor_bbox": [
+      295,
+      290,
+      355,
+      400
+    ],
+    "repair_region_w": 132,
+    "repair_region_h": 242,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t000_B_0",
@@ -137,7 +176,20 @@
       "delta_mean_luminance": 5.8199270028771535,
       "delta_contrast": 9.50092388231277,
       "delta_gradient_energy": 0.4811286926269531
-    }
+    },
+    "repair_donor_bbox": [
+      282,
+      294,
+      332,
+      410
+    ],
+    "repair_region_w": 110,
+    "repair_region_h": 254,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t000_B_1",
@@ -172,7 +224,20 @@
       "delta_mean_luminance": 8.854505649838268,
       "delta_contrast": 8.40233985401872,
       "delta_gradient_energy": 12.389303207397461
-    }
+    },
+    "repair_donor_bbox": [
+      304,
+      290,
+      346,
+      402
+    ],
+    "repair_region_w": 92,
+    "repair_region_h": 246,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t000_B_2",
@@ -207,7 +272,20 @@
       "delta_mean_luminance": 7.336591279291002,
       "delta_contrast": 3.779628710174924,
       "delta_gradient_energy": 4.976734161376953
-    }
+    },
+    "repair_donor_bbox": [
+      283,
+      291,
+      333,
+      406
+    ],
+    "repair_region_w": 110,
+    "repair_region_h": 253,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t000_C_0",
@@ -242,7 +320,20 @@
       "delta_mean_luminance": 4.3857732910412635,
       "delta_contrast": 2.368274971463632,
       "delta_gradient_energy": 2.9763259887695312
-    }
+    },
+    "repair_donor_bbox": [
+      294,
+      287,
+      367,
+      416
+    ],
+    "repair_region_w": 159,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t000_C_1",
@@ -270,7 +361,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      270,
+      366,
+      377,
+      521
+    ],
+    "repair_region_w": 235,
+    "repair_region_h": 341,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t000_C_2",
@@ -305,7 +409,20 @@
       "delta_mean_luminance": 11.292566731620251,
       "delta_contrast": 2.9774342898432806,
       "delta_gradient_energy": 7.2980804443359375
-    }
+    },
+    "repair_donor_bbox": [
+      265,
+      190,
+      329,
+      391
+    ],
+    "repair_region_w": 140,
+    "repair_region_h": 441,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t001_A_0",
@@ -340,7 +457,20 @@
       "delta_mean_luminance": 6.06445819239686,
       "delta_contrast": 17.763886306143345,
       "delta_gradient_energy": 1.4528846740722656
-    }
+    },
+    "repair_donor_bbox": [
+      305,
+      288,
+      348,
+      400
+    ],
+    "repair_region_w": 93,
+    "repair_region_h": 246,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t001_A_1",
@@ -375,7 +505,20 @@
       "delta_mean_luminance": 13.752643011776874,
       "delta_contrast": 11.16883010267142,
       "delta_gradient_energy": 1.0948715209960938
-    }
+    },
+    "repair_donor_bbox": [
+      305,
+      291,
+      351,
+      399
+    ],
+    "repair_region_w": 100,
+    "repair_region_h": 236,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t001_A_2",
@@ -410,7 +553,20 @@
       "delta_mean_luminance": 3.1955675004562774,
       "delta_contrast": 4.024266800252101,
       "delta_gradient_energy": 23.66659927368164
-    }
+    },
+    "repair_donor_bbox": [
+      295,
+      290,
+      355,
+      400
+    ],
+    "repair_region_w": 132,
+    "repair_region_h": 242,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t001_B_0",
@@ -445,7 +601,20 @@
       "delta_mean_luminance": 17.87275989119579,
       "delta_contrast": 16.56640090709799,
       "delta_gradient_energy": 14.75771713256836
-    }
+    },
+    "repair_donor_bbox": [
+      306,
+      286,
+      348,
+      404
+    ],
+    "repair_region_w": 92,
+    "repair_region_h": 258,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t001_B_1",
@@ -480,7 +649,20 @@
       "delta_mean_luminance": 13.471425593570798,
       "delta_contrast": 15.352988440390815,
       "delta_gradient_energy": 9.8406982421875
-    }
+    },
+    "repair_donor_bbox": [
+      300,
+      287,
+      349,
+      403
+    ],
+    "repair_region_w": 107,
+    "repair_region_h": 254,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t001_B_2",
@@ -515,7 +697,20 @@
       "delta_mean_luminance": 18.739646535332483,
       "delta_contrast": 20.133485864782514,
       "delta_gradient_energy": 4.995662689208984
-    }
+    },
+    "repair_donor_bbox": [
+      280,
+      290,
+      335,
+      409
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 261,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t001_C_0",
@@ -550,7 +745,20 @@
       "delta_mean_luminance": 13.025631127494842,
       "delta_contrast": 4.901375651222567,
       "delta_gradient_energy": 9.19378662109375
-    }
+    },
+    "repair_donor_bbox": [
+      266,
+      206,
+      328,
+      390
+    ],
+    "repair_region_w": 136,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t001_C_1",
@@ -585,7 +793,20 @@
       "delta_mean_luminance": 22.612737642540253,
       "delta_contrast": 3.0913284205773346,
       "delta_gradient_energy": 15.442939758300781
-    }
+    },
+    "repair_donor_bbox": [
+      318,
+      315,
+      431,
+      433
+    ],
+    "repair_region_w": 247,
+    "repair_region_h": 258,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t001_C_2",
@@ -613,7 +834,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      228,
+      333,
+      356,
+      503
+    ],
+    "repair_region_w": 280,
+    "repair_region_h": 374,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t002_A_0",
@@ -648,7 +882,20 @@
       "delta_mean_luminance": 24.17688802652015,
       "delta_contrast": 24.50914724457062,
       "delta_gradient_energy": 8.219581604003906
-    }
+    },
+    "repair_donor_bbox": [
+      384,
+      242,
+      416,
+      296
+    ],
+    "repair_region_w": 70,
+    "repair_region_h": 118,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t002_A_1",
@@ -683,7 +930,20 @@
       "delta_mean_luminance": 2.4291945382438604,
       "delta_contrast": 5.578469625022092,
       "delta_gradient_energy": 2.963414192199707
-    }
+    },
+    "repair_donor_bbox": [
+      360,
+      253,
+      412,
+      296
+    ],
+    "repair_region_w": 114,
+    "repair_region_h": 93,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t002_A_2",
@@ -718,7 +978,20 @@
       "delta_mean_luminance": 1.6239090066030286,
       "delta_contrast": 3.9672478809407523,
       "delta_gradient_energy": 2.43515682220459
-    }
+    },
+    "repair_donor_bbox": [
+      361,
+      252,
+      410,
+      295
+    ],
+    "repair_region_w": 107,
+    "repair_region_h": 93,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t002_B_0",
@@ -753,7 +1026,20 @@
       "delta_mean_luminance": 0.3975485266813678,
       "delta_contrast": 0.6477341981792569,
       "delta_gradient_energy": 1.2818737030029297
-    }
+    },
+    "repair_donor_bbox": [
+      349,
+      268,
+      387,
+      309
+    ],
+    "repair_region_w": 82,
+    "repair_region_h": 89,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t002_B_1",
@@ -788,7 +1074,20 @@
       "delta_mean_luminance": 0.765707355193995,
       "delta_contrast": 0.5581356958097237,
       "delta_gradient_energy": 1.667433738708496
-    }
+    },
+    "repair_donor_bbox": [
+      369,
+      259,
+      403,
+      307
+    ],
+    "repair_region_w": 74,
+    "repair_region_h": 104,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t002_B_2",
@@ -823,7 +1122,20 @@
       "delta_mean_luminance": 1.3551148549048082,
       "delta_contrast": 1.6730989750836527,
       "delta_gradient_energy": 2.037674903869629
-    }
+    },
+    "repair_donor_bbox": [
+      361,
+      259,
+      410,
+      305
+    ],
+    "repair_region_w": 107,
+    "repair_region_h": 100,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t002_C_0",
@@ -858,7 +1170,20 @@
       "delta_mean_luminance": 13.025631127494842,
       "delta_contrast": 4.901375651222567,
       "delta_gradient_energy": 9.19378662109375
-    }
+    },
+    "repair_donor_bbox": [
+      266,
+      206,
+      328,
+      390
+    ],
+    "repair_region_w": 136,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t002_C_1",
@@ -886,7 +1211,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      315,
+      310,
+      435,
+      440
+    ],
+    "repair_region_w": 264,
+    "repair_region_h": 286,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t002_C_2",
@@ -921,7 +1259,20 @@
       "delta_mean_luminance": 6.616004830430793,
       "delta_contrast": 12.845507583145887,
       "delta_gradient_energy": 30.990692138671875
-    }
+    },
+    "repair_donor_bbox": [
+      320,
+      313,
+      433,
+      437
+    ],
+    "repair_region_w": 247,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t003_A_0",
@@ -956,7 +1307,20 @@
       "delta_mean_luminance": 0.8662311511404875,
       "delta_contrast": 1.6303767039200734,
       "delta_gradient_energy": 1.3679265975952148
-    }
+    },
+    "repair_donor_bbox": [
+      356,
+      264,
+      386,
+      315
+    ],
+    "repair_region_w": 66,
+    "repair_region_h": 111,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t003_A_1",
@@ -991,7 +1355,20 @@
       "delta_mean_luminance": 18.6368156393782,
       "delta_contrast": 40.998186142412074,
       "delta_gradient_energy": 11.978256225585938
-    }
+    },
+    "repair_donor_bbox": [
+      359,
+      264,
+      393,
+      308
+    ],
+    "repair_region_w": 74,
+    "repair_region_h": 96,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t003_A_2",
@@ -1026,7 +1403,20 @@
       "delta_mean_luminance": 1.6974331409633885,
       "delta_contrast": 12.396978904481891,
       "delta_gradient_energy": 2.3578739166259766
-    }
+    },
+    "repair_donor_bbox": [
+      352,
+      265,
+      392,
+      311
+    ],
+    "repair_region_w": 88,
+    "repair_region_h": 100,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t003_B_0",
@@ -1061,7 +1451,20 @@
       "delta_mean_luminance": 24.17688802652015,
       "delta_contrast": 24.50914724457062,
       "delta_gradient_energy": 8.219581604003906
-    }
+    },
+    "repair_donor_bbox": [
+      384,
+      242,
+      416,
+      296
+    ],
+    "repair_region_w": 70,
+    "repair_region_h": 118,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t003_B_1",
@@ -1096,7 +1499,20 @@
       "delta_mean_luminance": 1.6781872990734894,
       "delta_contrast": 3.6692781257169305,
       "delta_gradient_energy": 3.4597597122192383
-    }
+    },
+    "repair_donor_bbox": [
+      373,
+      251,
+      406,
+      304
+    ],
+    "repair_region_w": 71,
+    "repair_region_h": 115,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t003_B_2",
@@ -1131,7 +1547,20 @@
       "delta_mean_luminance": 1.8212751358532338,
       "delta_contrast": 2.511473960316415,
       "delta_gradient_energy": 2.9295997619628906
-    }
+    },
+    "repair_donor_bbox": [
+      371,
+      253,
+      407,
+      303
+    ],
+    "repair_region_w": 78,
+    "repair_region_h": 110,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t003_C_0",
@@ -1166,7 +1595,20 @@
       "delta_mean_luminance": 5.8199270028771535,
       "delta_contrast": 9.50092388231277,
       "delta_gradient_energy": 0.4811286926269531
-    }
+    },
+    "repair_donor_bbox": [
+      282,
+      294,
+      332,
+      410
+    ],
+    "repair_region_w": 110,
+    "repair_region_h": 254,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t003_C_1",
@@ -1201,7 +1643,20 @@
       "delta_mean_luminance": 10.114123389436227,
       "delta_contrast": 8.74075757838302,
       "delta_gradient_energy": 17.37487030029297
-    }
+    },
+    "repair_donor_bbox": [
+      311,
+      266,
+      381,
+      391
+    ],
+    "repair_region_w": 154,
+    "repair_region_h": 275,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t003_C_2",
@@ -1236,7 +1691,20 @@
       "delta_mean_luminance": 0.8877697889233054,
       "delta_contrast": 3.7162258357520144,
       "delta_gradient_energy": 5.6909027099609375
-    }
+    },
+    "repair_donor_bbox": [
+      239,
+      168,
+      299,
+      321
+    ],
+    "repair_region_w": 132,
+    "repair_region_h": 335,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t004_B_0",
@@ -1271,7 +1739,20 @@
       "delta_mean_luminance": 81.30666196701046,
       "delta_contrast": 76.18768469874962,
       "delta_gradient_energy": 8.03781509399414
-    }
+    },
+    "repair_donor_bbox": [
+      359,
+      227,
+      486,
+      356
+    ],
+    "repair_region_w": 279,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t004_B_1",
@@ -1299,7 +1780,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      228,
+      333,
+      356,
+      503
+    ],
+    "repair_region_w": 280,
+    "repair_region_h": 374,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t004_B_2",
@@ -1327,7 +1821,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      333,
+      403,
+      468,
+      558
+    ],
+    "repair_region_w": 297,
+    "repair_region_h": 330,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t004_C_0",
@@ -1362,7 +1869,20 @@
       "delta_mean_luminance": 14.333372510415806,
       "delta_contrast": 6.905168102251328,
       "delta_gradient_energy": 21.835960388183594
-    }
+    },
+    "repair_donor_bbox": [
+      319,
+      306,
+      430,
+      430
+    ],
+    "repair_region_w": 243,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t004_C_1",
@@ -1397,7 +1917,20 @@
       "delta_mean_luminance": 2.8300489657559025,
       "delta_contrast": 7.259530698809069,
       "delta_gradient_energy": 5.6019439697265625
-    }
+    },
+    "repair_donor_bbox": [
+      235,
+      195,
+      296,
+      338
+    ],
+    "repair_region_w": 133,
+    "repair_region_h": 313,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t004_C_2",
@@ -1432,7 +1965,20 @@
       "delta_mean_luminance": 3.1955675004562774,
       "delta_contrast": 4.024266800252101,
       "delta_gradient_energy": 23.66659927368164
-    }
+    },
+    "repair_donor_bbox": [
+      295,
+      290,
+      355,
+      400
+    ],
+    "repair_region_w": 132,
+    "repair_region_h": 242,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t005_B_0",
@@ -1467,7 +2013,20 @@
       "delta_mean_luminance": 64.24053094782766,
       "delta_contrast": 13.564839241618037,
       "delta_gradient_energy": 11.079341888427734
-    }
+    },
+    "repair_donor_bbox": [
+      388,
+      348,
+      518,
+      513
+    ],
+    "repair_region_w": 286,
+    "repair_region_h": 363,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t005_B_1",
@@ -1495,7 +2054,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      399,
+      328,
+      549,
+      501
+    ],
+    "repair_region_w": 330,
+    "repair_region_h": 379,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t005_B_2",
@@ -1530,7 +2102,20 @@
       "delta_mean_luminance": 76.20232155684734,
       "delta_contrast": 22.63382459339032,
       "delta_gradient_energy": 9.201522827148438
-    }
+    },
+    "repair_donor_bbox": [
+      398,
+      359,
+      528,
+      503
+    ],
+    "repair_region_w": 286,
+    "repair_region_h": 316,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t005_C_0",
@@ -1565,7 +2150,20 @@
       "delta_mean_luminance": 5.798565713816006,
       "delta_contrast": 4.73377372412424,
       "delta_gradient_energy": 0.435760498046875
-    }
+    },
+    "repair_donor_bbox": [
+      249,
+      226,
+      325,
+      417
+    ],
+    "repair_region_w": 166,
+    "repair_region_h": 419,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t005_C_1",
@@ -1593,7 +2191,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      314,
+      313,
+      430,
+      437
+    ],
+    "repair_region_w": 254,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t005_C_2",
@@ -1628,7 +2239,20 @@
       "delta_mean_luminance": 9.14875114882068,
       "delta_contrast": 4.1389266942463845,
       "delta_gradient_energy": 11.748603820800781
-    }
+    },
+    "repair_donor_bbox": [
+      269,
+      224,
+      328,
+      395
+    ],
+    "repair_region_w": 129,
+    "repair_region_h": 375,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t006_A_0",
@@ -1663,7 +2287,20 @@
       "delta_mean_luminance": 30.209998462194118,
       "delta_contrast": 6.578288870641158,
       "delta_gradient_energy": 7.4546051025390625
-    }
+    },
+    "repair_donor_bbox": [
+      356,
+      368,
+      411,
+      431
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 137,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t006_A_1",
@@ -1698,7 +2335,20 @@
       "delta_mean_luminance": 24.439182655878334,
       "delta_contrast": 13.035478884114301,
       "delta_gradient_energy": 5.766731262207031
-    }
+    },
+    "repair_donor_bbox": [
+      297,
+      409,
+      363,
+      495
+    ],
+    "repair_region_w": 144,
+    "repair_region_h": 188,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t006_A_2",
@@ -1733,7 +2383,20 @@
       "delta_mean_luminance": 0.9276747135232256,
       "delta_contrast": 0.4774631458687551,
       "delta_gradient_energy": 0.794403076171875
-    }
+    },
+    "repair_donor_bbox": [
+      286,
+      353,
+      327,
+      406
+    ],
+    "repair_region_w": 89,
+    "repair_region_h": 115,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t006_B_0",
@@ -1768,7 +2431,20 @@
       "delta_mean_luminance": 1.7884233614278322,
       "delta_contrast": 2.4819795102607434,
       "delta_gradient_energy": 2.6956729888916016
-    }
+    },
+    "repair_donor_bbox": [
+      285,
+      353,
+      316,
+      401
+    ],
+    "repair_region_w": 67,
+    "repair_region_h": 104,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t006_B_1",
@@ -1803,7 +2479,20 @@
       "delta_mean_luminance": 4.278250041867237,
       "delta_contrast": 28.85329566551612,
       "delta_gradient_energy": 8.090335845947266
-    }
+    },
+    "repair_donor_bbox": [
+      315,
+      278,
+      411,
+      374
+    ],
+    "repair_region_w": 210,
+    "repair_region_h": 210,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t006_B_2",
@@ -1838,7 +2527,20 @@
       "delta_mean_luminance": 10.876022547187617,
       "delta_contrast": 8.314875631076527,
       "delta_gradient_energy": 7.917441368103027
-    }
+    },
+    "repair_donor_bbox": [
+      269,
+      339,
+      355,
+      445
+    ],
+    "repair_region_w": 188,
+    "repair_region_h": 232,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t006_C_0",
@@ -1873,7 +2575,20 @@
       "delta_mean_luminance": 5.186836157152147,
       "delta_contrast": 8.75525902049107,
       "delta_gradient_energy": 13.865798950195312
-    }
+    },
+    "repair_donor_bbox": [
+      263,
+      243,
+      336,
+      435
+    ],
+    "repair_region_w": 159,
+    "repair_region_h": 422,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t006_C_1",
@@ -1908,7 +2623,20 @@
       "delta_mean_luminance": 13.435625180467474,
       "delta_contrast": 14.592491638929305,
       "delta_gradient_energy": 13.360786437988281
-    }
+    },
+    "repair_donor_bbox": [
+      287,
+      294,
+      365,
+      424
+    ],
+    "repair_region_w": 170,
+    "repair_region_h": 286,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t006_C_2",
@@ -1936,7 +2664,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      309,
+      437,
+      438
+    ],
+    "repair_region_w": 264,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t007_A_0",
@@ -1971,7 +2712,20 @@
       "delta_mean_luminance": 7.059792591667227,
       "delta_contrast": 0.23344642060889714,
       "delta_gradient_energy": 4.947910308837891
-    }
+    },
+    "repair_donor_bbox": [
+      312,
+      460,
+      351,
+      521
+    ],
+    "repair_region_w": 85,
+    "repair_region_h": 133,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t007_B_0",
@@ -2006,7 +2760,20 @@
       "delta_mean_luminance": 1.7884233614278322,
       "delta_contrast": 2.4819795102607434,
       "delta_gradient_energy": 2.6956729888916016
-    }
+    },
+    "repair_donor_bbox": [
+      285,
+      353,
+      316,
+      401
+    ],
+    "repair_region_w": 67,
+    "repair_region_h": 104,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t007_B_1",
@@ -2041,7 +2808,20 @@
       "delta_mean_luminance": 3.2501983894852167,
       "delta_contrast": 14.406179718487554,
       "delta_gradient_energy": 2.6311845779418945
-    }
+    },
+    "repair_donor_bbox": [
+      255,
+      325,
+      284,
+      361
+    ],
+    "repair_region_w": 63,
+    "repair_region_h": 78,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t007_B_2",
@@ -2076,7 +2856,20 @@
       "delta_mean_luminance": 21.716633853128034,
       "delta_contrast": 10.13072341988724,
       "delta_gradient_energy": 5.16583251953125
-    }
+    },
+    "repair_donor_bbox": [
+      264,
+      293,
+      355,
+      506
+    ],
+    "repair_region_w": 199,
+    "repair_region_h": 467,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t007_C_0",
@@ -2104,7 +2897,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      309,
+      437,
+      438
+    ],
+    "repair_region_w": 264,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t007_C_1",
@@ -2132,7 +2938,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      314,
+      308,
+      430,
+      442
+    ],
+    "repair_region_w": 254,
+    "repair_region_h": 294,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t007_C_2",
@@ -2160,7 +2979,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      313,
+      310,
+      431,
+      437
+    ],
+    "repair_region_w": 258,
+    "repair_region_h": 279,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t008_A_0",
@@ -2188,7 +3020,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      310,
+      432,
+      434
+    ],
+    "repair_region_w": 253,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t008_A_1",
@@ -2216,7 +3061,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      311,
+      313,
+      430,
+      429
+    ],
+    "repair_region_w": 261,
+    "repair_region_h": 254,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t008_A_2",
@@ -2244,7 +3102,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      315,
+      310,
+      435,
+      440
+    ],
+    "repair_region_w": 264,
+    "repair_region_h": 286,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t008_B_0",
@@ -2279,7 +3150,20 @@
       "delta_mean_luminance": 1.7169681841113082,
       "delta_contrast": 2.6564939453574223,
       "delta_gradient_energy": 1.475128173828125
-    }
+    },
+    "repair_donor_bbox": [
+      263,
+      236,
+      330,
+      418
+    ],
+    "repair_region_w": 147,
+    "repair_region_h": 400,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t008_B_1",
@@ -2314,7 +3198,20 @@
       "delta_mean_luminance": 0.8877697889233054,
       "delta_contrast": 3.7162258357520144,
       "delta_gradient_energy": 5.6909027099609375
-    }
+    },
+    "repair_donor_bbox": [
+      239,
+      168,
+      299,
+      321
+    ],
+    "repair_region_w": 132,
+    "repair_region_h": 335,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t008_B_2",
@@ -2349,7 +3246,20 @@
       "delta_mean_luminance": 3.9003764457960615,
       "delta_contrast": 1.6168493033999924,
       "delta_gradient_energy": 2.5562057495117188
-    }
+    },
+    "repair_donor_bbox": [
+      246,
+      163,
+      298,
+      319
+    ],
+    "repair_region_w": 114,
+    "repair_region_h": 342,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t008_C_0",
@@ -2384,7 +3294,20 @@
       "delta_mean_luminance": 6.091282217766368,
       "delta_contrast": 9.207902242729588,
       "delta_gradient_energy": 12.494064331054688
-    }
+    },
+    "repair_donor_bbox": [
+      219,
+      193,
+      285,
+      331
+    ],
+    "repair_region_w": 144,
+    "repair_region_h": 302,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t008_C_1",
@@ -2419,7 +3342,20 @@
       "delta_mean_luminance": 6.616004830430793,
       "delta_contrast": 12.845507583145887,
       "delta_gradient_energy": 30.990692138671875
-    }
+    },
+    "repair_donor_bbox": [
+      320,
+      313,
+      433,
+      437
+    ],
+    "repair_region_w": 247,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t008_C_2",
@@ -2454,7 +3390,20 @@
       "delta_mean_luminance": 0.3975485266813678,
       "delta_contrast": 0.6477341981792569,
       "delta_gradient_energy": 1.2818737030029297
-    }
+    },
+    "repair_donor_bbox": [
+      349,
+      268,
+      387,
+      309
+    ],
+    "repair_region_w": 82,
+    "repair_region_h": 89,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t009_A_0",
@@ -2489,7 +3438,20 @@
       "delta_mean_luminance": 2.9033662367069875,
       "delta_contrast": 5.809141487765606,
       "delta_gradient_energy": 16.999664306640625
-    }
+    },
+    "repair_donor_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "repair_region_w": 115,
+    "repair_region_h": 327,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t009_A_1",
@@ -2524,7 +3486,20 @@
       "delta_mean_luminance": 1.8291892227422124,
       "delta_contrast": 9.468295578802824,
       "delta_gradient_energy": 9.9552001953125
-    }
+    },
+    "repair_donor_bbox": [
+      235,
+      185,
+      290,
+      349
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 360,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t009_A_2",
@@ -2559,7 +3534,20 @@
       "delta_mean_luminance": 2.8708479945338876,
       "delta_contrast": 6.797089337432367,
       "delta_gradient_energy": 14.461013793945312
-    }
+    },
+    "repair_donor_bbox": [
+      234,
+      181,
+      286,
+      350
+    ],
+    "repair_region_w": 114,
+    "repair_region_h": 371,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t009_B_0",
@@ -2594,7 +3582,20 @@
       "delta_mean_luminance": 3.340724317023249,
       "delta_contrast": 5.141442744236207,
       "delta_gradient_energy": 14.382843017578125
-    }
+    },
+    "repair_donor_bbox": [
+      264,
+      231,
+      327,
+      415
+    ],
+    "repair_region_w": 137,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t009_B_1",
@@ -2629,7 +3630,20 @@
       "delta_mean_luminance": 6.091282217766368,
       "delta_contrast": 9.207902242729588,
       "delta_gradient_energy": 12.494064331054688
-    }
+    },
+    "repair_donor_bbox": [
+      219,
+      193,
+      285,
+      331
+    ],
+    "repair_region_w": 144,
+    "repair_region_h": 302,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t009_B_2",
@@ -2664,7 +3678,20 @@
       "delta_mean_luminance": 22.612737642540253,
       "delta_contrast": 3.0913284205773346,
       "delta_gradient_energy": 15.442939758300781
-    }
+    },
+    "repair_donor_bbox": [
+      318,
+      315,
+      431,
+      433
+    ],
+    "repair_region_w": 247,
+    "repair_region_h": 258,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t009_C_0",
@@ -2699,7 +3726,20 @@
       "delta_mean_luminance": 4.433557916906167,
       "delta_contrast": 1.9710849172565676,
       "delta_gradient_energy": 11.773239135742188
-    }
+    },
+    "repair_donor_bbox": [
+      228,
+      190,
+      286,
+      338
+    ],
+    "repair_region_w": 126,
+    "repair_region_h": 324,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t009_C_1",
@@ -2734,7 +3774,20 @@
       "delta_mean_luminance": 34.64530297236487,
       "delta_contrast": 38.42997890478881,
       "delta_gradient_energy": 5.968832015991211
-    }
+    },
+    "repair_donor_bbox": [
+      293,
+      288,
+      341,
+      406
+    ],
+    "repair_region_w": 104,
+    "repair_region_h": 258,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t009_C_2",
@@ -2769,7 +3822,20 @@
       "delta_mean_luminance": 14.708043500807165,
       "delta_contrast": 19.85418264173864,
       "delta_gradient_energy": 15.187171936035156
-    }
+    },
+    "repair_donor_bbox": [
+      279,
+      292,
+      334,
+      412
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 264,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t010_A_0",
@@ -2804,7 +3870,20 @@
       "delta_mean_luminance": 1.8291892227422124,
       "delta_contrast": 9.468295578802824,
       "delta_gradient_energy": 9.9552001953125
-    }
+    },
+    "repair_donor_bbox": [
+      235,
+      185,
+      290,
+      349
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 360,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t010_A_1",
@@ -2839,7 +3918,20 @@
       "delta_mean_luminance": 2.8300489657559025,
       "delta_contrast": 7.259530698809069,
       "delta_gradient_energy": 5.6019439697265625
-    }
+    },
+    "repair_donor_bbox": [
+      235,
+      195,
+      296,
+      338
+    ],
+    "repair_region_w": 133,
+    "repair_region_h": 313,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t010_A_2",
@@ -2874,7 +3966,20 @@
       "delta_mean_luminance": 2.8708479945338876,
       "delta_contrast": 6.797089337432367,
       "delta_gradient_energy": 14.461013793945312
-    }
+    },
+    "repair_donor_bbox": [
+      234,
+      181,
+      286,
+      350
+    ],
+    "repair_region_w": 114,
+    "repair_region_h": 371,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t010_B_0",
@@ -2909,7 +4014,20 @@
       "delta_mean_luminance": 14.177481772130033,
       "delta_contrast": 9.390746349010284,
       "delta_gradient_energy": 19.023910522460938
-    }
+    },
+    "repair_donor_bbox": [
+      262,
+      226,
+      330,
+      424
+    ],
+    "repair_region_w": 148,
+    "repair_region_h": 434,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t010_B_1",
@@ -2944,7 +4062,20 @@
       "delta_mean_luminance": 4.465229314593384,
       "delta_contrast": 5.219297174815915,
       "delta_gradient_energy": 7.5453033447265625
-    }
+    },
+    "repair_donor_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 312,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t010_B_2",
@@ -2979,7 +4110,20 @@
       "delta_mean_luminance": 1.0628543383482179,
       "delta_contrast": 2.5894269580719502,
       "delta_gradient_energy": 1.5024261474609375
-    }
+    },
+    "repair_donor_bbox": [
+      263,
+      237,
+      331,
+      421
+    ],
+    "repair_region_w": 148,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t010_C_0",
@@ -3014,7 +4158,20 @@
       "delta_mean_luminance": 4.9144520149755815,
       "delta_contrast": 11.717410717036861,
       "delta_gradient_energy": 3.3730239868164062
-    }
+    },
+    "repair_donor_bbox": [
+      285,
+      299,
+      359,
+      433
+    ],
+    "repair_region_w": 162,
+    "repair_region_h": 294,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t010_C_1",
@@ -3042,7 +4199,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      311,
+      313,
+      430,
+      429
+    ],
+    "repair_region_w": 261,
+    "repair_region_h": 254,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t010_C_2",
@@ -3077,7 +4247,20 @@
       "delta_mean_luminance": 11.306592122433146,
       "delta_contrast": 3.480878449673044,
       "delta_gradient_energy": 12.292655944824219
-    }
+    },
+    "repair_donor_bbox": [
+      270,
+      198,
+      333,
+      389
+    ],
+    "repair_region_w": 137,
+    "repair_region_h": 419,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t011_A_0",
@@ -3112,7 +4295,20 @@
       "delta_mean_luminance": 5.215074634251789,
       "delta_contrast": 5.93949722589961,
       "delta_gradient_energy": 5.45623779296875
-    }
+    },
+    "repair_donor_bbox": [
+      233,
+      210,
+      289,
+      353
+    ],
+    "repair_region_w": 122,
+    "repair_region_h": 313,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t011_A_1",
@@ -3147,7 +4343,20 @@
       "delta_mean_luminance": 3.3175280076746794,
       "delta_contrast": 2.8958903343845996,
       "delta_gradient_energy": 6.881378173828125
-    }
+    },
+    "repair_donor_bbox": [
+      240,
+      187,
+      288,
+      333
+    ],
+    "repair_region_w": 104,
+    "repair_region_h": 320,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t011_B_0",
@@ -3182,7 +4391,20 @@
       "delta_mean_luminance": 1.0628543383482179,
       "delta_contrast": 2.5894269580719502,
       "delta_gradient_energy": 1.5024261474609375
-    }
+    },
+    "repair_donor_bbox": [
+      263,
+      237,
+      331,
+      421
+    ],
+    "repair_region_w": 148,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t011_B_1",
@@ -3217,7 +4439,20 @@
       "delta_mean_luminance": 2.9033662367069875,
       "delta_contrast": 5.809141487765606,
       "delta_gradient_energy": 16.999664306640625
-    }
+    },
+    "repair_donor_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "repair_region_w": 115,
+    "repair_region_h": 327,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t011_B_2",
@@ -3252,7 +4487,20 @@
       "delta_mean_luminance": 4.433557916906167,
       "delta_contrast": 1.9710849172565676,
       "delta_gradient_energy": 11.773239135742188
-    }
+    },
+    "repair_donor_bbox": [
+      228,
+      190,
+      286,
+      338
+    ],
+    "repair_region_w": 126,
+    "repair_region_h": 324,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t011_C_0",
@@ -3287,7 +4535,20 @@
       "delta_mean_luminance": 11.447366002214387,
       "delta_contrast": 7.412229274079442,
       "delta_gradient_energy": 17.32819366455078
-    }
+    },
+    "repair_donor_bbox": [
+      307,
+      269,
+      376,
+      402
+    ],
+    "repair_region_w": 151,
+    "repair_region_h": 291,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t011_C_1",
@@ -3322,7 +4583,20 @@
       "delta_mean_luminance": 0.9276747135232256,
       "delta_contrast": 0.4774631458687551,
       "delta_gradient_energy": 0.794403076171875
-    }
+    },
+    "repair_donor_bbox": [
+      286,
+      353,
+      327,
+      406
+    ],
+    "repair_region_w": 89,
+    "repair_region_h": 115,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t011_C_2",
@@ -3357,7 +4631,20 @@
       "delta_mean_luminance": 11.306592122433146,
       "delta_contrast": 3.480878449673044,
       "delta_gradient_energy": 12.292655944824219
-    }
+    },
+    "repair_donor_bbox": [
+      270,
+      198,
+      333,
+      389
+    ],
+    "repair_region_w": 137,
+    "repair_region_h": 419,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t012_A_0",
@@ -3392,7 +4679,20 @@
       "delta_mean_luminance": 22.612737642540253,
       "delta_contrast": 3.0913284205773346,
       "delta_gradient_energy": 15.442939758300781
-    }
+    },
+    "repair_donor_bbox": [
+      318,
+      315,
+      431,
+      433
+    ],
+    "repair_region_w": 247,
+    "repair_region_h": 258,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t012_A_1",
@@ -3427,7 +4727,20 @@
       "delta_mean_luminance": 20.760368079622566,
       "delta_contrast": 10.625205520927379,
       "delta_gradient_energy": 7.824981689453125
-    }
+    },
+    "repair_donor_bbox": [
+      311,
+      255,
+      386,
+      384
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t012_A_2",
@@ -3455,7 +4768,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      313,
+      310,
+      431,
+      437
+    ],
+    "repair_region_w": 258,
+    "repair_region_h": 279,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t012_B_0",
@@ -3483,7 +4809,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      308,
+      432,
+      440
+    ],
+    "repair_region_w": 253,
+    "repair_region_h": 290,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t012_B_1",
@@ -3518,7 +4857,20 @@
       "delta_mean_luminance": 4.353443116574122,
       "delta_contrast": 9.314717661633145,
       "delta_gradient_energy": 27.977920532226562
-    }
+    },
+    "repair_donor_bbox": [
+      287,
+      294,
+      366,
+      432
+    ],
+    "repair_region_w": 173,
+    "repair_region_h": 302,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t012_B_2",
@@ -3553,7 +4905,20 @@
       "delta_mean_luminance": 17.90901684752658,
       "delta_contrast": 11.122986154525636,
       "delta_gradient_energy": 11.335700988769531
-    }
+    },
+    "repair_donor_bbox": [
+      284,
+      296,
+      365,
+      424
+    ],
+    "repair_region_w": 177,
+    "repair_region_h": 280,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t012_C_0",
@@ -3588,7 +4953,20 @@
       "delta_mean_luminance": 1.0628543383482179,
       "delta_contrast": 2.5894269580719502,
       "delta_gradient_energy": 1.5024261474609375
-    }
+    },
+    "repair_donor_bbox": [
+      263,
+      237,
+      331,
+      421
+    ],
+    "repair_region_w": 148,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t012_C_1",
@@ -3623,7 +5001,20 @@
       "delta_mean_luminance": 24.439182655878334,
       "delta_contrast": 13.035478884114301,
       "delta_gradient_energy": 5.766731262207031
-    }
+    },
+    "repair_donor_bbox": [
+      297,
+      409,
+      363,
+      495
+    ],
+    "repair_region_w": 144,
+    "repair_region_h": 188,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t012_C_2",
@@ -3658,7 +5049,20 @@
       "delta_mean_luminance": 7.747117127854259,
       "delta_contrast": 6.344990548567421,
       "delta_gradient_energy": 0.82916259765625
-    }
+    },
+    "repair_donor_bbox": [
+      263,
+      213,
+      338,
+      403
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 418,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t013_A_0",
@@ -3693,7 +5097,20 @@
       "delta_mean_luminance": 5.715681180149113,
       "delta_contrast": 12.997795443174555,
       "delta_gradient_energy": 6.24798583984375
-    }
+    },
+    "repair_donor_bbox": [
+      288,
+      296,
+      363,
+      429
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 291,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t013_A_1",
@@ -3728,7 +5145,20 @@
       "delta_mean_luminance": 5.504887197415531,
       "delta_contrast": 12.512414912136373,
       "delta_gradient_energy": 7.898979187011719
-    }
+    },
+    "repair_donor_bbox": [
+      284,
+      300,
+      359,
+      431
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 287,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t013_A_2",
@@ -3763,7 +5193,20 @@
       "delta_mean_luminance": 5.385036229555201,
       "delta_contrast": 11.158306600268391,
       "delta_gradient_energy": 5.060081481933594
-    }
+    },
+    "repair_donor_bbox": [
+      285,
+      299,
+      360,
+      435
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 298,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t013_B_0",
@@ -3798,7 +5241,20 @@
       "delta_mean_luminance": 14.333372510415806,
       "delta_contrast": 6.905168102251328,
       "delta_gradient_energy": 21.835960388183594
-    }
+    },
+    "repair_donor_bbox": [
+      319,
+      306,
+      430,
+      430
+    ],
+    "repair_region_w": 243,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t013_B_1",
@@ -3826,7 +5282,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      308,
+      432,
+      440
+    ],
+    "repair_region_w": 253,
+    "repair_region_h": 290,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t013_B_2",
@@ -3861,7 +5330,20 @@
       "delta_mean_luminance": 11.677560645613617,
       "delta_contrast": 15.611239957631112,
       "delta_gradient_energy": 15.625007629394531
-    }
+    },
+    "repair_donor_bbox": [
+      287,
+      299,
+      364,
+      421
+    ],
+    "repair_region_w": 169,
+    "repair_region_h": 268,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t013_C_0",
@@ -3896,7 +5378,20 @@
       "delta_mean_luminance": 4.9144520149755815,
       "delta_contrast": 11.717410717036861,
       "delta_gradient_energy": 3.3730239868164062
-    }
+    },
+    "repair_donor_bbox": [
+      285,
+      299,
+      359,
+      433
+    ],
+    "repair_region_w": 162,
+    "repair_region_h": 294,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t013_C_1",
@@ -3924,7 +5419,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      308,
+      432,
+      440
+    ],
+    "repair_region_w": 253,
+    "repair_region_h": 290,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t013_C_2",
@@ -3959,7 +5467,20 @@
       "delta_mean_luminance": 4.353443116574122,
       "delta_contrast": 9.314717661633145,
       "delta_gradient_energy": 27.977920532226562
-    }
+    },
+    "repair_donor_bbox": [
+      287,
+      294,
+      366,
+      432
+    ],
+    "repair_region_w": 173,
+    "repair_region_h": 302,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t014_A_0",
@@ -3994,7 +5515,20 @@
       "delta_mean_luminance": 1.6781872990734894,
       "delta_contrast": 3.6692781257169305,
       "delta_gradient_energy": 3.4597597122192383
-    }
+    },
+    "repair_donor_bbox": [
+      373,
+      251,
+      406,
+      304
+    ],
+    "repair_region_w": 71,
+    "repair_region_h": 115,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t014_A_1",
@@ -4029,7 +5563,20 @@
       "delta_mean_luminance": 1.405473128562693,
       "delta_contrast": 1.8250612007316969,
       "delta_gradient_energy": 1.1506118774414062
-    }
+    },
+    "repair_donor_bbox": [
+      370,
+      252,
+      405,
+      303
+    ],
+    "repair_region_w": 77,
+    "repair_region_h": 111,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t014_A_2",
@@ -4064,7 +5611,20 @@
       "delta_mean_luminance": 7.22901120944578,
       "delta_contrast": 27.243620386039648,
       "delta_gradient_energy": 10.521207809448242
-    }
+    },
+    "repair_donor_bbox": [
+      365,
+      251,
+      403,
+      309
+    ],
+    "repair_region_w": 82,
+    "repair_region_h": 126,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t014_B_0",
@@ -4099,7 +5659,20 @@
       "delta_mean_luminance": 3.0738345101513396,
       "delta_contrast": 5.8372023360372784,
       "delta_gradient_energy": 4.960628509521484
-    }
+    },
+    "repair_donor_bbox": [
+      362,
+      252,
+      409,
+      296
+    ],
+    "repair_region_w": 103,
+    "repair_region_h": 96,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t014_B_1",
@@ -4134,7 +5707,20 @@
       "delta_mean_luminance": 1.8212751358532338,
       "delta_contrast": 2.511473960316415,
       "delta_gradient_energy": 2.9295997619628906
-    }
+    },
+    "repair_donor_bbox": [
+      371,
+      253,
+      407,
+      303
+    ],
+    "repair_region_w": 78,
+    "repair_region_h": 110,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t014_B_2",
@@ -4169,7 +5755,20 @@
       "delta_mean_luminance": 1.3869338473834814,
       "delta_contrast": 1.5306288962780397,
       "delta_gradient_energy": 1.9518537521362305
-    }
+    },
+    "repair_donor_bbox": [
+      352,
+      269,
+      388,
+      310
+    ],
+    "repair_region_w": 78,
+    "repair_region_h": 89,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t014_C_0",
@@ -4197,7 +5796,20 @@
     "repair_candidate_count": 0,
     "repair_selected_score": null,
     "repair_selected_source": null,
-    "repair_qa_metrics": null
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      313,
+      311,
+      434,
+      441
+    ],
+    "repair_region_w": 265,
+    "repair_region_h": 286,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
   },
   {
     "composite_id": "t014_C_1",
@@ -4232,7 +5844,20 @@
       "delta_mean_luminance": 14.708043500807165,
       "delta_contrast": 19.85418264173864,
       "delta_gradient_energy": 15.187171936035156
-    }
+    },
+    "repair_donor_bbox": [
+      279,
+      292,
+      334,
+      412
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 264,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   },
   {
     "composite_id": "t014_C_2",
@@ -4267,6 +5892,19 @@
       "delta_mean_luminance": 6.28145016835188,
       "delta_contrast": 12.338106202911357,
       "delta_gradient_energy": 2.41986083984375
-    }
+    },
+    "repair_donor_bbox": [
+      286,
+      297,
+      361,
+      426
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
   }
 ]
