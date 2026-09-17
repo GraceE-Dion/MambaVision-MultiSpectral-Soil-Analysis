@@ -601,6 +601,11 @@ def main():
                     "repair_selected_score": diagnostic.get("selected_score"),
                     "repair_selected_source": diagnostic.get("selected_source"),
                     "repair_qa_metrics": diagnostic.get("qa_metrics"),
+                    "repair_donor_bbox": diagnostic.get("donor_bbox"),
+                    "repair_region_w": diagnostic.get("region_w"),
+                    "repair_region_h": diagnostic.get("region_h"),
+                    "repair_donor_img_shape": diagnostic.get("donor_img_shape"),
+                    "repair_used_smaller_radii_tier": diagnostic.get("used_smaller_radii_tier"),
                 })
 
     print(f"\nGenerated {len(records)} composites across {len(targets)} target images")
