@@ -1,0 +1,5910 @@
+[
+  {
+    "composite_id": "t000_A_0",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_39_59_Pro_jpg.rf.9eee5f528b1ac07f8159653657575c05",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_40_13_Pro_jpg.rf.917f27c10c18d222751b2a847e2e884f",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t000_A_0.png",
+    "target_bbox": [
+      305,
+      291,
+      351,
+      399
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 31.201787263517538,
+    "repair_selected_source": [
+      187,
+      221
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 6.06445819239686,
+      "delta_contrast": 17.763886306143345,
+      "delta_gradient_energy": 1.4528846740722656
+    },
+    "repair_donor_bbox": [
+      305,
+      288,
+      348,
+      400
+    ],
+    "repair_region_w": 93,
+    "repair_region_h": 246,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t000_A_1",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_39_59_Pro_jpg.rf.9eee5f528b1ac07f8159653657575c05",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_40_08_Pro_jpg.rf.a8adc7f327d12037ae4a10f3c7ff8187",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t000_A_1.png",
+    "target_bbox": [
+      305,
+      291,
+      351,
+      399
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 37.229254794073015,
+    "repair_selected_source": [
+      131,
+      227
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 9.854062300428257,
+      "delta_contrast": 7.660638689164403,
+      "delta_gradient_energy": 6.965963363647461
+    },
+    "repair_donor_bbox": [
+      308,
+      290,
+      354,
+      396
+    ],
+    "repair_region_w": 100,
+    "repair_region_h": 232,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t000_A_2",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_39_59_Pro_jpg.rf.9eee5f528b1ac07f8159653657575c05",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_40_15_Pro_jpg.rf.f31d8d6d58679e39a5779081775db871",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t000_A_2.png",
+    "target_bbox": [
+      305,
+      291,
+      351,
+      399
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 31.291566311275783,
+    "repair_selected_source": [
+      127,
+      224
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 3.1955675004562774,
+      "delta_contrast": 4.024266800252101,
+      "delta_gradient_energy": 23.66659927368164
+    },
+    "repair_donor_bbox": [
+      295,
+      290,
+      355,
+      400
+    ],
+    "repair_region_w": 132,
+    "repair_region_h": 242,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t000_B_0",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_39_59_Pro_jpg.rf.9eee5f528b1ac07f8159653657575c05",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_00_14_Pro_jpg.rf.7dea9efa2855ca4e27f33072e9756b84",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t000_B_0.png",
+    "target_bbox": [
+      305,
+      291,
+      351,
+      399
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 27.08228965507641,
+    "repair_selected_source": [
+      417,
+      225
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 5.8199270028771535,
+      "delta_contrast": 9.50092388231277,
+      "delta_gradient_energy": 0.4811286926269531
+    },
+    "repair_donor_bbox": [
+      282,
+      294,
+      332,
+      410
+    ],
+    "repair_region_w": 110,
+    "repair_region_h": 254,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t000_B_1",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_39_59_Pro_jpg.rf.9eee5f528b1ac07f8159653657575c05",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_49_47_Pro_jpg.rf.098de5e11a06a94ccbdfd525763fcdc4",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t000_B_1.png",
+    "target_bbox": [
+      305,
+      291,
+      351,
+      399
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 35.390344975947855,
+    "repair_selected_source": [
+      141,
+      223
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 8.854505649838268,
+      "delta_contrast": 8.40233985401872,
+      "delta_gradient_energy": 12.389303207397461
+    },
+    "repair_donor_bbox": [
+      304,
+      290,
+      346,
+      402
+    ],
+    "repair_region_w": 92,
+    "repair_region_h": 246,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t000_B_2",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_39_59_Pro_jpg.rf.9eee5f528b1ac07f8159653657575c05",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_14_50_38_Pro_jpg.rf.599209ffbc5217be78ed495537c9cf2c",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 1,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t000_B_2.png",
+    "target_bbox": [
+      305,
+      291,
+      351,
+      399
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 31.375855052593444,
+    "repair_selected_source": [
+      363,
+      222
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 7.336591279291002,
+      "delta_contrast": 3.779628710174924,
+      "delta_gradient_energy": 4.976734161376953
+    },
+    "repair_donor_bbox": [
+      283,
+      291,
+      333,
+      406
+    ],
+    "repair_region_w": 110,
+    "repair_region_h": 253,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t000_C_0",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_39_59_Pro_jpg.rf.9eee5f528b1ac07f8159653657575c05",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_9_png.rf.39466d9144ca64ede4b5b8be799bee59",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 159,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "v4-UV",
+    "donor_class": 0,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t000_C_0.png",
+    "target_bbox": [
+      305,
+      291,
+      351,
+      399
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 3,
+    "repair_selected_score": 22.483866373064306,
+    "repair_selected_source": [
+      92,
+      210
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 4.3857732910412635,
+      "delta_contrast": 2.368274971463632,
+      "delta_gradient_energy": 2.9763259887695312
+    },
+    "repair_donor_bbox": [
+      294,
+      287,
+      367,
+      416
+    ],
+    "repair_region_w": 159,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t000_C_1",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_39_59_Pro_jpg.rf.9eee5f528b1ac07f8159653657575c05",
+    "condition": "C",
+    "donor_id": "Soil_Moisture_Stir_September-4_2_png.rf.f6de7fbaf863f2302df9c1229a101220",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 159,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t000_C_1.png",
+    "target_bbox": [
+      305,
+      291,
+      351,
+      399
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      270,
+      366,
+      377,
+      521
+    ],
+    "repair_region_w": 235,
+    "repair_region_h": 341,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t000_C_2",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_39_59_Pro_jpg.rf.9eee5f528b1ac07f8159653657575c05",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_31_png.rf.4a678bd2c093e493a14e5fb8fd27e6d4",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 159,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t000_C_2.png",
+    "target_bbox": [
+      305,
+      291,
+      351,
+      399
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 15.190087664267187,
+    "repair_selected_source": [
+      87,
+      70
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 11.292566731620251,
+      "delta_contrast": 2.9774342898432806,
+      "delta_gradient_energy": 7.2980804443359375
+    },
+    "repair_donor_bbox": [
+      265,
+      190,
+      329,
+      391
+    ],
+    "repair_region_w": 140,
+    "repair_region_h": 441,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t001_A_0",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_40_08_Pro_jpg.rf.a8adc7f327d12037ae4a10f3c7ff8187",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_40_13_Pro_jpg.rf.917f27c10c18d222751b2a847e2e884f",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t001_A_0.png",
+    "target_bbox": [
+      308,
+      290,
+      354,
+      396
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 31.201787263517538,
+    "repair_selected_source": [
+      187,
+      221
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 6.06445819239686,
+      "delta_contrast": 17.763886306143345,
+      "delta_gradient_energy": 1.4528846740722656
+    },
+    "repair_donor_bbox": [
+      305,
+      288,
+      348,
+      400
+    ],
+    "repair_region_w": 93,
+    "repair_region_h": 246,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t001_A_1",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_40_08_Pro_jpg.rf.a8adc7f327d12037ae4a10f3c7ff8187",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_39_59_Pro_jpg.rf.9eee5f528b1ac07f8159653657575c05",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t001_A_1.png",
+    "target_bbox": [
+      308,
+      290,
+      354,
+      396
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 54.849784200879476,
+    "repair_selected_source": [
+      428,
+      227
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 13.752643011776874,
+      "delta_contrast": 11.16883010267142,
+      "delta_gradient_energy": 1.0948715209960938
+    },
+    "repair_donor_bbox": [
+      305,
+      291,
+      351,
+      399
+    ],
+    "repair_region_w": 100,
+    "repair_region_h": 236,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t001_A_2",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_40_08_Pro_jpg.rf.a8adc7f327d12037ae4a10f3c7ff8187",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_40_15_Pro_jpg.rf.f31d8d6d58679e39a5779081775db871",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t001_A_2.png",
+    "target_bbox": [
+      308,
+      290,
+      354,
+      396
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 31.291566311275783,
+    "repair_selected_source": [
+      127,
+      224
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 3.1955675004562774,
+      "delta_contrast": 4.024266800252101,
+      "delta_gradient_energy": 23.66659927368164
+    },
+    "repair_donor_bbox": [
+      295,
+      290,
+      355,
+      400
+    ],
+    "repair_region_w": 132,
+    "repair_region_h": 242,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t001_B_0",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_40_08_Pro_jpg.rf.a8adc7f327d12037ae4a10f3c7ff8187",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_50_05_Pro_jpg.rf.c19477621ea7491e87d954e84d3e4af1",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t001_B_0.png",
+    "target_bbox": [
+      308,
+      290,
+      354,
+      396
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 38.556852798735505,
+    "repair_selected_source": [
+      419,
+      216
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 17.87275989119579,
+      "delta_contrast": 16.56640090709799,
+      "delta_gradient_energy": 14.75771713256836
+    },
+    "repair_donor_bbox": [
+      306,
+      286,
+      348,
+      404
+    ],
+    "repair_region_w": 92,
+    "repair_region_h": 258,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t001_B_1",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_40_08_Pro_jpg.rf.a8adc7f327d12037ae4a10f3c7ff8187",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_49_59_Pro_jpg.rf.89936f9d6dff771b5f6924ed020d5f40",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t001_B_1.png",
+    "target_bbox": [
+      308,
+      290,
+      354,
+      396
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 43.88025451128768,
+    "repair_selected_source": [
+      164,
+      218
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 13.471425593570798,
+      "delta_contrast": 15.352988440390815,
+      "delta_gradient_energy": 9.8406982421875
+    },
+    "repair_donor_bbox": [
+      300,
+      287,
+      349,
+      403
+    ],
+    "repair_region_w": 107,
+    "repair_region_h": 254,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t001_B_2",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_40_08_Pro_jpg.rf.a8adc7f327d12037ae4a10f3c7ff8187",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_00_30_Pro_jpg.rf.7435399101b2740c63020f85a8e97641",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "5sagf",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t001_B_2.png",
+    "target_bbox": [
+      308,
+      290,
+      354,
+      396
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 40.70973393126047,
+    "repair_selected_source": [
+      66,
+      219
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 18.739646535332483,
+      "delta_contrast": 20.133485864782514,
+      "delta_gradient_energy": 4.995662689208984
+    },
+    "repair_donor_bbox": [
+      280,
+      290,
+      335,
+      409
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 261,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t001_C_0",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_40_08_Pro_jpg.rf.a8adc7f327d12037ae4a10f3c7ff8187",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_37_png.rf.19b47a3ef28aea091c6b4237b155f284",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 159,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t001_C_0.png",
+    "target_bbox": [
+      308,
+      290,
+      354,
+      396
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 16.13504886240672,
+    "repair_selected_source": [
+      93,
+      96
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 13.025631127494842,
+      "delta_contrast": 4.901375651222567,
+      "delta_gradient_energy": 9.19378662109375
+    },
+    "repair_donor_bbox": [
+      266,
+      206,
+      328,
+      390
+    ],
+    "repair_region_w": 136,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t001_C_1",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_40_08_Pro_jpg.rf.a8adc7f327d12037ae4a10f3c7ff8187",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_36_png.rf.4e2564f68a3463a5201523178b3ddc40",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 159,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "v4-UV",
+    "donor_class": 7,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t001_C_1.png",
+    "target_bbox": [
+      308,
+      290,
+      354,
+      396
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 1,
+    "repair_selected_score": 47.14575431904478,
+    "repair_selected_source": [
+      4,
+      245
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 22.612737642540253,
+      "delta_contrast": 3.0913284205773346,
+      "delta_gradient_energy": 15.442939758300781
+    },
+    "repair_donor_bbox": [
+      318,
+      315,
+      431,
+      433
+    ],
+    "repair_region_w": 247,
+    "repair_region_h": 258,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t001_C_2",
+    "target_id": "Soil-Moisture-1_WIN_20231111_15_40_08_Pro_jpg.rf.a8adc7f327d12037ae4a10f3c7ff8187",
+    "condition": "C",
+    "donor_id": "Soil_Moisture_September-8_2_png.rf.9c927bb42933094f174bff07c77502de",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 159,
+    "target_source": "5sagf",
+    "target_class": 5,
+    "donor_source": "September",
+    "donor_class": 8,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t001_C_2.png",
+    "target_bbox": [
+      308,
+      290,
+      354,
+      396
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      228,
+      333,
+      356,
+      503
+    ],
+    "repair_region_w": 280,
+    "repair_region_h": 374,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t002_A_0",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_40_Pro_jpg.rf.b72716e5a752aef80aaafd6f3c5e8036",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_25_Pro_jpg.rf.2745faae8dcaa5cfa1900648c698512a",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "IR",
+    "target_class": 8,
+    "donor_source": "IR",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t002_A_0.png",
+    "target_bbox": [
+      360,
+      254,
+      418,
+      297
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 21,
+    "repair_selected_score": 40.19864149664354,
+    "repair_selected_source": [
+      470,
+      387
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 24.17688802652015,
+      "delta_contrast": 24.50914724457062,
+      "delta_gradient_energy": 8.219581604003906
+    },
+    "repair_donor_bbox": [
+      384,
+      242,
+      416,
+      296
+    ],
+    "repair_region_w": 70,
+    "repair_region_h": 118,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t002_A_1",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_40_Pro_jpg.rf.b72716e5a752aef80aaafd6f3c5e8036",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_38_12_Pro_jpg.rf.ce096875da359a26c64051516c449e08",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "IR",
+    "target_class": 8,
+    "donor_source": "IR",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t002_A_1.png",
+    "target_bbox": [
+      360,
+      254,
+      418,
+      297
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 21,
+    "repair_selected_score": 1.297758991843533,
+    "repair_selected_source": [
+      329,
+      135
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 2.4291945382438604,
+      "delta_contrast": 5.578469625022092,
+      "delta_gradient_energy": 2.963414192199707
+    },
+    "repair_donor_bbox": [
+      360,
+      253,
+      412,
+      296
+    ],
+    "repair_region_w": 114,
+    "repair_region_h": 93,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t002_A_2",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_40_Pro_jpg.rf.b72716e5a752aef80aaafd6f3c5e8036",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_38_25_Pro_jpg.rf.bf3cb0c55d239d79bc1c7608e10e2092",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "IR",
+    "target_class": 8,
+    "donor_source": "IR",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t002_A_2.png",
+    "target_bbox": [
+      360,
+      254,
+      418,
+      297
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 21,
+    "repair_selected_score": 12.281123389039802,
+    "repair_selected_source": [
+      332,
+      320
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.6239090066030286,
+      "delta_contrast": 3.9672478809407523,
+      "delta_gradient_energy": 2.43515682220459
+    },
+    "repair_donor_bbox": [
+      361,
+      252,
+      410,
+      295
+    ],
+    "repair_region_w": 107,
+    "repair_region_h": 93,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t002_B_0",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_40_Pro_jpg.rf.b72716e5a752aef80aaafd6f3c5e8036",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_58_10_Pro_jpg.rf.ef349c5a9a8fb417d21c3b97404cf800",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "IR",
+    "target_class": 8,
+    "donor_source": "IR",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t002_B_0.png",
+    "target_bbox": [
+      360,
+      254,
+      418,
+      297
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 1.9113950183829214,
+    "repair_selected_source": [
+      409,
+      244
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 0.3975485266813678,
+      "delta_contrast": 0.6477341981792569,
+      "delta_gradient_energy": 1.2818737030029297
+    },
+    "repair_donor_bbox": [
+      349,
+      268,
+      387,
+      309
+    ],
+    "repair_region_w": 82,
+    "repair_region_h": 89,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t002_B_1",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_40_Pro_jpg.rf.b72716e5a752aef80aaafd6f3c5e8036",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_15_37_59_Pro_jpg.rf.35dee695daf204260d906a8084e70099",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "IR",
+    "target_class": 8,
+    "donor_source": "IR",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t002_B_1.png",
+    "target_bbox": [
+      360,
+      254,
+      418,
+      297
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 3.121150015550258,
+    "repair_selected_source": [
+      349,
+      127
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 0.765707355193995,
+      "delta_contrast": 0.5581356958097237,
+      "delta_gradient_energy": 1.667433738708496
+    },
+    "repair_donor_bbox": [
+      369,
+      259,
+      403,
+      307
+    ],
+    "repair_region_w": 74,
+    "repair_region_h": 104,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t002_B_2",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_40_Pro_jpg.rf.b72716e5a752aef80aaafd6f3c5e8036",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_15_38_02_Pro_jpg.rf.29c1262f12862c78cdaf86f9a93f3d10",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "IR",
+    "target_class": 8,
+    "donor_source": "IR",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t002_B_2.png",
+    "target_bbox": [
+      360,
+      254,
+      418,
+      297
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 21,
+    "repair_selected_score": 2.9807549980401986,
+    "repair_selected_source": [
+      332,
+      132
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.3551148549048082,
+      "delta_contrast": 1.6730989750836527,
+      "delta_gradient_energy": 2.037674903869629
+    },
+    "repair_donor_bbox": [
+      361,
+      259,
+      410,
+      305
+    ],
+    "repair_region_w": 107,
+    "repair_region_h": 100,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t002_C_0",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_40_Pro_jpg.rf.b72716e5a752aef80aaafd6f3c5e8036",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_37_png.rf.5aa19e9000408e20ebc975ab1e02169a",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 174,
+    "target_source": "IR",
+    "target_class": 8,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t002_C_0.png",
+    "target_bbox": [
+      360,
+      254,
+      418,
+      297
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 16.13504886240672,
+    "repair_selected_source": [
+      93,
+      96
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 13.025631127494842,
+      "delta_contrast": 4.901375651222567,
+      "delta_gradient_energy": 9.19378662109375
+    },
+    "repair_donor_bbox": [
+      266,
+      206,
+      328,
+      390
+    ],
+    "repair_region_w": 136,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t002_C_1",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_40_Pro_jpg.rf.b72716e5a752aef80aaafd6f3c5e8036",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_63_png.rf.e2ee0639bd26acf8048a60a774997bcd",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 174,
+    "target_source": "IR",
+    "target_class": 8,
+    "donor_source": "v4-UV",
+    "donor_class": 10,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t002_C_1.png",
+    "target_bbox": [
+      360,
+      254,
+      418,
+      297
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      315,
+      310,
+      435,
+      440
+    ],
+    "repair_region_w": 264,
+    "repair_region_h": 286,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t002_C_2",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_40_Pro_jpg.rf.b72716e5a752aef80aaafd6f3c5e8036",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_16_png.rf.b7d1a96cce632074c7eea696acdb8733",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 174,
+    "target_source": "IR",
+    "target_class": 8,
+    "donor_source": "v4-UV",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t002_C_2.png",
+    "target_bbox": [
+      360,
+      254,
+      418,
+      297
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 1,
+    "repair_selected_score": 44.70020040754283,
+    "repair_selected_source": [
+      6,
+      239
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 6.616004830430793,
+      "delta_contrast": 12.845507583145887,
+      "delta_gradient_energy": 30.990692138671875
+    },
+    "repair_donor_bbox": [
+      320,
+      313,
+      433,
+      437
+    ],
+    "repair_region_w": 247,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t003_A_0",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_30_Pro_jpg.rf.00b725cffdf17a0382122d910c2fd599",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_37_Pro_jpg.rf.43ad98eee2eca54742ef0100a67fcf78",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "IR",
+    "target_class": 1,
+    "donor_source": "IR",
+    "donor_class": 1,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t003_A_0.png",
+    "target_bbox": [
+      353,
+      259,
+      397,
+      311
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 3.6238516915283108,
+    "repair_selected_source": [
+      404,
+      234
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 0.8662311511404875,
+      "delta_contrast": 1.6303767039200734,
+      "delta_gradient_energy": 1.3679265975952148
+    },
+    "repair_donor_bbox": [
+      356,
+      264,
+      386,
+      315
+    ],
+    "repair_region_w": 66,
+    "repair_region_h": 111,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t003_A_1",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_30_Pro_jpg.rf.00b725cffdf17a0382122d910c2fd599",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_08_Pro_jpg.rf.13582124a184b0892a9a16543ba06ad0",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "IR",
+    "target_class": 1,
+    "donor_source": "IR",
+    "donor_class": 1,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t003_A_1.png",
+    "target_bbox": [
+      353,
+      259,
+      397,
+      311
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 18.59534472300447,
+    "repair_selected_source": [
+      413,
+      334
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 18.6368156393782,
+      "delta_contrast": 40.998186142412074,
+      "delta_gradient_energy": 11.978256225585938
+    },
+    "repair_donor_bbox": [
+      359,
+      264,
+      393,
+      308
+    ],
+    "repair_region_w": 74,
+    "repair_region_h": 96,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t003_A_2",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_30_Pro_jpg.rf.00b725cffdf17a0382122d910c2fd599",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_04_Pro_jpg.rf.e2580863151ca73d50579894e3c9d71d",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "IR",
+    "target_class": 1,
+    "donor_source": "IR",
+    "donor_class": 1,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t003_A_2.png",
+    "target_bbox": [
+      353,
+      259,
+      397,
+      311
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 12.021487983010017,
+    "repair_selected_source": [
+      240,
+      238
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.6974331409633885,
+      "delta_contrast": 12.396978904481891,
+      "delta_gradient_energy": 2.3578739166259766
+    },
+    "repair_donor_bbox": [
+      352,
+      265,
+      392,
+      311
+    ],
+    "repair_region_w": 88,
+    "repair_region_h": 100,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t003_B_0",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_30_Pro_jpg.rf.00b725cffdf17a0382122d910c2fd599",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_37_25_Pro_jpg.rf.2745faae8dcaa5cfa1900648c698512a",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "IR",
+    "target_class": 1,
+    "donor_source": "IR",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t003_B_0.png",
+    "target_bbox": [
+      353,
+      259,
+      397,
+      311
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 21,
+    "repair_selected_score": 40.19864149664354,
+    "repair_selected_source": [
+      470,
+      387
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 24.17688802652015,
+      "delta_contrast": 24.50914724457062,
+      "delta_gradient_energy": 8.219581604003906
+    },
+    "repair_donor_bbox": [
+      384,
+      242,
+      416,
+      296
+    ],
+    "repair_region_w": 70,
+    "repair_region_h": 118,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t003_B_1",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_30_Pro_jpg.rf.00b725cffdf17a0382122d910c2fd599",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_11_Pro_jpg.rf.98d07a38d1d13ba931b2e33f4ce83656",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "IR",
+    "target_class": 1,
+    "donor_source": "IR",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t003_B_1.png",
+    "target_bbox": [
+      353,
+      259,
+      397,
+      311
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 21,
+    "repair_selected_score": 3.84294860356643,
+    "repair_selected_source": [
+      354,
+      105
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.6781872990734894,
+      "delta_contrast": 3.6692781257169305,
+      "delta_gradient_energy": 3.4597597122192383
+    },
+    "repair_donor_bbox": [
+      373,
+      251,
+      406,
+      304
+    ],
+    "repair_region_w": 71,
+    "repair_region_h": 115,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t003_B_2",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_30_Pro_jpg.rf.00b725cffdf17a0382122d910c2fd599",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_15_37_50_Pro_jpg.rf.874036dd13b01e933efb24fe43e2fdf6",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 15,
+    "target_source": "IR",
+    "target_class": 1,
+    "donor_source": "IR",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t003_B_2.png",
+    "target_bbox": [
+      353,
+      259,
+      397,
+      311
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 4.276903557412043,
+    "repair_selected_source": [
+      428,
+      113
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.8212751358532338,
+      "delta_contrast": 2.511473960316415,
+      "delta_gradient_energy": 2.9295997619628906
+    },
+    "repair_donor_bbox": [
+      371,
+      253,
+      407,
+      303
+    ],
+    "repair_region_w": 78,
+    "repair_region_h": 110,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t003_C_0",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_30_Pro_jpg.rf.00b725cffdf17a0382122d910c2fd599",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_00_14_Pro_jpg.rf.7dea9efa2855ca4e27f33072e9756b84",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 163,
+    "target_source": "IR",
+    "target_class": 1,
+    "donor_source": "5sagf",
+    "donor_class": 2,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t003_C_0.png",
+    "target_bbox": [
+      353,
+      259,
+      397,
+      311
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 27.08228965507641,
+    "repair_selected_source": [
+      417,
+      225
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 5.8199270028771535,
+      "delta_contrast": 9.50092388231277,
+      "delta_gradient_energy": 0.4811286926269531
+    },
+    "repair_donor_bbox": [
+      282,
+      294,
+      332,
+      410
+    ],
+    "repair_region_w": 110,
+    "repair_region_h": 254,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t003_C_1",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_30_Pro_jpg.rf.00b725cffdf17a0382122d910c2fd599",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_16_png.rf.6c1b07cd506f9c89cd8eafb1cc88a887",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 163,
+    "target_source": "IR",
+    "target_class": 1,
+    "donor_source": "v4",
+    "donor_class": 7,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t003_C_1.png",
+    "target_bbox": [
+      353,
+      259,
+      397,
+      311
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 3,
+    "repair_selected_score": 29.062514246088462,
+    "repair_selected_source": [
+      115,
+      191
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 10.114123389436227,
+      "delta_contrast": 8.74075757838302,
+      "delta_gradient_energy": 17.37487030029297
+    },
+    "repair_donor_bbox": [
+      311,
+      266,
+      381,
+      391
+    ],
+    "repair_region_w": 154,
+    "repair_region_h": 275,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t003_C_2",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_14_48_30_Pro_jpg.rf.00b725cffdf17a0382122d910c2fd599",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_5_png.rf.c2dfebca2b4e852ca53c5977a64df841",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 163,
+    "target_source": "IR",
+    "target_class": 1,
+    "donor_source": "v4-IR",
+    "donor_class": 2,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t003_C_2.png",
+    "target_bbox": [
+      353,
+      259,
+      397,
+      311
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 24.68286885469398,
+    "repair_selected_source": [
+      401,
+      77
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 0.8877697889233054,
+      "delta_contrast": 3.7162258357520144,
+      "delta_gradient_energy": 5.6909027099609375
+    },
+    "repair_donor_bbox": [
+      239,
+      168,
+      299,
+      321
+    ],
+    "repair_region_w": 132,
+    "repair_region_h": 335,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t004_B_0",
+    "target_id": "Soil_Moisture_September-8_3_png.rf.23b49f366916414b6f9cbcefdae6be8a",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_September-8_10_png.rf.f29c3c911ce4c28f9906ec9bb5c60a1a",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "September",
+    "target_class": 7,
+    "donor_source": "September",
+    "donor_class": 9,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t004_B_0.png",
+    "target_bbox": [
+      195,
+      410,
+      338,
+      587
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 1,
+    "repair_selected_score": 244.5885327666996,
+    "repair_selected_source": [
+      4,
+      150
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 81.30666196701046,
+      "delta_contrast": 76.18768469874962,
+      "delta_gradient_energy": 8.03781509399414
+    },
+    "repair_donor_bbox": [
+      359,
+      227,
+      486,
+      356
+    ],
+    "repair_region_w": 279,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t004_B_1",
+    "target_id": "Soil_Moisture_September-8_3_png.rf.23b49f366916414b6f9cbcefdae6be8a",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_September-8_2_png.rf.9c927bb42933094f174bff07c77502de",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "September",
+    "target_class": 7,
+    "donor_source": "September",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t004_B_1.png",
+    "target_bbox": [
+      195,
+      410,
+      338,
+      587
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      228,
+      333,
+      356,
+      503
+    ],
+    "repair_region_w": 280,
+    "repair_region_h": 374,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t004_B_2",
+    "target_id": "Soil_Moisture_September-8_3_png.rf.23b49f366916414b6f9cbcefdae6be8a",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_September-8_23_png.rf.3d13219f9f71be2ee59e7c8455f1fbe2",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "September",
+    "target_class": 7,
+    "donor_source": "September",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t004_B_2.png",
+    "target_bbox": [
+      195,
+      410,
+      338,
+      587
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      333,
+      403,
+      468,
+      558
+    ],
+    "repair_region_w": 297,
+    "repair_region_h": 330,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t004_C_0",
+    "target_id": "Soil_Moisture_September-8_3_png.rf.23b49f366916414b6f9cbcefdae6be8a",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_30_png.rf.41d49c57b816b80b78ce446911c1ac35",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 177,
+    "target_source": "September",
+    "target_class": 7,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t004_C_0.png",
+    "target_bbox": [
+      195,
+      410,
+      338,
+      587
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 1,
+    "repair_selected_score": 39.55622670694651,
+    "repair_selected_source": [
+      10,
+      232
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 14.333372510415806,
+      "delta_contrast": 6.905168102251328,
+      "delta_gradient_energy": 21.835960388183594
+    },
+    "repair_donor_bbox": [
+      319,
+      306,
+      430,
+      430
+    ],
+    "repair_region_w": 243,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t004_C_1",
+    "target_id": "Soil_Moisture_September-8_3_png.rf.23b49f366916414b6f9cbcefdae6be8a",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_55_png.rf.87b412b8d90b37d6645e397e36d5e042",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 177,
+    "target_source": "September",
+    "target_class": 7,
+    "donor_source": "v4",
+    "donor_class": 6,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t004_C_1.png",
+    "target_bbox": [
+      195,
+      410,
+      338,
+      587
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 9.369271906762812,
+    "repair_selected_source": [
+      465,
+      110
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 2.8300489657559025,
+      "delta_contrast": 7.259530698809069,
+      "delta_gradient_energy": 5.6019439697265625
+    },
+    "repair_donor_bbox": [
+      235,
+      195,
+      296,
+      338
+    ],
+    "repair_region_w": 133,
+    "repair_region_h": 313,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t004_C_2",
+    "target_id": "Soil_Moisture_September-8_3_png.rf.23b49f366916414b6f9cbcefdae6be8a",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_40_15_Pro_jpg.rf.f31d8d6d58679e39a5779081775db871",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 177,
+    "target_source": "September",
+    "target_class": 7,
+    "donor_source": "5sagf",
+    "donor_class": 5,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t004_C_2.png",
+    "target_bbox": [
+      195,
+      410,
+      338,
+      587
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 31.291566311275783,
+    "repair_selected_source": [
+      127,
+      224
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 3.1955675004562774,
+      "delta_contrast": 4.024266800252101,
+      "delta_gradient_energy": 23.66659927368164
+    },
+    "repair_donor_bbox": [
+      295,
+      290,
+      355,
+      400
+    ],
+    "repair_region_w": 132,
+    "repair_region_h": 242,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t005_B_0",
+    "target_id": "Soil_Moisture_September-8_2_png.rf.9c927bb42933094f174bff07c77502de",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_September-8_18_png.rf.8e70fa8bd7851ff466190934636ef752",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "September",
+    "target_class": 8,
+    "donor_source": "September",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t005_B_0.png",
+    "target_bbox": [
+      228,
+      333,
+      356,
+      503
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 1,
+    "repair_selected_score": 132.334312079492,
+    "repair_selected_source": [
+      24,
+      249
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 64.24053094782766,
+      "delta_contrast": 13.564839241618037,
+      "delta_gradient_energy": 11.079341888427734
+    },
+    "repair_donor_bbox": [
+      388,
+      348,
+      518,
+      513
+    ],
+    "repair_region_w": 286,
+    "repair_region_h": 363,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t005_B_1",
+    "target_id": "Soil_Moisture_September-8_2_png.rf.9c927bb42933094f174bff07c77502de",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_September-8_9_png.rf.2db72e84f99b05fd67300a55be5270be",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "September",
+    "target_class": 8,
+    "donor_source": "September",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t005_B_1.png",
+    "target_bbox": [
+      228,
+      333,
+      356,
+      503
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      399,
+      328,
+      549,
+      501
+    ],
+    "repair_region_w": 330,
+    "repair_region_h": 379,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t005_B_2",
+    "target_id": "Soil_Moisture_September-8_2_png.rf.9c927bb42933094f174bff07c77502de",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_September-8_4_png.rf.42e3fe77cc026762b96f864a97edb407",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "September",
+    "target_class": 8,
+    "donor_source": "September",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t005_B_2.png",
+    "target_bbox": [
+      228,
+      333,
+      356,
+      503
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 1,
+    "repair_selected_score": 171.3009114477497,
+    "repair_selected_source": [
+      34,
+      273
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 76.20232155684734,
+      "delta_contrast": 22.63382459339032,
+      "delta_gradient_energy": 9.201522827148438
+    },
+    "repair_donor_bbox": [
+      398,
+      359,
+      528,
+      503
+    ],
+    "repair_region_w": 286,
+    "repair_region_h": 316,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t005_C_0",
+    "target_id": "Soil_Moisture_September-8_2_png.rf.9c927bb42933094f174bff07c77502de",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_11_png.rf.7ae72520fed14ecf13e60fd070e4d5ee",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 179,
+    "target_source": "September",
+    "target_class": 8,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t005_C_0.png",
+    "target_bbox": [
+      228,
+      333,
+      356,
+      503
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 3,
+    "repair_selected_score": 13.167553277663803,
+    "repair_selected_source": [
+      370,
+      112
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 5.798565713816006,
+      "delta_contrast": 4.73377372412424,
+      "delta_gradient_energy": 0.435760498046875
+    },
+    "repair_donor_bbox": [
+      249,
+      226,
+      325,
+      417
+    ],
+    "repair_region_w": 166,
+    "repair_region_h": 419,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t005_C_1",
+    "target_id": "Soil_Moisture_September-8_2_png.rf.9c927bb42933094f174bff07c77502de",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_18_png.rf.ed30a621f5a0b34b1295518d26027b18",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 179,
+    "target_source": "September",
+    "target_class": 8,
+    "donor_source": "v4-UV",
+    "donor_class": 4,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t005_C_1.png",
+    "target_bbox": [
+      228,
+      333,
+      356,
+      503
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      314,
+      313,
+      430,
+      437
+    ],
+    "repair_region_w": 254,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t005_C_2",
+    "target_id": "Soil_Moisture_September-8_2_png.rf.9c927bb42933094f174bff07c77502de",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_39_png.rf.f0ea0ed5a7935d7cbf83e26b2a49c7f9",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 179,
+    "target_source": "September",
+    "target_class": 8,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t005_C_2.png",
+    "target_bbox": [
+      228,
+      333,
+      356,
+      503
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 14.035992008787584,
+    "repair_selected_source": [
+      105,
+      122
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 9.14875114882068,
+      "delta_contrast": 4.1389266942463845,
+      "delta_gradient_energy": 11.748603820800781
+    },
+    "repair_donor_bbox": [
+      269,
+      224,
+      328,
+      395
+    ],
+    "repair_region_w": 129,
+    "repair_region_h": 375,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t006_A_0",
+    "target_id": "Soil_Moisture_Stir_September-4_29_png.rf.2c7feb200240ad92cafc5c8b21b4f212",
+    "condition": "A",
+    "donor_id": "Soil_Moisture_Stir_September-4_1_png.rf.51e870a03aa32f891e105180781821e1",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "Stir-Sept",
+    "target_class": 3,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t006_A_0.png",
+    "target_bbox": [
+      255,
+      325,
+      284,
+      361
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 16,
+    "repair_selected_score": 61.36197575694213,
+    "repair_selected_source": [
+      81,
+      331
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 30.209998462194118,
+      "delta_contrast": 6.578288870641158,
+      "delta_gradient_energy": 7.4546051025390625
+    },
+    "repair_donor_bbox": [
+      356,
+      368,
+      411,
+      431
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 137,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t006_A_1",
+    "target_id": "Soil_Moisture_Stir_September-4_29_png.rf.2c7feb200240ad92cafc5c8b21b4f212",
+    "condition": "A",
+    "donor_id": "Soil_Moisture_Stir_September-4_4_png.rf.020041899fc4e7041a276f62d036c1ff",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "Stir-Sept",
+    "target_class": 3,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t006_A_1.png",
+    "target_bbox": [
+      255,
+      325,
+      284,
+      361
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 10,
+    "repair_selected_score": 26.955492726036574,
+    "repair_selected_source": [
+      114,
+      170
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 24.439182655878334,
+      "delta_contrast": 13.035478884114301,
+      "delta_gradient_energy": 5.766731262207031
+    },
+    "repair_donor_bbox": [
+      297,
+      409,
+      363,
+      495
+    ],
+    "repair_region_w": 144,
+    "repair_region_h": 188,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t006_A_2",
+    "target_id": "Soil_Moisture_Stir_September-4_29_png.rf.2c7feb200240ad92cafc5c8b21b4f212",
+    "condition": "A",
+    "donor_id": "Soil_Moisture_Stir_September-4_28_png.rf.be5c32e6a07946339efdfea6afe7b469",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 4,
+    "target_source": "Stir-Sept",
+    "target_class": 3,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t006_A_2.png",
+    "target_bbox": [
+      255,
+      325,
+      284,
+      361
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 21,
+    "repair_selected_score": 2.1763281165831634,
+    "repair_selected_source": [
+      262,
+      150
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 0.9276747135232256,
+      "delta_contrast": 0.4774631458687551,
+      "delta_gradient_energy": 0.794403076171875
+    },
+    "repair_donor_bbox": [
+      286,
+      353,
+      327,
+      406
+    ],
+    "repair_region_w": 89,
+    "repair_region_h": 115,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t006_B_0",
+    "target_id": "Soil_Moisture_Stir_September-4_29_png.rf.2c7feb200240ad92cafc5c8b21b4f212",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 7,
+    "target_source": "Stir-Sept",
+    "target_class": 3,
+    "donor_source": "Stir-Sept",
+    "donor_class": 1,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t006_B_0.png",
+    "target_bbox": [
+      255,
+      325,
+      284,
+      361
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 4.823861103205437,
+    "repair_selected_source": [
+      334,
+      221
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.7884233614278322,
+      "delta_contrast": 2.4819795102607434,
+      "delta_gradient_energy": 2.6956729888916016
+    },
+    "repair_donor_bbox": [
+      285,
+      353,
+      316,
+      401
+    ],
+    "repair_region_w": 67,
+    "repair_region_h": 104,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t006_B_1",
+    "target_id": "Soil_Moisture_Stir_September-4_29_png.rf.2c7feb200240ad92cafc5c8b21b4f212",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_24_png.rf.baae9568fadbc1c677ef12cada3621da",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 7,
+    "target_source": "Stir-Sept",
+    "target_class": 3,
+    "donor_source": "Stir-Sept",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t006_B_1.png",
+    "target_bbox": [
+      255,
+      325,
+      284,
+      361
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 3,
+    "repair_selected_score": 54.26431094374509,
+    "repair_selected_source": [
+      48,
+      221
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 4.278250041867237,
+      "delta_contrast": 28.85329566551612,
+      "delta_gradient_energy": 8.090335845947266
+    },
+    "repair_donor_bbox": [
+      315,
+      278,
+      411,
+      374
+    ],
+    "repair_region_w": 210,
+    "repair_region_h": 210,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t006_B_2",
+    "target_id": "Soil_Moisture_Stir_September-4_29_png.rf.2c7feb200240ad92cafc5c8b21b4f212",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_16_png.rf.e957049c0208b227cd5691dfd4fd7660",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 7,
+    "target_source": "Stir-Sept",
+    "target_class": 3,
+    "donor_source": "Stir-Sept",
+    "donor_class": 7,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t006_B_2.png",
+    "target_bbox": [
+      255,
+      325,
+      284,
+      361
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 35.699857073283724,
+    "repair_selected_source": [
+      218,
+      44
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 10.876022547187617,
+      "delta_contrast": 8.314875631076527,
+      "delta_gradient_energy": 7.917441368103027
+    },
+    "repair_donor_bbox": [
+      269,
+      339,
+      355,
+      445
+    ],
+    "repair_region_w": 188,
+    "repair_region_h": 232,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t006_C_0",
+    "target_id": "Soil_Moisture_Stir_September-4_29_png.rf.2c7feb200240ad92cafc5c8b21b4f212",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_48_png.rf.240cb655f1892b61e9d197ef798628f5",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 176,
+    "target_source": "Stir-Sept",
+    "target_class": 3,
+    "donor_source": "v4",
+    "donor_class": 9,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t006_C_0.png",
+    "target_bbox": [
+      255,
+      325,
+      284,
+      361
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 3,
+    "repair_selected_score": 5.953998431080398,
+    "repair_selected_source": [
+      379,
+      128
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 5.186836157152147,
+      "delta_contrast": 8.75525902049107,
+      "delta_gradient_energy": 13.865798950195312
+    },
+    "repair_donor_bbox": [
+      263,
+      243,
+      336,
+      435
+    ],
+    "repair_region_w": 159,
+    "repair_region_h": 422,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t006_C_1",
+    "target_id": "Soil_Moisture_Stir_September-4_29_png.rf.2c7feb200240ad92cafc5c8b21b4f212",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_22_png.rf.2e50eabf3fec2181878fd8aaea9f924a",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 176,
+    "target_source": "Stir-Sept",
+    "target_class": 3,
+    "donor_source": "v4-UV",
+    "donor_class": 0,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t006_C_1.png",
+    "target_bbox": [
+      255,
+      325,
+      284,
+      361
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 37.44376424821208,
+    "repair_selected_source": [
+      411,
+      216
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 13.435625180467474,
+      "delta_contrast": 14.592491638929305,
+      "delta_gradient_energy": 13.360786437988281
+    },
+    "repair_donor_bbox": [
+      287,
+      294,
+      365,
+      424
+    ],
+    "repair_region_w": 170,
+    "repair_region_h": 286,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t006_C_2",
+    "target_id": "Soil_Moisture_Stir_September-4_29_png.rf.2c7feb200240ad92cafc5c8b21b4f212",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_44_png.rf.462f1c8bef0880a6947088a13e594a64",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 176,
+    "target_source": "Stir-Sept",
+    "target_class": 3,
+    "donor_source": "v4",
+    "donor_class": 8,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t006_C_2.png",
+    "target_bbox": [
+      255,
+      325,
+      284,
+      361
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      309,
+      437,
+      438
+    ],
+    "repair_region_w": 264,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t007_A_0",
+    "target_id": "Soil_Moisture_Stir_September-4_24_png.rf.baae9568fadbc1c677ef12cada3621da",
+    "condition": "A",
+    "donor_id": "Soil_Moisture_Stir_September-4_5_png.rf.b9db5a121d051f7482db79e7028b1b5f",
+    "donor_index": 0,
+    "donor_count_used": 1,
+    "donor_count_eligible": 1,
+    "target_source": "Stir-Sept",
+    "target_class": 10,
+    "donor_source": "Stir-Sept",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t007_A_0.png",
+    "target_bbox": [
+      315,
+      278,
+      411,
+      374
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 15,
+    "repair_selected_score": 15.40084754951459,
+    "repair_selected_source": [
+      374,
+      424
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 7.059792591667227,
+      "delta_contrast": 0.23344642060889714,
+      "delta_gradient_energy": 4.947910308837891
+    },
+    "repair_donor_bbox": [
+      312,
+      460,
+      351,
+      521
+    ],
+    "repair_region_w": 85,
+    "repair_region_h": 133,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t007_B_0",
+    "target_id": "Soil_Moisture_Stir_September-4_24_png.rf.baae9568fadbc1c677ef12cada3621da",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_5_png.rf.ac91c674009fb779eaeedcc28f091fbf",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "Stir-Sept",
+    "target_class": 10,
+    "donor_source": "Stir-Sept",
+    "donor_class": 1,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t007_B_0.png",
+    "target_bbox": [
+      315,
+      278,
+      411,
+      374
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 4.823861103205437,
+    "repair_selected_source": [
+      334,
+      221
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.7884233614278322,
+      "delta_contrast": 2.4819795102607434,
+      "delta_gradient_energy": 2.6956729888916016
+    },
+    "repair_donor_bbox": [
+      285,
+      353,
+      316,
+      401
+    ],
+    "repair_region_w": 67,
+    "repair_region_h": 104,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t007_B_1",
+    "target_id": "Soil_Moisture_Stir_September-4_24_png.rf.baae9568fadbc1c677ef12cada3621da",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_29_png.rf.2c7feb200240ad92cafc5c8b21b4f212",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "Stir-Sept",
+    "target_class": 10,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t007_B_1.png",
+    "target_bbox": [
+      315,
+      278,
+      411,
+      374
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 15.707270380543227,
+    "repair_selected_source": [
+      238,
+      382
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 3.2501983894852167,
+      "delta_contrast": 14.406179718487554,
+      "delta_gradient_energy": 2.6311845779418945
+    },
+    "repair_donor_bbox": [
+      255,
+      325,
+      284,
+      361
+    ],
+    "repair_region_w": 63,
+    "repair_region_h": 78,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t007_B_2",
+    "target_id": "Soil_Moisture_Stir_September-4_24_png.rf.baae9568fadbc1c677ef12cada3621da",
+    "condition": "B",
+    "donor_id": "Soil_Moisture_Stir_September-4_23_png.rf.4bc4dda1cf91c898b697e163122d7f24",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 10,
+    "target_source": "Stir-Sept",
+    "target_class": 10,
+    "donor_source": "Stir-Sept",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t007_B_2.png",
+    "target_bbox": [
+      315,
+      278,
+      411,
+      374
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 58.56177931771602,
+    "repair_selected_source": [
+      409,
+      166
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 21.716633853128034,
+      "delta_contrast": 10.13072341988724,
+      "delta_gradient_energy": 5.16583251953125
+    },
+    "repair_donor_bbox": [
+      264,
+      293,
+      355,
+      506
+    ],
+    "repair_region_w": 199,
+    "repair_region_h": 467,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t007_C_0",
+    "target_id": "Soil_Moisture_Stir_September-4_24_png.rf.baae9568fadbc1c677ef12cada3621da",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_44_png.rf.0faaf7e5d0597f3f3a9ca1a542ca2963",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 171,
+    "target_source": "Stir-Sept",
+    "target_class": 10,
+    "donor_source": "v4-UV",
+    "donor_class": 8,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t007_C_0.png",
+    "target_bbox": [
+      315,
+      278,
+      411,
+      374
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      309,
+      437,
+      438
+    ],
+    "repair_region_w": 264,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t007_C_1",
+    "target_id": "Soil_Moisture_Stir_September-4_24_png.rf.baae9568fadbc1c677ef12cada3621da",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_1_png.rf.6c7f8ab921c5d3e2b462424a98792d37",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 171,
+    "target_source": "Stir-Sept",
+    "target_class": 10,
+    "donor_source": "v4-UV",
+    "donor_class": 1,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t007_C_1.png",
+    "target_bbox": [
+      315,
+      278,
+      411,
+      374
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      314,
+      308,
+      430,
+      442
+    ],
+    "repair_region_w": 254,
+    "repair_region_h": 294,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t007_C_2",
+    "target_id": "Soil_Moisture_Stir_September-4_24_png.rf.baae9568fadbc1c677ef12cada3621da",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_35_png.rf.3701e7f73972ce9ca4652c5b0d56543e",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 171,
+    "target_source": "Stir-Sept",
+    "target_class": 10,
+    "donor_source": "v4-UV",
+    "donor_class": 7,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t007_C_2.png",
+    "target_bbox": [
+      315,
+      278,
+      411,
+      374
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      313,
+      310,
+      431,
+      437
+    ],
+    "repair_region_w": 258,
+    "repair_region_h": 279,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t008_A_0",
+    "target_id": "Soil-Moisture-v4-3_77_png.rf.d1bdefd993e34f51618b40e410a4769c",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_67_png.rf.297b72219e217c4458e2f361e8f90cf0",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t008_A_0.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      310,
+      432,
+      434
+    ],
+    "repair_region_w": 253,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t008_A_1",
+    "target_id": "Soil-Moisture-v4-3_77_png.rf.d1bdefd993e34f51618b40e410a4769c",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_68_png.rf.b93a48c4db244df103aba537b7106d14",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t008_A_1.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      311,
+      313,
+      430,
+      429
+    ],
+    "repair_region_w": 261,
+    "repair_region_h": 254,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t008_A_2",
+    "target_id": "Soil-Moisture-v4-3_77_png.rf.d1bdefd993e34f51618b40e410a4769c",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_63_png.rf.f41f59830c6c13fc212e7edfa5fea1e6",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t008_A_2.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      315,
+      310,
+      435,
+      440
+    ],
+    "repair_region_w": 264,
+    "repair_region_h": 286,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t008_B_0",
+    "target_id": "Soil-Moisture-v4-3_77_png.rf.d1bdefd993e34f51618b40e410a4769c",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_41_png.rf.c5688f32b2fb6a41af7fcd00eda26a27",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 63,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t008_B_0.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 11.673479658502302,
+    "repair_selected_source": [
+      370,
+      127
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.7169681841113082,
+      "delta_contrast": 2.6564939453574223,
+      "delta_gradient_energy": 1.475128173828125
+    },
+    "repair_donor_bbox": [
+      263,
+      236,
+      330,
+      418
+    ],
+    "repair_region_w": 147,
+    "repair_region_h": 400,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t008_B_1",
+    "target_id": "Soil-Moisture-v4-3_77_png.rf.d1bdefd993e34f51618b40e410a4769c",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_5_png.rf.882992619ed230b70b407f00db34f885",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 63,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t008_B_1.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 24.68286885469398,
+    "repair_selected_source": [
+      401,
+      77
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 0.8877697889233054,
+      "delta_contrast": 3.7162258357520144,
+      "delta_gradient_energy": 5.6909027099609375
+    },
+    "repair_donor_bbox": [
+      239,
+      168,
+      299,
+      321
+    ],
+    "repair_region_w": 132,
+    "repair_region_h": 335,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t008_B_2",
+    "target_id": "Soil-Moisture-v4-3_77_png.rf.d1bdefd993e34f51618b40e410a4769c",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_2_png.rf.6903fd2923d4b95b9d57364e46760ce1",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 63,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t008_B_2.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 18.033640242981125,
+    "repair_selected_source": [
+      443,
+      70
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 3.9003764457960615,
+      "delta_contrast": 1.6168493033999924,
+      "delta_gradient_energy": 2.5562057495117188
+    },
+    "repair_donor_bbox": [
+      246,
+      163,
+      298,
+      319
+    ],
+    "repair_region_w": 114,
+    "repair_region_h": 342,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t008_C_0",
+    "target_id": "Soil-Moisture-v4-3_77_png.rf.d1bdefd993e34f51618b40e410a4769c",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_11_png.rf.995367815a5cf46eec90053cfca59466",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t008_C_0.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 12.93717240441395,
+    "repair_selected_source": [
+      468,
+      111
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 6.091282217766368,
+      "delta_contrast": 9.207902242729588,
+      "delta_gradient_energy": 12.494064331054688
+    },
+    "repair_donor_bbox": [
+      219,
+      193,
+      285,
+      331
+    ],
+    "repair_region_w": 144,
+    "repair_region_h": 302,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t008_C_1",
+    "target_id": "Soil-Moisture-v4-3_77_png.rf.d1bdefd993e34f51618b40e410a4769c",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_16_png.rf.b7d1a96cce632074c7eea696acdb8733",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "v4-UV",
+    "donor_class": 4,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t008_C_1.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 1,
+    "repair_selected_score": 44.70020040754283,
+    "repair_selected_source": [
+      6,
+      239
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 6.616004830430793,
+      "delta_contrast": 12.845507583145887,
+      "delta_gradient_energy": 30.990692138671875
+    },
+    "repair_donor_bbox": [
+      320,
+      313,
+      433,
+      437
+    ],
+    "repair_region_w": 247,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t008_C_2",
+    "target_id": "Soil-Moisture-v4-3_77_png.rf.d1bdefd993e34f51618b40e410a4769c",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_58_10_Pro_jpg.rf.ef349c5a9a8fb417d21c3b97404cf800",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 118,
+    "target_source": "v4",
+    "target_class": 10,
+    "donor_source": "IR",
+    "donor_class": 2,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t008_C_2.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 1.9113950183829214,
+    "repair_selected_source": [
+      409,
+      244
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 0.3975485266813678,
+      "delta_contrast": 0.6477341981792569,
+      "delta_gradient_energy": 1.2818737030029297
+    },
+    "repair_donor_bbox": [
+      349,
+      268,
+      387,
+      309
+    ],
+    "repair_region_w": 82,
+    "repair_region_h": 89,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t009_A_0",
+    "target_id": "Soil-Moisture-v4-3_48_png.rf.85fe39f86b99885a2ec93cbac4124006",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_47_png.rf.2b6b98b88f716c497de3a3672dc79bba",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4",
+    "target_class": 6,
+    "donor_source": "v4",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t009_A_0.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 13.166939694068612,
+    "repair_selected_source": [
+      439,
+      93
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 2.9033662367069875,
+      "delta_contrast": 5.809141487765606,
+      "delta_gradient_energy": 16.999664306640625
+    },
+    "repair_donor_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "repair_region_w": 115,
+    "repair_region_h": 327,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t009_A_1",
+    "target_id": "Soil-Moisture-v4-3_48_png.rf.85fe39f86b99885a2ec93cbac4124006",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_46_png.rf.f64f01e05b23b9d9b87ed88b49a23422",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4",
+    "target_class": 6,
+    "donor_source": "v4",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t009_A_1.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 8.19885369550245,
+    "repair_selected_source": [
+      444,
+      87
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.8291892227422124,
+      "delta_contrast": 9.468295578802824,
+      "delta_gradient_energy": 9.9552001953125
+    },
+    "repair_donor_bbox": [
+      235,
+      185,
+      290,
+      349
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 360,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t009_A_2",
+    "target_id": "Soil-Moisture-v4-3_48_png.rf.85fe39f86b99885a2ec93cbac4124006",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-3_43_png.rf.bc7798e477f9d84043d0158d1efdfc49",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4",
+    "target_class": 6,
+    "donor_source": "v4",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t009_A_2.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 10.669418467406405,
+    "repair_selected_source": [
+      431,
+      80
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 2.8708479945338876,
+      "delta_contrast": 6.797089337432367,
+      "delta_gradient_energy": 14.461013793945312
+    },
+    "repair_donor_bbox": [
+      234,
+      181,
+      286,
+      350
+    ],
+    "repair_region_w": 114,
+    "repair_region_h": 371,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t009_B_0",
+    "target_id": "Soil-Moisture-v4-3_48_png.rf.85fe39f86b99885a2ec93cbac4124006",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_2_png.rf.1510216eb396bdaeb53ebbc710dadf7e",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 64,
+    "target_source": "v4",
+    "target_class": 6,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t009_B_0.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 14.901871849887202,
+    "repair_selected_source": [
+      90,
+      121
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 3.340724317023249,
+      "delta_contrast": 5.141442744236207,
+      "delta_gradient_energy": 14.382843017578125
+    },
+    "repair_donor_bbox": [
+      264,
+      231,
+      327,
+      415
+    ],
+    "repair_region_w": 137,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t009_B_1",
+    "target_id": "Soil-Moisture-v4-3_48_png.rf.85fe39f86b99885a2ec93cbac4124006",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_11_png.rf.ea222acebc72cee84dba4163d36fe26b",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 64,
+    "target_source": "v4",
+    "target_class": 6,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t009_B_1.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 12.93717240441395,
+    "repair_selected_source": [
+      468,
+      111
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 6.091282217766368,
+      "delta_contrast": 9.207902242729588,
+      "delta_gradient_energy": 12.494064331054688
+    },
+    "repair_donor_bbox": [
+      219,
+      193,
+      285,
+      331
+    ],
+    "repair_region_w": 144,
+    "repair_region_h": 302,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t009_B_2",
+    "target_id": "Soil-Moisture-v4-3_48_png.rf.85fe39f86b99885a2ec93cbac4124006",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-3_36_png.rf.25f220c20b79b546e570529764421b0b",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 64,
+    "target_source": "v4",
+    "target_class": 6,
+    "donor_source": "v4",
+    "donor_class": 7,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t009_B_2.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 1,
+    "repair_selected_score": 47.14575431904478,
+    "repair_selected_source": [
+      4,
+      245
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 22.612737642540253,
+      "delta_contrast": 3.0913284205773346,
+      "delta_gradient_energy": 15.442939758300781
+    },
+    "repair_donor_bbox": [
+      318,
+      315,
+      431,
+      433
+    ],
+    "repair_region_w": 247,
+    "repair_region_h": 258,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t009_C_0",
+    "target_id": "Soil-Moisture-v4-3_48_png.rf.85fe39f86b99885a2ec93cbac4124006",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_5_png.rf.eff8d29b77f403470554f78def423a05",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 127,
+    "target_source": "v4",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t009_C_0.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 14.899564518115852,
+    "repair_selected_source": [
+      446,
+      102
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 4.433557916906167,
+      "delta_contrast": 1.9710849172565676,
+      "delta_gradient_energy": 11.773239135742188
+    },
+    "repair_donor_bbox": [
+      228,
+      190,
+      286,
+      338
+    ],
+    "repair_region_w": 126,
+    "repair_region_h": 324,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t009_C_1",
+    "target_id": "Soil-Moisture-v4-3_48_png.rf.85fe39f86b99885a2ec93cbac4124006",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_00_05_Pro_jpg.rf.6efe643aca4c6363a804c607b475a1f3",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 127,
+    "target_source": "v4",
+    "target_class": 6,
+    "donor_source": "5sagf",
+    "donor_class": 2,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t009_C_1.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 68.68422136529263,
+    "repair_selected_source": [
+      57,
+      218
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 34.64530297236487,
+      "delta_contrast": 38.42997890478881,
+      "delta_gradient_energy": 5.968832015991211
+    },
+    "repair_donor_bbox": [
+      293,
+      288,
+      341,
+      406
+    ],
+    "repair_region_w": 104,
+    "repair_region_h": 258,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t009_C_2",
+    "target_id": "Soil-Moisture-v4-3_48_png.rf.85fe39f86b99885a2ec93cbac4124006",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_17_47_Pro_jpg.rf.2d449c9205ff16b967fe13703eb2796e",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 127,
+    "target_source": "v4",
+    "target_class": 6,
+    "donor_source": "5sagf",
+    "donor_class": 2,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t009_C_2.png",
+    "target_bbox": [
+      236,
+      179,
+      292,
+      340
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 49.03160118058455,
+    "repair_selected_source": [
+      125,
+      220
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 14.708043500807165,
+      "delta_contrast": 19.85418264173864,
+      "delta_gradient_energy": 15.187171936035156
+    },
+    "repair_donor_bbox": [
+      279,
+      292,
+      334,
+      412
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 264,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t010_A_0",
+    "target_id": "Soil-Moisture-v4-IR-1_47_png.rf.2112976d08765050658932d78510f85c",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_46_png.rf.2f4a12e0d278661fdec915151e5858dd",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t010_A_0.png",
+    "target_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 8.19885369550245,
+    "repair_selected_source": [
+      444,
+      87
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.8291892227422124,
+      "delta_contrast": 9.468295578802824,
+      "delta_gradient_energy": 9.9552001953125
+    },
+    "repair_donor_bbox": [
+      235,
+      185,
+      290,
+      349
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 360,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t010_A_1",
+    "target_id": "Soil-Moisture-v4-IR-1_47_png.rf.2112976d08765050658932d78510f85c",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_55_png.rf.7ea705a0973ea46938ec31b5e77c229f",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t010_A_1.png",
+    "target_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 9.369271906762812,
+    "repair_selected_source": [
+      465,
+      110
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 2.8300489657559025,
+      "delta_contrast": 7.259530698809069,
+      "delta_gradient_energy": 5.6019439697265625
+    },
+    "repair_donor_bbox": [
+      235,
+      195,
+      296,
+      338
+    ],
+    "repair_region_w": 133,
+    "repair_region_h": 313,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t010_A_2",
+    "target_id": "Soil-Moisture-v4-IR-1_47_png.rf.2112976d08765050658932d78510f85c",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_43_png.rf.1390d1849b95c4bd54cbd617f085098b",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 5,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t010_A_2.png",
+    "target_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 10.669418467406405,
+    "repair_selected_source": [
+      431,
+      80
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 2.8708479945338876,
+      "delta_contrast": 6.797089337432367,
+      "delta_gradient_energy": 14.461013793945312
+    },
+    "repair_donor_bbox": [
+      234,
+      181,
+      286,
+      350
+    ],
+    "repair_region_w": 114,
+    "repair_region_h": 371,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t010_B_0",
+    "target_id": "Soil-Moisture-v4-IR-1_47_png.rf.2112976d08765050658932d78510f85c",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_15_png.rf.4d036fadea1d293700c5b45730d54236",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 24,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t010_B_0.png",
+    "target_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 32.65938102534452,
+    "repair_selected_source": [
+      74,
+      108
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 14.177481772130033,
+      "delta_contrast": 9.390746349010284,
+      "delta_gradient_energy": 19.023910522460938
+    },
+    "repair_donor_bbox": [
+      262,
+      226,
+      330,
+      424
+    ],
+    "repair_region_w": 148,
+    "repair_region_h": 434,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t010_B_1",
+    "target_id": "Soil-Moisture-v4-IR-1_47_png.rf.2112976d08765050658932d78510f85c",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 24,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t010_B_1.png",
+    "target_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 19.828219314645242,
+    "repair_selected_source": [
+      444,
+      112
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 4.465229314593384,
+      "delta_contrast": 5.219297174815915,
+      "delta_gradient_energy": 7.5453033447265625
+    },
+    "repair_donor_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 312,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t010_B_2",
+    "target_id": "Soil-Moisture-v4-IR-1_47_png.rf.2112976d08765050658932d78510f85c",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_50_png.rf.bfe02d71044f536daf1bec4462142151",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 24,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-IR",
+    "donor_class": 9,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t010_B_2.png",
+    "target_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 12.181886320662885,
+    "repair_selected_source": [
+      371,
+      127
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.0628543383482179,
+      "delta_contrast": 2.5894269580719502,
+      "delta_gradient_energy": 1.5024261474609375
+    },
+    "repair_donor_bbox": [
+      263,
+      237,
+      331,
+      421
+    ],
+    "repair_region_w": 148,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t010_C_0",
+    "target_id": "Soil-Moisture-v4-IR-1_47_png.rf.2112976d08765050658932d78510f85c",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_87_png.rf.65b34d43758f026fc06b0808fe174255",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 167,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4",
+    "donor_class": 5,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t010_C_0.png",
+    "target_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 22.273024840734074,
+    "repair_selected_source": [
+      79,
+      219
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 4.9144520149755815,
+      "delta_contrast": 11.717410717036861,
+      "delta_gradient_energy": 3.3730239868164062
+    },
+    "repair_donor_bbox": [
+      285,
+      299,
+      359,
+      433
+    ],
+    "repair_region_w": 162,
+    "repair_region_h": 294,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t010_C_1",
+    "target_id": "Soil-Moisture-v4-IR-1_47_png.rf.2112976d08765050658932d78510f85c",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_68_png.rf.5daf1e53db67249edaa783d7342c4718",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 167,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4-UV",
+    "donor_class": 10,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t010_C_1.png",
+    "target_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      311,
+      313,
+      430,
+      429
+    ],
+    "repair_region_w": 261,
+    "repair_region_h": 254,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t010_C_2",
+    "target_id": "Soil-Moisture-v4-IR-1_47_png.rf.2112976d08765050658932d78510f85c",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_34_png.rf.849c457fade604dff1ed620de9cb7f7e",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 167,
+    "target_source": "v4-IR",
+    "target_class": 6,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t010_C_2.png",
+    "target_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 16.873438944432756,
+    "repair_selected_source": [
+      96,
+      84
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 11.306592122433146,
+      "delta_contrast": 3.480878449673044,
+      "delta_gradient_energy": 12.292655944824219
+    },
+    "repair_donor_bbox": [
+      270,
+      198,
+      333,
+      389
+    ],
+    "repair_region_w": 137,
+    "repair_region_h": 419,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t011_A_0",
+    "target_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_70_png.rf.183153983ef45834728e16cd69eba7f9",
+    "donor_index": 0,
+    "donor_count_used": 2,
+    "donor_count_eligible": 2,
+    "target_source": "v4-IR",
+    "target_class": 10,
+    "donor_source": "v4-IR",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t011_A_0.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 20.171169888693935,
+    "repair_selected_source": [
+      444,
+      125
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 5.215074634251789,
+      "delta_contrast": 5.93949722589961,
+      "delta_gradient_energy": 5.45623779296875
+    },
+    "repair_donor_bbox": [
+      233,
+      210,
+      289,
+      353
+    ],
+    "repair_region_w": 122,
+    "repair_region_h": 313,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t011_A_1",
+    "target_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-IR-1_79_png.rf.5039e0027ac0935693897cdccbab49fa",
+    "donor_index": 1,
+    "donor_count_used": 2,
+    "donor_count_eligible": 2,
+    "target_source": "v4-IR",
+    "target_class": 10,
+    "donor_source": "v4-IR",
+    "donor_class": 10,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t011_A_1.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 20.594818123463003,
+    "repair_selected_source": [
+      316,
+      100
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 3.3175280076746794,
+      "delta_contrast": 2.8958903343845996,
+      "delta_gradient_energy": 6.881378173828125
+    },
+    "repair_donor_bbox": [
+      240,
+      187,
+      288,
+      333
+    ],
+    "repair_region_w": 104,
+    "repair_region_h": 320,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t011_B_0",
+    "target_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_50_png.rf.bfe02d71044f536daf1bec4462142151",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 27,
+    "target_source": "v4-IR",
+    "target_class": 10,
+    "donor_source": "v4-IR",
+    "donor_class": 9,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t011_B_0.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 12.181886320662885,
+    "repair_selected_source": [
+      371,
+      127
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.0628543383482179,
+      "delta_contrast": 2.5894269580719502,
+      "delta_gradient_energy": 1.5024261474609375
+    },
+    "repair_donor_bbox": [
+      263,
+      237,
+      331,
+      421
+    ],
+    "repair_region_w": 148,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t011_B_1",
+    "target_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_47_png.rf.2112976d08765050658932d78510f85c",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 27,
+    "target_source": "v4-IR",
+    "target_class": 10,
+    "donor_source": "v4-IR",
+    "donor_class": 6,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t011_B_1.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 13.166939694068612,
+    "repair_selected_source": [
+      439,
+      93
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 2.9033662367069875,
+      "delta_contrast": 5.809141487765606,
+      "delta_gradient_energy": 16.999664306640625
+    },
+    "repair_donor_bbox": [
+      240,
+      182,
+      293,
+      331
+    ],
+    "repair_region_w": 115,
+    "repair_region_h": 327,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t011_B_2",
+    "target_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-IR-1_5_png.rf.eff8d29b77f403470554f78def423a05",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 27,
+    "target_source": "v4-IR",
+    "target_class": 10,
+    "donor_source": "v4-IR",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t011_B_2.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 5,
+    "repair_selected_score": 14.899564518115852,
+    "repair_selected_source": [
+      446,
+      102
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 4.433557916906167,
+      "delta_contrast": 1.9710849172565676,
+      "delta_gradient_energy": 11.773239135742188
+    },
+    "repair_donor_bbox": [
+      228,
+      190,
+      286,
+      338
+    ],
+    "repair_region_w": 126,
+    "repair_region_h": 324,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t011_C_0",
+    "target_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_15_png.rf.6512222b19ee1a3f85ed0d875b34d840",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 154,
+    "target_source": "v4-IR",
+    "target_class": 10,
+    "donor_source": "v4-UV",
+    "donor_class": 7,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t011_C_0.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 3,
+    "repair_selected_score": 32.72712110141409,
+    "repair_selected_source": [
+      115,
+      190
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 11.447366002214387,
+      "delta_contrast": 7.412229274079442,
+      "delta_gradient_energy": 17.32819366455078
+    },
+    "repair_donor_bbox": [
+      307,
+      269,
+      376,
+      402
+    ],
+    "repair_region_w": 151,
+    "repair_region_h": 291,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t011_C_1",
+    "target_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "condition": "C",
+    "donor_id": "Soil_Moisture_Stir_September-4_28_png.rf.be5c32e6a07946339efdfea6afe7b469",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 154,
+    "target_source": "v4-IR",
+    "target_class": 10,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t011_C_1.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 21,
+    "repair_selected_score": 2.1763281165831634,
+    "repair_selected_source": [
+      262,
+      150
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 0.9276747135232256,
+      "delta_contrast": 0.4774631458687551,
+      "delta_gradient_energy": 0.794403076171875
+    },
+    "repair_donor_bbox": [
+      286,
+      353,
+      327,
+      406
+    ],
+    "repair_region_w": 89,
+    "repair_region_h": 115,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t011_C_2",
+    "target_id": "Soil-Moisture-v4-IR-1_77_png.rf.1f94a3fcdd3bfda66b71bff1eeb4eb88",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_34_png.rf.849c457fade604dff1ed620de9cb7f7e",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 154,
+    "target_source": "v4-IR",
+    "target_class": 10,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t011_C_2.png",
+    "target_bbox": [
+      235,
+      197,
+      290,
+      339
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 16.873438944432756,
+    "repair_selected_source": [
+      96,
+      84
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 11.306592122433146,
+      "delta_contrast": 3.480878449673044,
+      "delta_gradient_energy": 12.292655944824219
+    },
+    "repair_donor_bbox": [
+      270,
+      198,
+      333,
+      389
+    ],
+    "repair_region_w": 137,
+    "repair_region_h": 419,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t012_A_0",
+    "target_id": "Soil-Moisture-v4-UV-1_23_png.rf.c9b28e7e0a90b4e258614047b41cfbce",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-UV-1_36_png.rf.4e2564f68a3463a5201523178b3ddc40",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4-UV",
+    "target_class": 7,
+    "donor_source": "v4-UV",
+    "donor_class": 7,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t012_A_0.png",
+    "target_bbox": [
+      311,
+      266,
+      379,
+      394
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 1,
+    "repair_selected_score": 47.14575431904478,
+    "repair_selected_source": [
+      4,
+      245
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 22.612737642540253,
+      "delta_contrast": 3.0913284205773346,
+      "delta_gradient_energy": 15.442939758300781
+    },
+    "repair_donor_bbox": [
+      318,
+      315,
+      431,
+      433
+    ],
+    "repair_region_w": 247,
+    "repair_region_h": 258,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t012_A_1",
+    "target_id": "Soil-Moisture-v4-UV-1_23_png.rf.c9b28e7e0a90b4e258614047b41cfbce",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-UV-1_8_png.rf.d438401906bcad7cbbaf52520af9a513",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4-UV",
+    "target_class": 7,
+    "donor_source": "v4-UV",
+    "donor_class": 7,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t012_A_1.png",
+    "target_bbox": [
+      311,
+      266,
+      379,
+      394
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 3,
+    "repair_selected_score": 67.79624631932988,
+    "repair_selected_source": [
+      431,
+      178
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 20.760368079622566,
+      "delta_contrast": 10.625205520927379,
+      "delta_gradient_energy": 7.824981689453125
+    },
+    "repair_donor_bbox": [
+      311,
+      255,
+      386,
+      384
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t012_A_2",
+    "target_id": "Soil-Moisture-v4-UV-1_23_png.rf.c9b28e7e0a90b4e258614047b41cfbce",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-UV-1_35_png.rf.3701e7f73972ce9ca4652c5b0d56543e",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 6,
+    "target_source": "v4-UV",
+    "target_class": 7,
+    "donor_source": "v4-UV",
+    "donor_class": 7,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t012_A_2.png",
+    "target_bbox": [
+      311,
+      266,
+      379,
+      394
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      313,
+      310,
+      431,
+      437
+    ],
+    "repair_region_w": 258,
+    "repair_region_h": 279,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t012_B_0",
+    "target_id": "Soil-Moisture-v4-UV-1_23_png.rf.c9b28e7e0a90b4e258614047b41cfbce",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-UV-1_17_png.rf.619013788e8e95bda344d3b128a4f506",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 33,
+    "target_source": "v4-UV",
+    "target_class": 7,
+    "donor_source": "v4-UV",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t012_B_0.png",
+    "target_bbox": [
+      311,
+      266,
+      379,
+      394
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      308,
+      432,
+      440
+    ],
+    "repair_region_w": 253,
+    "repair_region_h": 290,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t012_B_1",
+    "target_id": "Soil-Moisture-v4-UV-1_23_png.rf.c9b28e7e0a90b4e258614047b41cfbce",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-UV-1_60_png.rf.edaf59af2a41c2b6fc8c508a41fdb789",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 33,
+    "target_source": "v4-UV",
+    "target_class": 7,
+    "donor_source": "v4-UV",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t012_B_1.png",
+    "target_bbox": [
+      311,
+      266,
+      379,
+      394
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 28.359588893352505,
+    "repair_selected_source": [
+      413,
+      212
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 4.353443116574122,
+      "delta_contrast": 9.314717661633145,
+      "delta_gradient_energy": 27.977920532226562
+    },
+    "repair_donor_bbox": [
+      287,
+      294,
+      366,
+      432
+    ],
+    "repair_region_w": 173,
+    "repair_region_h": 302,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t012_B_2",
+    "target_id": "Soil-Moisture-v4-UV-1_23_png.rf.c9b28e7e0a90b4e258614047b41cfbce",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-UV-1_19_png.rf.f344804aa111c29166b66939f93c13f4",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 33,
+    "target_source": "v4-UV",
+    "target_class": 7,
+    "donor_source": "v4-UV",
+    "donor_class": 0,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t012_B_2.png",
+    "target_bbox": [
+      311,
+      266,
+      379,
+      394
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 38.58579239537485,
+    "repair_selected_source": [
+      413,
+      220
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 17.90901684752658,
+      "delta_contrast": 11.122986154525636,
+      "delta_gradient_energy": 11.335700988769531
+    },
+    "repair_donor_bbox": [
+      284,
+      296,
+      365,
+      424
+    ],
+    "repair_region_w": 177,
+    "repair_region_h": 280,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t012_C_0",
+    "target_id": "Soil-Moisture-v4-UV-1_23_png.rf.c9b28e7e0a90b4e258614047b41cfbce",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-IR-1_50_png.rf.bfe02d71044f536daf1bec4462142151",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 154,
+    "target_source": "v4-UV",
+    "target_class": 7,
+    "donor_source": "v4-IR",
+    "donor_class": 9,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t012_C_0.png",
+    "target_bbox": [
+      311,
+      266,
+      379,
+      394
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 4,
+    "repair_selected_score": 12.181886320662885,
+    "repair_selected_source": [
+      371,
+      127
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.0628543383482179,
+      "delta_contrast": 2.5894269580719502,
+      "delta_gradient_energy": 1.5024261474609375
+    },
+    "repair_donor_bbox": [
+      263,
+      237,
+      331,
+      421
+    ],
+    "repair_region_w": 148,
+    "repair_region_h": 404,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t012_C_1",
+    "target_id": "Soil-Moisture-v4-UV-1_23_png.rf.c9b28e7e0a90b4e258614047b41cfbce",
+    "condition": "C",
+    "donor_id": "Soil_Moisture_Stir_September-4_4_png.rf.020041899fc4e7041a276f62d036c1ff",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 154,
+    "target_source": "v4-UV",
+    "target_class": 7,
+    "donor_source": "Stir-Sept",
+    "donor_class": 3,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t012_C_1.png",
+    "target_bbox": [
+      311,
+      266,
+      379,
+      394
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 10,
+    "repair_selected_score": 26.955492726036574,
+    "repair_selected_source": [
+      114,
+      170
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 24.439182655878334,
+      "delta_contrast": 13.035478884114301,
+      "delta_gradient_energy": 5.766731262207031
+    },
+    "repair_donor_bbox": [
+      297,
+      409,
+      363,
+      495
+    ],
+    "repair_region_w": 144,
+    "repair_region_h": 188,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t012_C_2",
+    "target_id": "Soil-Moisture-v4-UV-1_23_png.rf.c9b28e7e0a90b4e258614047b41cfbce",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_5_png.rf.3ae37f4f578fc58c636457722064667f",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 154,
+    "target_source": "v4-UV",
+    "target_class": 7,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t012_C_2.png",
+    "target_bbox": [
+      311,
+      266,
+      379,
+      394
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 3,
+    "repair_selected_score": 13.90621411122388,
+    "repair_selected_source": [
+      383,
+      99
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 7.747117127854259,
+      "delta_contrast": 6.344990548567421,
+      "delta_gradient_energy": 0.82916259765625
+    },
+    "repair_donor_bbox": [
+      263,
+      213,
+      338,
+      403
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 418,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t013_A_0",
+    "target_id": "Soil-Moisture-v4-UV-1_75_png.rf.fbc474719959d207323844f9109f4dc4",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-UV-1_71_png.rf.08a1f4cd81f428d49b6a6a18138eec63",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 3,
+    "target_source": "v4-UV",
+    "target_class": 3,
+    "donor_source": "v4-UV",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t013_A_0.png",
+    "target_bbox": [
+      286,
+      298,
+      362,
+      432
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 14.151940007574117,
+    "repair_selected_source": [
+      78,
+      217
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 5.715681180149113,
+      "delta_contrast": 12.997795443174555,
+      "delta_gradient_energy": 6.24798583984375
+    },
+    "repair_donor_bbox": [
+      288,
+      296,
+      363,
+      429
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 291,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t013_A_1",
+    "target_id": "Soil-Moisture-v4-UV-1_75_png.rf.fbc474719959d207323844f9109f4dc4",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-UV-1_85_png.rf.e7c6d0aa786691f959e55a0e5e6754ad",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 3,
+    "target_source": "v4-UV",
+    "target_class": 3,
+    "donor_source": "v4-UV",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t013_A_1.png",
+    "target_bbox": [
+      286,
+      298,
+      362,
+      432
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 14.208516768605703,
+    "repair_selected_source": [
+      74,
+      222
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 5.504887197415531,
+      "delta_contrast": 12.512414912136373,
+      "delta_gradient_energy": 7.898979187011719
+    },
+    "repair_donor_bbox": [
+      284,
+      300,
+      359,
+      431
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 287,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t013_A_2",
+    "target_id": "Soil-Moisture-v4-UV-1_75_png.rf.fbc474719959d207323844f9109f4dc4",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-v4-UV-1_78_png.rf.7d7bf005a60a3faa48211c7295fad361",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 3,
+    "target_source": "v4-UV",
+    "target_class": 3,
+    "donor_source": "v4-UV",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t013_A_2.png",
+    "target_bbox": [
+      286,
+      298,
+      362,
+      432
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 14.653044073008697,
+    "repair_selected_source": [
+      75,
+      218
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 5.385036229555201,
+      "delta_contrast": 11.158306600268391,
+      "delta_gradient_energy": 5.060081481933594
+    },
+    "repair_donor_bbox": [
+      285,
+      299,
+      360,
+      435
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 298,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t013_B_0",
+    "target_id": "Soil-Moisture-v4-UV-1_75_png.rf.fbc474719959d207323844f9109f4dc4",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-UV-1_30_png.rf.4e60b8e133edc4a4fbfde5616993d402",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 36,
+    "target_source": "v4-UV",
+    "target_class": 3,
+    "donor_source": "v4-UV",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t013_B_0.png",
+    "target_bbox": [
+      286,
+      298,
+      362,
+      432
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 1,
+    "repair_selected_score": 39.55622670694651,
+    "repair_selected_source": [
+      10,
+      232
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 14.333372510415806,
+      "delta_contrast": 6.905168102251328,
+      "delta_gradient_energy": 21.835960388183594
+    },
+    "repair_donor_bbox": [
+      319,
+      306,
+      430,
+      430
+    ],
+    "repair_region_w": 243,
+    "repair_region_h": 272,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t013_B_1",
+    "target_id": "Soil-Moisture-v4-UV-1_75_png.rf.fbc474719959d207323844f9109f4dc4",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-UV-1_17_png.rf.619013788e8e95bda344d3b128a4f506",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 36,
+    "target_source": "v4-UV",
+    "target_class": 3,
+    "donor_source": "v4-UV",
+    "donor_class": 4,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t013_B_1.png",
+    "target_bbox": [
+      286,
+      298,
+      362,
+      432
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      308,
+      432,
+      440
+    ],
+    "repair_region_w": 253,
+    "repair_region_h": 290,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t013_B_2",
+    "target_id": "Soil-Moisture-v4-UV-1_75_png.rf.fbc474719959d207323844f9109f4dc4",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-v4-UV-1_24_png.rf.688b89626f15a05ffdfe6b28fa999a38",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 36,
+    "target_source": "v4-UV",
+    "target_class": 3,
+    "donor_source": "v4-UV",
+    "donor_class": 0,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t013_B_2.png",
+    "target_bbox": [
+      286,
+      298,
+      362,
+      432
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 37.85493110622828,
+    "repair_selected_source": [
+      410,
+      226
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 11.677560645613617,
+      "delta_contrast": 15.611239957631112,
+      "delta_gradient_energy": 15.625007629394531
+    },
+    "repair_donor_bbox": [
+      287,
+      299,
+      364,
+      421
+    ],
+    "repair_region_w": 169,
+    "repair_region_h": 268,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t013_C_0",
+    "target_id": "Soil-Moisture-v4-UV-1_75_png.rf.fbc474719959d207323844f9109f4dc4",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_87_png.rf.65b34d43758f026fc06b0808fe174255",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 147,
+    "target_source": "v4-UV",
+    "target_class": 3,
+    "donor_source": "v4",
+    "donor_class": 5,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t013_C_0.png",
+    "target_bbox": [
+      286,
+      298,
+      362,
+      432
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 22.273024840734074,
+    "repair_selected_source": [
+      79,
+      219
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 4.9144520149755815,
+      "delta_contrast": 11.717410717036861,
+      "delta_gradient_energy": 3.3730239868164062
+    },
+    "repair_donor_bbox": [
+      285,
+      299,
+      359,
+      433
+    ],
+    "repair_region_w": 162,
+    "repair_region_h": 294,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t013_C_1",
+    "target_id": "Soil-Moisture-v4-UV-1_75_png.rf.fbc474719959d207323844f9109f4dc4",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_17_png.rf.311d15ab4df9359919e3ba0591730935",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 147,
+    "target_source": "v4-UV",
+    "target_class": 3,
+    "donor_source": "v4",
+    "donor_class": 4,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t013_C_1.png",
+    "target_bbox": [
+      286,
+      298,
+      362,
+      432
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      317,
+      308,
+      432,
+      440
+    ],
+    "repair_region_w": 253,
+    "repair_region_h": 290,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t013_C_2",
+    "target_id": "Soil-Moisture-v4-UV-1_75_png.rf.fbc474719959d207323844f9109f4dc4",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_60_png.rf.2946a3e8e8a1e2b55c6790c86235fdff",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 147,
+    "target_source": "v4-UV",
+    "target_class": 3,
+    "donor_source": "v4",
+    "donor_class": 2,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t013_C_2.png",
+    "target_bbox": [
+      286,
+      298,
+      362,
+      432
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 28.359588893352505,
+    "repair_selected_source": [
+      413,
+      212
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 4.353443116574122,
+      "delta_contrast": 9.314717661633145,
+      "delta_gradient_energy": 27.977920532226562
+    },
+    "repair_donor_bbox": [
+      287,
+      294,
+      366,
+      432
+    ],
+    "repair_region_w": 173,
+    "repair_region_h": 302,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t014_A_0",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_38_Pro_jpg.rf.8e50bb394f317611de8f07576f7858a6",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_11_Pro_jpg.rf.98d07a38d1d13ba931b2e33f4ce83656",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 3,
+    "target_source": "IR",
+    "target_class": 3,
+    "donor_source": "IR",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t014_A_0.png",
+    "target_bbox": [
+      374,
+      255,
+      408,
+      302
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 21,
+    "repair_selected_score": 3.84294860356643,
+    "repair_selected_source": [
+      354,
+      105
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.6781872990734894,
+      "delta_contrast": 3.6692781257169305,
+      "delta_gradient_energy": 3.4597597122192383
+    },
+    "repair_donor_bbox": [
+      373,
+      251,
+      406,
+      304
+    ],
+    "repair_region_w": 71,
+    "repair_region_h": 115,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t014_A_1",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_38_Pro_jpg.rf.8e50bb394f317611de8f07576f7858a6",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_09_Pro_jpg.rf.213c907f6dc5cef448f0660e1c5ad967",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 3,
+    "target_source": "IR",
+    "target_class": 3,
+    "donor_source": "IR",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t014_A_1.png",
+    "target_bbox": [
+      374,
+      255,
+      408,
+      302
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 2.6862333167419616,
+    "repair_selected_source": [
+      272,
+      222
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.405473128562693,
+      "delta_contrast": 1.8250612007316969,
+      "delta_gradient_energy": 1.1506118774414062
+    },
+    "repair_donor_bbox": [
+      370,
+      252,
+      405,
+      303
+    ],
+    "repair_region_w": 77,
+    "repair_region_h": 111,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t014_A_2",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_38_Pro_jpg.rf.8e50bb394f317611de8f07576f7858a6",
+    "condition": "A",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_16_Pro_jpg.rf.4a6a5bfb7b7cad74fda93291c219163b",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 3,
+    "target_source": "IR",
+    "target_class": 3,
+    "donor_source": "IR",
+    "donor_class": 3,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t014_A_2.png",
+    "target_bbox": [
+      374,
+      255,
+      408,
+      302
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 21,
+    "repair_selected_score": 13.50352755397707,
+    "repair_selected_source": [
+      466,
+      217
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 7.22901120944578,
+      "delta_contrast": 27.243620386039648,
+      "delta_gradient_energy": 10.521207809448242
+    },
+    "repair_donor_bbox": [
+      365,
+      251,
+      403,
+      309
+    ],
+    "repair_region_w": 82,
+    "repair_region_h": 126,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t014_B_0",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_38_Pro_jpg.rf.8e50bb394f317611de8f07576f7858a6",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_38_39_Pro_jpg.rf.5736bd3263c732bbe05ea3a9a7f7a4ac",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 16,
+    "target_source": "IR",
+    "target_class": 3,
+    "donor_source": "IR",
+    "donor_class": 8,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t014_B_0.png",
+    "target_bbox": [
+      374,
+      255,
+      408,
+      302
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 21,
+    "repair_selected_score": 22.84775992299846,
+    "repair_selected_source": [
+      437,
+      226
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 3.0738345101513396,
+      "delta_contrast": 5.8372023360372784,
+      "delta_gradient_energy": 4.960628509521484
+    },
+    "repair_donor_bbox": [
+      362,
+      252,
+      409,
+      296
+    ],
+    "repair_region_w": 103,
+    "repair_region_h": 96,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t014_B_1",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_38_Pro_jpg.rf.8e50bb394f317611de8f07576f7858a6",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_15_37_50_Pro_jpg.rf.874036dd13b01e933efb24fe43e2fdf6",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 16,
+    "target_source": "IR",
+    "target_class": 3,
+    "donor_source": "IR",
+    "donor_class": 5,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t014_B_1.png",
+    "target_bbox": [
+      374,
+      255,
+      408,
+      302
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 4.276903557412043,
+    "repair_selected_source": [
+      428,
+      113
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.8212751358532338,
+      "delta_contrast": 2.511473960316415,
+      "delta_gradient_energy": 2.9295997619628906
+    },
+    "repair_donor_bbox": [
+      371,
+      253,
+      407,
+      303
+    ],
+    "repair_region_w": 78,
+    "repair_region_h": 110,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t014_B_2",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_38_Pro_jpg.rf.8e50bb394f317611de8f07576f7858a6",
+    "condition": "B",
+    "donor_id": "Soil-Moisture-IR-1_WIN_20231111_14_58_19_Pro_jpg.rf.c1a6b165317b0308fd543433f2b92490",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 16,
+    "target_source": "IR",
+    "target_class": 3,
+    "donor_source": "IR",
+    "donor_class": 2,
+    "same_modality": null,
+    "composite_path": "./results/phase8c/pilot_v6/t014_B_2.png",
+    "target_bbox": [
+      374,
+      255,
+      408,
+      302
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 24,
+    "repair_selected_score": 3.056356688824386,
+    "repair_selected_source": [
+      331,
+      378
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 1.3869338473834814,
+      "delta_contrast": 1.5306288962780397,
+      "delta_gradient_energy": 1.9518537521362305
+    },
+    "repair_donor_bbox": [
+      352,
+      269,
+      388,
+      310
+    ],
+    "repair_region_w": 78,
+    "repair_region_h": 89,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t014_C_0",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_38_Pro_jpg.rf.8e50bb394f317611de8f07576f7858a6",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-3_43_png.rf.59acb16a45e92b59999f98877c1966ce",
+    "donor_index": 0,
+    "donor_count_used": 3,
+    "donor_count_eligible": 167,
+    "target_source": "IR",
+    "target_class": 3,
+    "donor_source": "v4",
+    "donor_class": 8,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t014_C_0.png",
+    "target_bbox": [
+      374,
+      255,
+      408,
+      302
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "reflection_fill_last_resort",
+    "repair_candidate_count": 0,
+    "repair_selected_score": null,
+    "repair_selected_source": null,
+    "repair_qa_metrics": null,
+    "repair_donor_bbox": [
+      313,
+      311,
+      434,
+      441
+    ],
+    "repair_region_w": 265,
+    "repair_region_h": 286,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": true
+  },
+  {
+    "composite_id": "t014_C_1",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_38_Pro_jpg.rf.8e50bb394f317611de8f07576f7858a6",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-1_WIN_20231111_15_17_47_Pro_jpg.rf.2d449c9205ff16b967fe13703eb2796e",
+    "donor_index": 1,
+    "donor_count_used": 3,
+    "donor_count_eligible": 167,
+    "target_source": "IR",
+    "target_class": 3,
+    "donor_source": "5sagf",
+    "donor_class": 2,
+    "same_modality": true,
+    "composite_path": "./results/phase8c/pilot_v6/t014_C_1.png",
+    "target_bbox": [
+      374,
+      255,
+      408,
+      302
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 6,
+    "repair_selected_score": 49.03160118058455,
+    "repair_selected_source": [
+      125,
+      220
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 14.708043500807165,
+      "delta_contrast": 19.85418264173864,
+      "delta_gradient_energy": 15.187171936035156
+    },
+    "repair_donor_bbox": [
+      279,
+      292,
+      334,
+      412
+    ],
+    "repair_region_w": 121,
+    "repair_region_h": 264,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  },
+  {
+    "composite_id": "t014_C_2",
+    "target_id": "Soil-Moisture-IR-1_WIN_20231111_15_46_38_Pro_jpg.rf.8e50bb394f317611de8f07576f7858a6",
+    "condition": "C",
+    "donor_id": "Soil-Moisture-v4-UV-1_88_png.rf.9aa8a26a4b26797a8c33c8abc45d017e",
+    "donor_index": 2,
+    "donor_count_used": 3,
+    "donor_count_eligible": 167,
+    "target_source": "IR",
+    "target_class": 3,
+    "donor_source": "v4-UV",
+    "donor_class": 5,
+    "same_modality": false,
+    "composite_path": "./results/phase8c/pilot_v6/t014_C_2.png",
+    "target_bbox": [
+      374,
+      255,
+      408,
+      302
+    ],
+    "roi_integrity_ok": true,
+    "roi_max_diff": 0,
+    "repair_method": "texture_patch_replacement",
+    "repair_candidate_count": 2,
+    "repair_selected_score": 23.853755780716916,
+    "repair_selected_source": [
+      76,
+      220
+    ],
+    "repair_qa_metrics": {
+      "delta_mean_luminance": 6.28145016835188,
+      "delta_contrast": 12.338106202911357,
+      "delta_gradient_energy": 2.41986083984375
+    },
+    "repair_donor_bbox": [
+      286,
+      297,
+      361,
+      426
+    ],
+    "repair_region_w": 165,
+    "repair_region_h": 283,
+    "repair_donor_img_shape": [
+      640,
+      640
+    ],
+    "repair_used_smaller_radii_tier": false
+  }
+]
