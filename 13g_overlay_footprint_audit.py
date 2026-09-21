@@ -57,19 +57,45 @@ def get_dataset_name(filename):
 
 def detect_yellow_text_bbox(img):
     """Returns (bbox, quadrant, pixel_count). bbox is
-    (x_min, y_min, x_max, y_max) of detected yellow-ish pixels, or
-    None if nothing found."""
+    (x_min, y_min, x_max, y_max) of detected TEXT-LIKE yellow blobs,
+    or None if nothing found.
+
+    REVISED after first audit run returned near-full-image bounding
+    boxes (0,0)-(639,639) for nearly every source -- the original
+    broad HSV threshold was catching warm-toned soil/gravel and
+    possibly laser glow, not just the small burned-in text. Fixed by:
+    (1) tightening saturation/value thresholds to match pure, bright,
+    saturated text rather than generic warm soil tones, and (2) using
+    connected-component analysis with a plausible text-character-
+    cluster size filter, discarding large diffuse blobs that cannot
+    be text."""
     h, w = img.shape[:2]
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
-    lower_yellow = np.array([18, 80, 120])
-    upper_yellow = np.array([35, 255, 255])
+    # Tightened: pure bright yellow text is typically near-maximum
+    # saturation and value (close to RGB (255,255,0) territory), not
+    # merely "warm-toned" like soil/gravel under directional lighting.
+    lower_yellow = np.array([22, 150, 180])
+    upper_yellow = np.array([32, 255, 255])
     mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
 
-    kernel = np.ones((5, 5), np.uint8)
+    kernel = np.ones((3, 3), np.uint8)
     mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
 
-    ys, xs = np.where(mask > 0)
+    # Connected-component filtering: keep only components whose size
+    # is plausible for a text character/word cluster. Discard both
+    # tiny noise specks and large diffuse regions (soil, glare, laser
+    # glow) that cannot be burned-in text at this image resolution.
+    n_labels, labels, stats, _ = cv2.connectedComponentsWithStats(mask, connectivity=8)
+    MIN_COMPONENT_AREA = 8
+    MAX_COMPONENT_AREA = 400
+    text_mask = np.zeros_like(mask)
+    for i in range(1, n_labels):  # skip label 0 (background)
+        area = stats[i, cv2.CC_STAT_AREA]
+        if MIN_COMPONENT_AREA <= area <= MAX_COMPONENT_AREA:
+            text_mask[labels == i] = 255
+
+    ys, xs = np.where(text_mask > 0)
     if len(xs) == 0:
         return None, "none_found", 0
 
