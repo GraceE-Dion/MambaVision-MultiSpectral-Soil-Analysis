@@ -58,11 +58,32 @@ DATASET_PATTERNS = {
 # padded +6px on each side for safety margin against slight per-image
 # variation. 5sagf and IR deliberately absent -- confirmed no overlay,
 # no region to repair.
+# From the overlay footprint audit (13g), per-source union bboxes,
+# padded +6px on each side for safety margin against slight per-image
+# variation. 5sagf and IR deliberately absent -- confirmed no overlay,
+# no region to repair.
+#
+# CORRECTION (Stir-Sept): the original audit-derived box (10,10,53,30)
+# was confirmed WRONG via direct visual inspection of a real repaired
+# image -- the overlay was still fully visible/legible after "repair,"
+# meaning the box missed it entirely. Root cause: Stir-Sept had the
+# LOWEST detection hit rate in the original audit (4/12 sampled
+# images), so the audit-derived box was built from too few successful
+# detections to capture the true footprint. Direct visual evidence
+# showed the real overlay clipped by the TOP EDGE of the frame
+# (starts near y=0, not y=10) and spans two full lines of text
+# (taller than the original 20px). Widened and repositioned below
+# based on this direct evidence, not re-derived from the same weak
+# audit data.
+#
+# v4-IR had an equally low hit rate (2/15) in the same audit -- NOT
+# yet confirmed broken or fine via direct visual check. Flagged here;
+# verify with a real repaired v4-IR image before trusting its region.
 OVERLAY_REGIONS = {
     "September":  (7, 10, 71, 50),
-    "Stir-Sept":  (10, 10, 53, 30),
+    "Stir-Sept":  (5, 0, 70, 38),    # corrected -- see note above
     "v4":         (9, 10, 55, 49),
-    "v4-IR":      (10, 11, 35, 49),
+    "v4-IR":      (10, 11, 35, 49),  # low audit confidence -- verify directly
     "v4-UV":      (9, 10, 55, 32),
 }
 
