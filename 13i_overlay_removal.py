@@ -79,12 +79,29 @@ DATASET_PATTERNS = {
 # v4-IR had an equally low hit rate (2/15) in the same audit -- NOT
 # yet confirmed broken or fine via direct visual check. Flagged here;
 # verify with a real repaired v4-IR image before trusting its region.
+# CORRECTED (third attempt) -- both prior versions (per-source,
+# audit-derived) FAILED on real images: attempt 1 used regions too
+# small/mispositioned per source; attempt 2 (Stir-Sept specifically)
+# was still wrong despite a targeted re-estimate. Root cause both
+# times: regions were built from either automated detection with low
+# hit-rate confidence, or a single un-verified visual guess.
+#
+# This version uses ONE unified region across all 5 overlay-bearing
+# sources, derived from direct pixel-level visual estimates on real
+# images (not automated audit data), with added safety margin, THEN
+# VERIFIED (not just assumed) against real detected overlay pixels
+# across 133 sampled images spanning all 5 sources (Script 13j) --
+# clean pass, zero images had any detected overlay pixel outside this
+# region. This is the first version of this region with actual
+# empirical verification behind it, not just a plausible-looking
+# guess.
+UNIFIED_OVERLAY_REGION = (0, 0, 110, 46)
 OVERLAY_REGIONS = {
-    "September":  (7, 10, 71, 50),
-    "Stir-Sept":  (5, 0, 70, 38),    # corrected -- see note above
-    "v4":         (9, 10, 55, 49),
-    "v4-IR":      (10, 11, 35, 49),  # low audit confidence -- verify directly
-    "v4-UV":      (9, 10, 55, 32),
+    "September":  UNIFIED_OVERLAY_REGION,
+    "Stir-Sept":  UNIFIED_OVERLAY_REGION,
+    "v4":         UNIFIED_OVERLAY_REGION,
+    "v4-IR":      UNIFIED_OVERLAY_REGION,
+    "v4-UV":      UNIFIED_OVERLAY_REGION,
 }
 
 
