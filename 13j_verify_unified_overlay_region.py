@@ -62,8 +62,16 @@ def detect_yellow_text_pixels(img):
     as the footprint audit -- returns list of (x, y) pixel coords of
     detected text-like blobs, or empty list if none found."""
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    lower_yellow = np.array([18, 80, 120])
-    upper_yellow = np.array([35, 255, 255])
+    # CORRECTED -- the original version of this script mistakenly used
+    # the OLD, already-disproven loose threshold ([18,80,120] to
+    # [35,255,255]), which catches warm-toned soil/gravel/glow across
+    # large diffuse areas, not just small text. This reproduced the
+    # exact false-failure signature already seen and fixed once before
+    # (huge "violation" spans like (0,0)-(561,639), thousands of
+    # pixels -- clearly not text). Using the validated tight threshold
+    # from the corrected footprint audit instead.
+    lower_yellow = np.array([22, 150, 180])
+    upper_yellow = np.array([32, 255, 255])
     mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
 
     kernel = np.ones((3, 3), np.uint8)
