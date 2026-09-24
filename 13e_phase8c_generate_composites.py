@@ -20,7 +20,7 @@ Usage:
     python 13e_phase8c_generate_composites.py --full
 
 Assumptions needing confirmation before trusting the full run:
-  - Val split lives at /data/Grace/Master_Detection/val/ with
+  - Val split lives at /data/Grace/Master_Detection_overlay_sanitized/val/ with
     images/ and labels/ subfolders (matches Phase 8B's data.yaml).
   - Labels are YOLO-format .txt files, one bbox per image (single
     annotated laser ROI per the locked plan's matching-rule
@@ -46,7 +46,13 @@ import argparse
 import cv2
 import numpy as np
 
-VAL_DIR = "/data/Grace/Master_Detection/val"
+VAL_DIR = "/data/Grace/Master_Detection_overlay_sanitized/val"
+# Updated to the overlay-sanitized directory (Finding 1, closed) --
+# confirmed via full-batch verification (163/163 images clean) and
+# baseline reproduction on all four models (deltas: classifier +0.00,
+# 8B.1 -0.01, 8B.2 +0.07, 8B.3 +0.03 -- all within rounding noise).
+# Labels are unaffected by overlay removal (pixel-only change) and
+# were copied unmodified from the original directory.
 IMAGES_DIR = os.path.join(VAL_DIR, "images")
 LABELS_DIR = os.path.join(VAL_DIR, "labels")
 
