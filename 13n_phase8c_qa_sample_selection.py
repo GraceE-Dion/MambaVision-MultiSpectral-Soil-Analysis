@@ -99,6 +99,26 @@ def main():
     else:
         print("  None occurred in this pilot -- Tier 1/2 resolved every donor.")
 
+    # --- Group 2b: ALL weak-candidate-support repairs (<=3 candidates) ---
+    # Added per peer review on the finding2v1 pilot (t005_B_2 case): a
+    # Tier-1 repair selected from very few candidates is a distinct,
+    # separately-tracked risk from Tier-3 fallback, and must be
+    # inspected in full every run, not sampled -- this is diagnostic
+    # tracking only, it does not change which tier a donor resolves at.
+    weak = [r for r in records if r.get("weak_candidate_support") is True]
+    by_donor_weak = {}
+    for r in weak:
+        by_donor_weak.setdefault(r["donor_id"], r)
+    print(f"\n[GROUP 2b] ALL weak-candidate-support repairs (<=3 candidates): "
+          f"{len(by_donor_weak)} unique donor(s)")
+    if by_donor_weak:
+        for r in by_donor_weak.values():
+            print(f"    {r['composite_id']}  candidates={r['repair_candidate_count']}  "
+                  f"tier={r['repair_tier']}  score={r['repair_selected_score']:.2f}  "
+                  f"donor={r['donor_id']} ({r['donor_source']})  -> {panel_path(r)}")
+    else:
+        print("  None in this pilot.")
+
     # --- Group 3: heterogeneous Tier-1/Tier-2 sample across sources ---
     random.seed(0)
     non_tier3 = [r for r in records if r.get("repair_tier") in (1, 2)]

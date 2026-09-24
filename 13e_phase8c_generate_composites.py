@@ -379,6 +379,19 @@ def repair_donor_roi(donor_img, donor_bbox, pad_fraction=0.6, min_pad_px=15):
     diagnostic = {
         "tier": tier,
         "candidate_count": len(candidates),
+        # Per peer review on the finding2v1 pilot (t005_B_2 case):
+        # tier alone conflates "which repair pathway succeeded" with
+        # "how much real choice that pathway had" -- a Tier-1 repair
+        # selected from 1 candidate is not scientifically the same as
+        # one selected from 100+. This is a pure observability
+        # addition; it does NOT change candidate search or tier
+        # routing. Boundaries are explicitly QA categories, not
+        # validated scientific thresholds -- the only boundary peer
+        # review called load-bearing is <=3 ("weak").
+        "candidate_support": ("weak" if len(candidates) <= 3
+                               else "limited" if len(candidates) <= 10
+                               else "adequate"),
+        "weak_candidate_support": len(candidates) <= 3,
         "shrink_fraction_used": shrink_fraction_used,
         "pad_x": pad_x, "pad_y": pad_y,
         "region": (px_min, py_min, px_max, py_max),
@@ -765,6 +778,8 @@ def main():
                     # not silently admitted on the strength of its score.
                     "repair_admissible": diagnostic.get("repair_admissible"),
                     "repair_candidate_count": diagnostic.get("candidate_count"),
+                    "repair_candidate_support": diagnostic.get("candidate_support"),
+                    "weak_candidate_support": diagnostic.get("weak_candidate_support"),
                     "repair_shrink_fraction_used": diagnostic.get("shrink_fraction_used"),
                     "repair_selected_score": diagnostic.get("selected_score"),
                     "repair_selected_source": diagnostic.get("selected_source"),
@@ -850,11 +865,42 @@ def main():
             print("    (A tier-1 repair selected from very few candidates is more constrained")
             print("     than one selected from many, even though both are nominally 'Tier 1'.)")
 
+        # Candidate-support distribution (peer review, finding2v1 QA):
+        # tier alone conflates pathway with how much real choice it
+        # had. weak (<=3 candidates) is the one load-bearing boundary;
+        # limited/adequate are operational, not validated thresholds.
+        support_counts = {"weak": 0, "limited": 0, "adequate": 0}
+        for d in diags:
+            s = d.get("candidate_support")
+            if s in support_counts:
+                support_counts[s] += 1
+        print(f"\n  Candidate-support distribution across {n_donors} unique donors:")
+        for s in ["weak", "limited", "adequate"]:
+            c = support_counts[s]
+            print(f"    {s} ({'<=3' if s=='weak' else '4-10' if s=='limited' else '>10'} candidates): "
+                  f"{c} ({100*c/n_donors:.1f}%)")
+        weak_n = support_counts["weak"]
+        if weak_n:
+            print(f"  FLAG: {weak_n} donor(s) with weak candidate support (<=3). Per peer review,")
+            print("  these must be individually visually inspected, not excluded or auto-escalated")
+            print("  to Tier 2 -- candidate count is a diagnostic here, not a trigger. Track whether")
+            print("  this recurs at scale: isolated (~1) vs. a systematic large-ROI-donor population")
+            print("  determines whether Tier 2 routing needs to change later.")
+
         for t in [1, 2, 3]:
             t_scores = [d.get("selected_score") for d in diags if d.get("tier") == t and d.get("selected_score") is not None]
             if t_scores:
                 print(f"  Tier {t} score distribution (n={len(t_scores)}): "
                       f"min={min(t_scores):.2f}, max={max(t_scores):.2f}, mean={sum(t_scores)/len(t_scores):.2f}")
+
+        # Score distribution by candidate-support group, as peer review
+        # specifically asked the next larger run to report.
+        for s in ["weak", "limited", "adequate"]:
+            s_scores = [d.get("selected_score") for d in diags
+                        if d.get("candidate_support") == s and d.get("selected_score") is not None]
+            if s_scores:
+                print(f"  Score distribution, {s} support (n={len(s_scores)}): "
+                      f"min={min(s_scores):.2f}, max={max(s_scores):.2f}, mean={sum(s_scores)/len(s_scores):.2f}")
 
         print(f"\n  Repaired donor backgrounds saved individually -> {repaired_donor_dir}/")
 
