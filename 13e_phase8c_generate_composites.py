@@ -175,6 +175,62 @@ def get_eligible_donors(target, index, condition):
     return candidates
 
 
+def bbox_area(img):
+    x_min, y_min, x_max, y_max = img["bbox"]
+    return (x_max - x_min) * (y_max - y_min)
+
+
+def bbox_boundary_distance(img):
+    """Minimum pixel distance from the annotated bbox to the nearest
+    image edge -- small values mean the repair region for this image,
+    if it's used as a donor, will be geometrically constrained (per
+    peer review's finding2v1 note: this is exactly the property that
+    produced t005_B_2's candidate-starved forced pick)."""
+    x_min, y_min, x_max, y_max = img["bbox"]
+    w, h = img["img_w"], img["img_h"]
+    return min(x_min, y_min, w - x_max, h - y_max)
+
+
+def select_pilot_donors(eligible, k):
+    """PILOT MODE ONLY -- deliberately biases donor selection toward
+    the geometries peer review flagged as most likely to challenge the
+    repair pipeline (large bbox, boundary-adjacent bbox), mixed with
+    ordinary random picks, rather than pure random sampling.
+
+    This is a QA-staging/stress-test policy, not a change to the
+    repair algorithm itself (which stays frozen), and it is NOT used
+    in --full mode: the full sweep's actual experimental dataset uses
+    plain seeded random donor assignment per the locked plan, exactly
+    as before. Mixing deliberately-adversarial cases with ordinary
+    ones (rather than sampling only hard cases) is intentional --
+    per peer review, we need to see whether the redesign behaves
+    normally across the population while also stress-testing known
+    failure modes, not just confirm it fails on cases picked to fail.
+    """
+    if len(eligible) <= k:
+        return list(eligible)
+
+    picks = []
+    remaining = list(eligible)
+
+    if k >= 1:
+        largest = max(remaining, key=bbox_area)
+        picks.append(largest)
+        remaining.remove(largest)
+
+    if k >= 2 and remaining:
+        nearest_edge = min(remaining, key=bbox_boundary_distance)
+        picks.append(nearest_edge)
+        remaining.remove(nearest_edge)
+
+    while len(picks) < k and remaining:
+        pick = random.choice(remaining)
+        picks.append(pick)
+        remaining.remove(pick)
+
+    return picks
+
+
 def get_surround_stats(img, x_min, y_min, x_max, y_max, ring_width=20):
     """Stats of the annulus immediately OUTSIDE the destination region --
     per peer review: we don't know what was behind the laser, so match
@@ -679,11 +735,10 @@ def main():
     if args.full:
         targets = list(enumerate(index))
     else:
-        # Heterogeneous pilot sampling (peer review point 9): stratify
-        # across source datasets rather than pure random, so the pilot
-        # stress-tests the algorithm across different acquisition
-        # modalities/textures instead of whatever the random draw
-        # happens to favor.
+        # Heterogeneous pilot sampling: stratify across source datasets
+        # rather than pure random, so the pilot stress-tests the
+        # algorithm across different acquisition modalities/textures
+        # instead of whatever the random draw happens to favor.
         by_source = {}
         for img in index:
             by_source.setdefault(img["source"], []).append(img)
@@ -696,7 +751,39 @@ def main():
         if len(sampled) < args.n_pilot:
             remaining = [img for img in index if img not in sampled]
             sampled.extend(random.sample(remaining, min(args.n_pilot - len(sampled), len(remaining))))
-        targets = list(enumerate(sampled[:max(args.n_pilot, len(sources))]))
+        sampled = sampled[:max(args.n_pilot, len(sources))]
+
+        # Class-coverage top-up (peer review, 30-image stress-QA
+        # request): the per-source draw above doesn't itself guarantee
+        # spread across moisture classes. Swap in one representative
+        # per still-missing class, budget permitting, rather than
+        # leaving class coverage to chance.
+        covered_classes = {img["class_id"] for img in sampled}
+        all_classes = sorted({img["class_id"] for img in index})
+        missing_classes = [c for c in all_classes if c not in covered_classes]
+        sampled_stems = {img["stem"] for img in sampled}
+        for c in missing_classes:
+            candidates = [img for img in index
+                          if img["class_id"] == c and img["stem"] not in sampled_stems]
+            if not candidates:
+                continue
+            pick = random.choice(candidates)
+            if len(sampled) < args.n_pilot:
+                sampled.append(pick)
+            else:
+                # Budget is full -- replace a random image from the
+                # most-represented source rather than just growing
+                # past n_pilot, so class-coverage doesn't silently
+                # blow the requested pilot size.
+                counts_by_src = {}
+                for img in sampled:
+                    counts_by_src[img["source"]] = counts_by_src.get(img["source"], 0) + 1
+                fattest_src = max(counts_by_src, key=counts_by_src.get)
+                swap_idx = next(i for i, img in enumerate(sampled) if img["source"] == fattest_src)
+                sampled[swap_idx] = pick
+            sampled_stems.add(pick["stem"])
+
+        targets = list(enumerate(sampled))
 
     records = []
     eligibility_counts = {"A": 0, "B": 0, "C": 0}
@@ -712,7 +799,16 @@ def main():
             eligibility_counts[condition] += 1
 
             k = min(MAX_DONORS, len(eligible))
-            donors = random.sample(eligible, k)
+            if args.full:
+                # Full sweep uses plain seeded random donor assignment
+                # per the locked plan -- unchanged, no stress bias.
+                donors = random.sample(eligible, k)
+            else:
+                # Pilot mode: deliberately bias toward the geometries
+                # peer review flagged (large bbox, boundary-adjacent
+                # bbox), mixed with ordinary random picks -- see
+                # select_pilot_donors() docstring.
+                donors = select_pilot_donors(eligible, k)
 
             for donor_idx, donor in enumerate(donors):
                 composite, diagnostic, roi_ok, roi_max_diff = composite_image(
